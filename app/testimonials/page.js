@@ -1,0 +1,39 @@
+import { testimonials, pageHeaders, cta } from "@/content/data";
+import PageBanner from "@/components/sections/PageBanner";
+import CTA from "@/components/sections/CTA";
+import Container from "@/components/layout/Container";
+import SectionTitle from "@/components/sections/SectionTitle";
+import TestimonialCard from "@/components/cards/TestimonialCard";
+
+export const metadata = {
+  title: "Testimonials",
+  description:
+    "Read what homeowners, contractors and designers say about VK Tiles & Granites — premium quality and trusted service.",
+};
+
+export default function TestimonialsPage() {
+  const header = pageHeaders.testimonials;
+
+  return (
+    <>
+      <PageBanner title={header.title} subtitle={header.subtitle} image={header.image} />
+
+      <section className="section-padding bg-white" aria-label="Customer testimonials">
+        <Container>
+          <SectionTitle
+            eyebrow="Reviews"
+            title="What Our Customers Say"
+            subtitle="5000+ happy homes, hotels and commercial projects delivered across Tamil Nadu."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((testimonial) => (
+              <TestimonialCard key={testimonial.name} testimonial={testimonial} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <CTA data={cta} />
+    </>
+  );
+}
