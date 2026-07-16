@@ -1,18 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --gold: #c8a45d;
-  --dark: #232323;
-  --gray: #6b7280;
-  --background: #f8f8f7;
+  /* VK logo palette — navy + sky */
+  --navy: #0b1f3a;
+  --navy-deep: #061428;
+  --sky: #3ba4e6;
+  --sky-bright: #5bb8f0;
+  --sky-soft: #d6eefb;
+  --silver: #e8eef5;
+  --gray: #5b6b7c;
+  --background: #f4f7fb;
   --white: #ffffff;
-  --accent: #e7d7b4;
-  --foreground: #232323;
+  --foreground: #0b1f3a;
+  /* legacy aliases mapped to brand */
+  --gold: var(--sky);
+  --dark: var(--navy);
+  --accent: var(--sky-soft);
 }
 
 @theme inline {
-  --color-gold: var(--gold);
-  --color-dark: var(--dark);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-sky: var(--sky);
+  --color-sky-bright: var(--sky-bright);
+  --color-sky-soft: var(--sky-soft);
+  --color-silver: var(--silver);
+  --color-gold: var(--sky);
+  --color-dark: var(--navy);
   --color-gray: var(--gray);
   --color-background: var(--background);
   --color-white: var(--white);
@@ -52,45 +66,75 @@ body {
   }
 }
 
-.gold-line {
+.gold-line,
+.brand-line {
   width: 3rem;
   height: 2px;
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--sky), var(--sky-bright));
 }
 
 .card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -12px rgba(35, 35, 35, 0.12);
+  box-shadow: 0 24px 48px -16px rgba(11, 31, 58, 0.18);
 }
 
 .image-overlay {
   background: linear-gradient(
     to top,
-    rgba(35, 35, 35, 0.85) 0%,
-    rgba(35, 35, 35, 0.4) 50%,
-    rgba(35, 35, 35, 0.15) 100%
+    rgba(6, 20, 40, 0.9) 0%,
+    rgba(11, 31, 58, 0.45) 45%,
+    rgba(11, 31, 58, 0.12) 100%
   );
 }
 
 .hero-overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(35, 35, 35, 0.75) 0%,
-    rgba(35, 35, 35, 0.45) 50%,
-    rgba(35, 35, 35, 0.25) 100%
-  );
+  background:
+    linear-gradient(120deg, rgba(6, 20, 40, 0.88) 0%, rgba(11, 31, 58, 0.55) 48%, rgba(59, 164, 230, 0.22) 100%),
+    repeating-linear-gradient(
+      -28deg,
+      transparent,
+      transparent 48px,
+      rgba(255, 255, 255, 0.02) 48px,
+      rgba(255, 255, 255, 0.02) 96px
+    );
+}
+
+.brand-mesh {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(59, 164, 230, 0.18), transparent 45%),
+    radial-gradient(ellipse at 80% 0%, rgba(91, 184, 240, 0.12), transparent 40%),
+    var(--background);
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--sky);
   outline-offset: 2px;
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--dark);
+  background: var(--sky-soft);
+  color: var(--navy);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease both;
+}
+
+.animate-fade-up-delay {
+  animation: fade-up 0.8s ease 0.15s both;
 }

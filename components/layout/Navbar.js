@@ -11,15 +11,15 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-dark/5">
-      <div className="hidden md:block bg-dark text-white text-xs">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-navy/8">
+      <div className="hidden md:block bg-navy text-white text-xs">
         <Container className="flex items-center justify-between py-2">
-          <p className="text-white/70">{business.address}</p>
+          <p className="text-white/70">{business.tagline} · {business.address}</p>
           <div className="flex items-center gap-6">
-            <a href={`tel:${business.phoneRaw}`} className="hover:text-gold transition-colors">
+            <a href={`tel:${business.phoneRaw}`} className="hover:text-sky-bright transition-colors">
               {business.phone}
             </a>
-            <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
+            <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-sky-bright transition-colors">
               WhatsApp
             </a>
           </div>
@@ -27,14 +27,14 @@ export default function Navbar() {
       </div>
 
       <Container>
-        <nav className="flex items-center justify-between py-4" aria-label="Main navigation">
+        <nav className="flex items-center justify-between py-3 md:py-4" aria-label="Main navigation">
           <Link href="/" className="group flex items-center gap-3 shrink-0">
             <Image
               src="/logo.png"
               alt={business.name}
-              width={180}
-              height={56}
-              className="h-10 md:h-12 w-auto object-contain"
+              width={200}
+              height={72}
+              className="h-11 md:h-14 w-auto object-contain rounded-sm"
               priority
             />
           </Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="px-3 py-2 text-sm text-dark/80 hover:text-gold transition-colors"
+                  className="px-3 py-2 text-sm text-navy/80 hover:text-sky transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -56,14 +56,12 @@ export default function Navbar() {
             <Button href={business.whatsapp} variant="whatsapp" size="sm" external>
               WhatsApp
             </Button>
-            <Button href="/contact" size="sm">
-              Get Quote
-            </Button>
+        
           </div>
 
           <button
             type="button"
-            className="lg:hidden p-2 text-dark"
+            className="lg:hidden p-2 text-navy"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             aria-label="Toggle menu"
@@ -80,14 +78,14 @@ export default function Navbar() {
       </Container>
 
       {open && (
-        <div className="lg:hidden border-t border-dark/5 bg-white">
+        <div className="lg:hidden border-t border-navy/8 bg-white">
           <Container className="py-4">
             <ul className="flex flex-col gap-1">
               {navigation.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block px-3 py-3 text-dark hover:text-gold transition-colors"
+                    className="block px-3 py-3 text-navy hover:text-sky transition-colors"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
@@ -95,7 +93,7 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-dark/5">
+            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-navy/8">
               <Button href={business.whatsapp} variant="whatsapp" external>
                 WhatsApp
               </Button>

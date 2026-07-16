@@ -1,16 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
 import { business, footer, socialLinks, businessHours } from "@/content/data";
 import Container from "@/components/layout/Container";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white" aria-label="Footer">
+    <footer className="bg-navy-deep text-white" aria-label="Footer">
       <Container className="py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <span className="font-display text-2xl text-white">{business.name}</span>
-              <span className="block text-[10px] uppercase tracking-[0.2em] text-white/50 mt-1">
+              <Image
+                src="/logo.png"
+                alt={business.name}
+                width={180}
+                height={64}
+                className="h-12 w-auto object-contain rounded-sm mb-3"
+              />
+              <span className="block text-[10px] uppercase tracking-[0.22em] text-sky-bright/90">
                 {business.tagline}
               </span>
             </Link>
@@ -25,7 +32,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-9 h-9 flex items-center justify-center border border-white/20 text-white/70 hover:border-gold hover:text-gold transition-colors text-xs"
+                  className="w-9 h-9 flex items-center justify-center border border-white/20 text-white/70 hover:border-sky hover:text-sky transition-colors text-xs"
                 >
                   {social.platform[0]}
                 </a>
@@ -34,13 +41,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-5">
+            <h3 className="text-sky text-xs font-semibold uppercase tracking-[0.2em] mb-5">
               Quick Links
             </h3>
             <ul className="space-y-3">
               {footer.quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-white/60 text-sm hover:text-gold transition-colors">
+                  <Link href={link.href} className="text-white/60 text-sm hover:text-sky transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -49,13 +56,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-5">
+            <h3 className="text-sky text-xs font-semibold uppercase tracking-[0.2em] mb-5">
               Services
             </h3>
             <ul className="space-y-3">
               {footer.services.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-white/60 text-sm hover:text-gold transition-colors">
+                  <Link href={link.href} className="text-white/60 text-sm hover:text-sky transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -64,18 +71,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-5">
+            <h3 className="text-sky text-xs font-semibold uppercase tracking-[0.2em] mb-5">
               Contact
             </h3>
             <address className="not-italic text-white/60 text-sm space-y-3">
               <p>{business.address}</p>
               <p>
-                <a href={`tel:${business.phoneRaw}`} className="hover:text-gold transition-colors">
+                <a href={`tel:${business.phoneRaw}`} className="hover:text-sky transition-colors">
                   {business.phone}
                 </a>
               </p>
               <p>
-                <a href={`mailto:${business.email}`} className="hover:text-gold transition-colors">
+                <a href={`mailto:${business.email}`} className="hover:text-sky transition-colors">
                   {business.email}
                 </a>
               </p>
@@ -99,7 +106,7 @@ export default function Footer() {
           <ul className="flex gap-6">
             {footer.legal.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-white/40 text-xs hover:text-gold transition-colors">
+                <Link href={link.href} className="text-white/40 text-xs hover:text-sky transition-colors">
                   {link.label}
                 </Link>
               </li>

@@ -1,15 +1,22 @@
+import {
+  getCategories,
+  getProducts,
+  getFeaturedProducts,
+  getCatalogMeta,
+} from "@/lib/products";
+
 export const business = {
   name: "VK Tiles & Granites",
-  tagline: "World Ceramics Wholesaler",
+  tagline: "Elegance Beyond Surface",
   description:
-    "Tamil Nadu's trusted wholesale destination for premium tiles, granite, marble and designer surfaces. Visit our Bommidi showroom or enquire for bulk supply across the state.",
+    "Tamil Nadu's trusted wholesale destination for premium Simpolo tiles and designer surfaces. Visit our Bommidi showroom or enquire for bulk supply across the state.",
   address: "Plot No. 2/289, Bommidi, Tamil Nadu - 635301",
   phone: "+91 63094 93308",
   phoneRaw: "+916309493308",
   email: "info@vktilesandgranites.in",
   whatsapp: "https://wa.me/916309493308",
   mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5!2d78.0!3d12.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAwJzAwLjAiTiA3OMKwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5!2d78.0!3d12.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAwJzAwLjAiTiA3OMKwMDAnMDAuMCJF!5e0!2sen!2sin!4v1700000000000",
   mapLink: "https://maps.google.com/?q=VK+Tiles+Granites+Bommidi",
   founded: 2010,
 };
@@ -30,7 +37,7 @@ export const navigation = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
-  { href: "/categories", label: "Categories" },
+  { href: "/categories", label: "Collections" },
   { href: "/brands", label: "Brands" },
   { href: "/gallery", label: "Gallery" },
   { href: "/services", label: "Services" },
@@ -41,20 +48,26 @@ export const navigation = [
 ];
 
 export const hero = {
-  eyebrow: "Premium Ceramic Showroom",
-  title: "Elevate Every Space with World-Class Surfaces",
+  eyebrow: "VK Tiles & Granites",
+  title: "Elegance Beyond Surface",
   subtitle:
-    "Discover 1000+ premium tiles, granite and marble designs from 50+ top brands — wholesale pricing, expert guidance, and delivery across Tamil Nadu.",
+    "Explore Simpolo’s premium vitrified collections — durable large-format tiles with full packing details, wholesale pricing, and delivery across Tamil Nadu.",
   image:
     "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1920&auto=format&fit=crop",
   ctaPrimary: { label: "Explore Products", href: "/products" },
   ctaSecondary: { label: "Visit Showroom", href: "/contact" },
 };
 
+const catalogMeta = getCatalogMeta();
+
 export const statistics = [
   { label: "Happy Customers", value: "5000+", numeric: 5000 },
-  { label: "Premium Designs", value: "1000+", numeric: 1000 },
-  { label: "Top Brands", value: "50+", numeric: 50 },
+  {
+    label: "Tile Designs",
+    value: `${catalogMeta.count || 1500}+`,
+    numeric: catalogMeta.count || 1500,
+  },
+  { label: "Simpolo Collections", value: `${getCategories().length || 30}+`, numeric: getCategories().length || 30 },
   { label: "Years Experience", value: "15+", numeric: 15 },
 ];
 
@@ -62,9 +75,9 @@ export const about = {
   eyebrow: "About VK Tiles",
   title: "Your Trusted Partner in Premium Surfaces",
   description:
-    "For over 15 years, VK Tiles & Granites has been the go-to wholesale showroom in Bommidi for homeowners, builders, architects and dealers seeking genuine, world-class ceramic and stone solutions.",
+    "For over 15 years, VK Tiles & Granites has been the go-to wholesale showroom in Bommidi for homeowners, builders, architects and dealers seeking genuine Simpolo tiles and world-class ceramic solutions.",
   highlights: [
-    "Largest tile & granite collection in the region",
+    "Authorised Simpolo tile collections with packing details",
     "Direct partnerships with India's top manufacturers",
     "Free design consultation for every customer",
     "Safe, on-time delivery across Tamil Nadu",
@@ -76,38 +89,38 @@ export const about = {
 
 export const whyChooseUs = [
   {
-    title: "100% Genuine Products",
-    text: "Every slab and tile is certified authentic from authorised distributors.",
+    title: "Premium Quality",
+    text: "Certified Simpolo tiles with durable surfaces for everyday luxury.",
     icon: "shield",
   },
   {
-    title: "Top International Brands",
-    text: "50+ trusted names including Kajaria, Somany, Johnson and more.",
+    title: "Exquisite Designs",
+    text: "Concrete, marble, stone and designer looks across large formats.",
     icon: "award",
+  },
+  {
+    title: "Durable & Long Lasting",
+    text: "Low porosity vitrified bodies engineered for Indian homes and projects.",
+    icon: "tag",
+  },
+  {
+    title: "Perfect for Every Space",
+    text: "Wall and floor options curated by collection — not room guesswork.",
+    icon: "users",
   },
   {
     title: "Best Price Guarantee",
     text: "Direct wholesale pricing with transparent quotations, always.",
-    icon: "tag",
-  },
-  {
-    title: "Expert Team",
-    text: "Free consultation and on-site guidance from experienced specialists.",
-    icon: "users",
-  },
-  {
-    title: "Delivery Support",
-    text: "Safe packaging and on-time delivery across Tamil Nadu.",
     icon: "truck",
   },
   {
-    title: "Large Showroom",
-    text: "Walk through curated displays and see every finish in real light.",
+    title: "Expert Team",
+    text: "Free consultation and packing guidance from experienced specialists.",
     icon: "building",
   },
   {
     title: "Modern Collection",
-    text: "New arrivals every season — latest Italian-inspired designs.",
+    text: "New arrivals every season — latest Simpolo designs in stock.",
     icon: "sparkles",
   },
   {
@@ -117,236 +130,30 @@ export const whyChooseUs = [
   },
 ];
 
-export const categories = [
-  {
-    slug: "floor-tiles",
-    name: "Floor Tiles",
-    blurb: "Elegant, durable, everyday luxury",
-    image:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=900&auto=format&fit=crop",
-    count: 180,
-  },
-  {
-    slug: "wall-tiles",
-    name: "Wall Tiles",
-    blurb: "Statement surfaces for every room",
-    image:
-      "https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=900&auto=format&fit=crop",
-    count: 150,
-  },
-  {
-    slug: "vitrified-tiles",
-    name: "Vitrified Tiles",
-    blurb: "High-strength, stain-proof finish",
-    image:
-      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=900&auto=format&fit=crop",
-    count: 120,
-  },
-  {
-    slug: "granite",
-    name: "Granite",
-    blurb: "Timeless natural stone strength",
-    image:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=900&auto=format&fit=crop",
-    count: 90,
-  },
-  {
-    slug: "marble",
-    name: "Marble",
-    blurb: "Old-world elegance, reimagined",
-    image:
-      "https://images.unsplash.com/photo-1600585152915-d208bec867a1?q=80&w=900&auto=format&fit=crop",
-    count: 75,
-  },
-  {
-    slug: "kitchen-tiles",
-    name: "Kitchen Tiles",
-    blurb: "Heat, oil & stain resistant",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop",
-    count: 85,
-  },
-  {
-    slug: "bathroom-tiles",
-    name: "Bathroom Tiles",
-    blurb: "Anti-skid, spa-like finishes",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=900&auto=format&fit=crop",
-    count: 70,
-  },
-  {
-    slug: "outdoor-tiles",
-    name: "Outdoor Tiles",
-    blurb: "Weatherproof, slip-resistant",
-    image:
-      "https://images.unsplash.com/photo-1600607688969-a5bfb1e8f7f6?q=80&w=900&auto=format&fit=crop",
-    count: 55,
-  },
-  {
-    slug: "parking-tiles",
-    name: "Parking Tiles",
-    blurb: "Heavy-duty, load-bearing",
-    image:
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=900&auto=format&fit=crop",
-    count: 40,
-  },
-  {
-    slug: "elevation-tiles",
-    name: "Elevation Tiles",
-    blurb: "Bold facades that last",
-    image:
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=900&auto=format&fit=crop",
-    count: 65,
-  },
-  {
-    slug: "ceramic-tiles",
-    name: "Ceramic Tiles",
-    blurb: "Versatile everyday classics",
-    image:
-      "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?q=80&w=900&auto=format&fit=crop",
-    count: 95,
-  },
-  {
-    slug: "designer-tiles",
-    name: "Designer Tiles",
-    blurb: "Artisanal, statement patterns",
-    image:
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=900&auto=format&fit=crop",
-    count: 60,
-  },
-];
+/** Collection-based categories from Simpolo catalog (no room categories). */
+export const categories = getCategories();
 
 export const brands = [
   {
-    slug: "kajaria",
-    name: "Kajaria",
-    tagline: "India's No.1 Tile Brand",
+    slug: "simpolo",
+    name: "Simpolo",
+    tagline: "Premium Vitrified Tiles",
     image:
-      "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?q=80&w=600&auto=format&fit=crop",
+      "https://simpolo-web.s3.ap-south-1.amazonaws.com/uploads/media/logo/black-logo-400-x-252.png",
   },
   {
-    slug: "somany",
-    name: "Somany",
-    tagline: "Innovation in Every Tile",
+    slug: "italica",
+    name: "Italica",
+    tagline: "Italian-inspired ceramic elegance",
     image:
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    slug: "johnson",
-    name: "Johnson",
-    tagline: "Pioneers of Vitrified Tiles",
-    image:
-      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    slug: "asian-granito",
-    name: "Asian Granito",
-    tagline: "Large Format Excellence",
-    image:
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    slug: "nitco",
-    name: "Nitco",
-    tagline: "Italian Inspired Designs",
-    image:
-      "https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    slug: "orientbell",
-    name: "Orientbell",
-    tagline: "Designer Wall & Floor Tiles",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=900&auto=format&fit=crop",
   },
 ];
 
-export const products = [
-  {
-    slug: "aurelia-vitrified-tile",
-    name: "Aurelia Vitrified Tile",
-    category: "vitrified-tiles",
-    brand: "Kajaria",
-    finish: "Glossy Finish",
-    size: "800×1600mm",
-    availability: "In Stock",
-    featured: true,
-    image:
-      "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?q=80&w=1000&auto=format&fit=crop",
-    description:
-      "A high-gloss vitrified tile engineered for large-format floors. Reflects ambient light beautifully while resisting staining, scratching and water absorption.",
-  },
-  {
-    slug: "black-galaxy-granite",
-    name: "Black Galaxy Granite",
-    category: "granite",
-    brand: "Imported",
-    finish: "Polished Finish",
-    size: "Slabs & Cut-to-size",
-    availability: "In Stock",
-    featured: true,
-    image:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop",
-    description:
-      "Signature depth of black with fine golden speckles — sought-after for kitchen countertops, staircases and feature walls.",
-  },
-  {
-    slug: "italian-carrara-marble",
-    name: "Italian Carrara Marble",
-    category: "marble",
-    brand: "Imported",
-    finish: "Honed Finish",
-    size: "900×1800mm slabs",
-    availability: "Limited Stock",
-    featured: true,
-    image:
-      "https://images.unsplash.com/photo-1600585152915-d208bec867a1?q=80&w=1000&auto=format&fit=crop",
-    description:
-      "Imported Carrara marble with soft grey veining across a bright white base. Ideal for formal living rooms and premium vanities.",
-  },
-  {
-    slug: "serene-bathroom-tile-set",
-    name: "Serene Bathroom Set",
-    category: "bathroom-tiles",
-    brand: "Somany",
-    finish: "Anti-Skid Matte",
-    size: "300×600mm",
-    availability: "In Stock",
-    featured: true,
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1000&auto=format&fit=crop",
-    description:
-      "A calming, spa-inspired tile set with anti-skid matte surface designed specifically for wet areas.",
-  },
-  {
-    slug: "royal-elevation-panel",
-    name: "Royal Elevation Panel",
-    category: "elevation-tiles",
-    brand: "Asian Granito",
-    finish: "Textured Finish",
-    size: "600×1200mm",
-    availability: "In Stock",
-    featured: false,
-    image:
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1000&auto=format&fit=crop",
-    description:
-      "Weather-resistant textured stone panel built for building facades and exterior feature walls.",
-  },
-  {
-    slug: "tan-brown-granite",
-    name: "Tan Brown Granite",
-    category: "granite",
-    brand: "Imported",
-    finish: "Polished Finish",
-    size: "Slabs & Countertops",
-    availability: "In Stock",
-    featured: false,
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000&auto=format&fit=crop",
-    description:
-      "Warm, richly patterned granite popular for kitchen countertops and flooring in busy households.",
-  },
-];
+/** Full Simpolo product catalogue */
+export const products = getProducts();
+
+export const featuredProducts = getFeaturedProducts(8);
 
 export const services = [
   {
@@ -361,7 +168,7 @@ export const services = [
     slug: "design-consultation",
     title: "Design Consultation",
     description:
-      "Free expert guidance to match tiles, granite and marble to your space, lighting conditions and budget.",
+      "Free expert guidance to match Simpolo collections to your space, lighting conditions and budget.",
     image:
       "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop",
   },
@@ -369,15 +176,15 @@ export const services = [
     slug: "site-delivery",
     title: "Site Delivery",
     description:
-      "Safe, on-time delivery across Tamil Nadu with professional packaging for tiles, slabs and fragile materials.",
+      "Safe, on-time delivery across Tamil Nadu with professional packaging for tiles and fragile materials.",
     image:
       "https://images.unsplash.com/photo-1600607688969-a5bfb1e8f7f6?q=80&w=800&auto=format&fit=crop",
   },
   {
-    slug: "custom-cutting",
-    title: "Custom Cutting",
+    slug: "packing-guidance",
+    title: "Packing & Coverage Guidance",
     description:
-      "Precision cut-to-size granite and marble slabs for countertops, staircases and bespoke architectural features.",
+      "Exact tiles-per-box and coverage area (sq ft) for every size so you order the right quantity first time.",
     image:
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
   },
@@ -388,7 +195,7 @@ export const projects = [
     slug: "sri-lakshmi-villa",
     title: "Sri Lakshmi Villa",
     location: "Salem",
-    scope: "Full home flooring — marble & vitrified tiles",
+    scope: "Full home flooring — large-format vitrified tiles",
     image:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
   },
@@ -396,7 +203,7 @@ export const projects = [
     slug: "greenview-apartments",
     title: "GreenView Apartments",
     location: "Dharmapuri",
-    scope: "48-unit residential — vitrified tiles & granite kitchens",
+    scope: "48-unit residential — Simpolo vitrified collections",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
   },
@@ -404,7 +211,7 @@ export const projects = [
     slug: "hotel-meridian-lobby",
     title: "Hotel Meridian Lobby",
     location: "Erode",
-    scope: "Imported marble flooring & wall cladding",
+    scope: "Statement floor & wall cladding",
     image:
       "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1200&auto=format&fit=crop",
   },
@@ -412,7 +219,7 @@ export const projects = [
     slug: "bommidi-commercial-complex",
     title: "Bommidi Commercial Complex",
     location: "Bommidi",
-    scope: "Elevation panels & parking area tiling",
+    scope: "Commercial flooring & elevation tiles",
     image:
       "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1200&auto=format&fit=crop",
   },
@@ -420,48 +227,48 @@ export const projects = [
 
 export const gallery = [
   {
-    slug: "villa-living-room",
-    caption: "Villa Living Room — Marble Flooring",
+    slug: "concrete-collection",
+    caption: "Concrete Look — Alchimia & Spectra",
     image:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1400&auto=format&fit=crop",
     thumb:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=700&auto=format&fit=crop",
   },
   {
-    slug: "modern-kitchen",
-    caption: "Modern Kitchen — Granite Countertop",
+    slug: "large-format-floor",
+    caption: "Large Format Floor Installation",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop",
     thumb:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=700&auto=format&fit=crop",
   },
   {
-    slug: "luxury-bathroom",
-    caption: "Luxury Bathroom — Vitrified Tile Finish",
+    slug: "matt-finish-wall",
+    caption: "Matt Finish Feature Wall",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1400&auto=format&fit=crop",
     thumb:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=700&auto=format&fit=crop",
   },
   {
-    slug: "hotel-lobby",
-    caption: "Hotel Lobby — Imported Marble",
+    slug: "commercial-lobby",
+    caption: "Commercial Lobby — Seamless Grout Lines",
     image:
       "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1400&auto=format&fit=crop",
     thumb:
       "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=700&auto=format&fit=crop",
   },
   {
-    slug: "building-elevation",
-    caption: "Building Elevation — Textured Stone Cladding",
+    slug: "polished-interior",
+    caption: "Polished Interior Flooring",
     image:
       "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1400&auto=format&fit=crop",
     thumb:
       "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=700&auto=format&fit=crop",
   },
   {
-    slug: "poolside-deck",
-    caption: "Poolside Deck — Anti-Skid Outdoor Tiles",
+    slug: "showroom-display",
+    caption: "VK Showroom Collection Display",
     image:
       "https://images.unsplash.com/photo-1600607688969-a5bfb1e8f7f6?q=80&w=1400&auto=format&fit=crop",
     thumb:
@@ -472,11 +279,11 @@ export const gallery = [
 export const processSteps = [
   {
     title: "Visit Showroom",
-    text: "Walk through our curated displays in Bommidi and see finishes in real light.",
+    text: "Walk through our curated Simpolo displays in Bommidi and see finishes in real light.",
   },
   {
-    title: "Select Design",
-    text: "Our experts help you pick the perfect tile, granite or marble for your space.",
+    title: "Select Collection",
+    text: "Pick the perfect collection, size and finish — we share packing and coverage details.",
   },
   {
     title: "Get Quotation",
@@ -490,12 +297,12 @@ export const processSteps = [
 
 export const aboutPage = {
   mission:
-    "To make premium tiles, granite and marble accessible to every homeowner, builder and designer in Tamil Nadu — with genuine products, honest pricing and expert guidance at every step.",
+    "To make premium Simpolo tiles accessible to every homeowner, builder and designer in Tamil Nadu — with genuine products, honest packing data and expert guidance at every step.",
   story:
-    "Founded in 2010, VK Tiles & Granites began as a small family-run showroom in Bommidi with a simple belief: every space deserves world-class surfaces. Over 15 years, we've grown into the region's most trusted wholesale destination, partnering directly with India's top manufacturers and importing select marble and granite from around the world.",
+    "Founded in 2010, VK Tiles & Granites began as a small family-run showroom in Bommidi with a simple belief: every space deserves world-class surfaces. Over 15 years, we've grown into the region's most trusted wholesale destination for Simpolo collections.",
   values: [
-    { title: "Authenticity", text: "100% genuine products from authorised distributors — no compromises." },
-    { title: "Transparency", text: "Clear quotations, honest stock updates and fair wholesale pricing." },
+    { title: "Authenticity", text: "100% genuine Simpolo products — no compromises." },
+    { title: "Transparency", text: "Clear quotations, packing details and fair wholesale pricing." },
     { title: "Expertise", text: "Free design consultation from specialists who understand your project." },
     { title: "Reliability", text: "On-time delivery and consistent stock for contractors and dealers." },
   ],
@@ -504,37 +311,37 @@ export const aboutPage = {
 export const pageHeaders = {
   about: {
     title: "About Us",
-    subtitle: "Your trusted partner in premium tiles, granite and marble across Tamil Nadu.",
+    subtitle: "Your trusted partner in premium Simpolo tiles across Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop",
   },
   products: {
     title: "Our Products",
-    subtitle: "Explore our curated catalogue of premium tiles, granite, marble and designer surfaces.",
+    subtitle: "Browse Simpolo collections with sizes, finishes and packing details.",
     image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?q=80&w=1920&auto=format&fit=crop",
   },
   categories: {
-    title: "Categories",
-    subtitle: "Browse by category — from everyday floor tiles to imported marble and granite.",
+    title: "Collections",
+    subtitle: "Explore by Simpolo collection — curated designs for walls and floors.",
     image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1920&auto=format&fit=crop",
   },
   brands: {
     title: "Our Brands",
-    subtitle: "Authorised dealer for 50+ top Indian and international tile & stone brands.",
+    subtitle: "Authorised dealer for Simpolo premium vitrified tiles.",
     image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1920&auto=format&fit=crop",
   },
   gallery: {
     title: "Gallery",
-    subtitle: "Real installations showcasing the beauty of premium tiles, granite and marble.",
+    subtitle: "Real installations showcasing the beauty of premium Simpolo tiles.",
     image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1920&auto=format&fit=crop",
   },
   services: {
     title: "Our Services",
-    subtitle: "End-to-end surface solutions — from selection and consultation to delivery and cutting.",
+    subtitle: "End-to-end surface solutions — from selection and packing guidance to delivery.",
     image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1920&auto=format&fit=crop",
   },
   projects: {
     title: "Projects",
-    subtitle: "Residential villas, apartments, hotels and commercial spaces we've delivered across Tamil Nadu.",
+    subtitle: "Residential villas, apartments, hotels and commercial spaces across Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1920&auto=format&fit=crop",
   },
   testimonials: {
@@ -560,7 +367,7 @@ export const testimonials = [
     role: "Homeowner, Salem",
     avatar: "https://i.pravatar.cc/120?img=32",
     quote:
-      "The finish and quality of the marble we bought was beyond our expectations. VK's team helped us choose exactly what suited our living room.",
+      "The finish and quality of the Simpolo tiles we bought was beyond our expectations. VK's team helped us choose exactly what suited our project.",
     rating: 5,
   },
   {
@@ -568,7 +375,7 @@ export const testimonials = [
     role: "Civil Contractor, Dharmapuri",
     avatar: "https://i.pravatar.cc/120?img=51",
     quote:
-      "As a contractor, I rely on consistent stock and honest pricing. VK Tiles has never let a project down in three years of working together.",
+      "As a contractor, I rely on consistent stock and honest packing data. VK Tiles has never let a project down.",
     rating: 5,
   },
   {
@@ -576,7 +383,7 @@ export const testimonials = [
     role: "Interior Designer, Erode",
     avatar: "https://i.pravatar.cc/120?img=47",
     quote:
-      "From the granite kitchen counter to bathroom fittings, everything came from VK. Their showroom made choosing so much easier.",
+      "From large-format floors to feature walls, everything came from VK. Their showroom made choosing so much easier.",
     rating: 5,
   },
   {
@@ -584,7 +391,7 @@ export const testimonials = [
     role: "Builder, Salem",
     avatar: "https://i.pravatar.cc/120?img=12",
     quote:
-      "We've sourced tiles for four apartment projects from VK. Competitive wholesale rates and reliable delivery every single time.",
+      "We've sourced Simpolo tiles for four apartment projects from VK. Competitive wholesale rates and reliable delivery every time.",
     rating: 5,
   },
   {
@@ -592,7 +399,7 @@ export const testimonials = [
     role: "Homeowner, Dharmapuri",
     avatar: "https://i.pravatar.cc/120?img=23",
     quote:
-      "The team patiently showed us dozens of vitrified options until we found the perfect match for our new home. Highly recommended!",
+      "The team patiently showed us dozens of collection options until we found the perfect match. Highly recommended!",
     rating: 5,
   },
 ];
@@ -606,17 +413,22 @@ export const faqs = [
   {
     question: "Which brands are available at your showroom?",
     answer:
-      "We stock 50+ top brands including Kajaria, Somany, Johnson, Asian Granito, Nitco, Orientbell and several imported marble & granite suppliers.",
+      "We stock Simpolo’s premium vitrified tile collections with full size, finish and packing details for every design.",
   },
   {
     question: "Do you provide delivery outside Bommidi?",
     answer:
-      "Yes, we deliver across Tamil Nadu with safe packaging for tiles, granite and marble slabs, ensuring on-time site delivery.",
+      "Yes, we deliver across Tamil Nadu with safe packaging for tiles, ensuring on-time site delivery.",
   },
   {
     question: "Can your team help me choose a design?",
     answer:
-      "Absolutely — our in-house experts offer free design consultation to match tiles, granite and marble to your space, lighting and budget.",
+      "Absolutely — our in-house experts offer free design consultation to match collections to your space, lighting and budget.",
+  },
+  {
+    question: "What packing details do you provide?",
+    answer:
+      "Every product page lists size, thickness, tiles per box and coverage area (sq ft) so you can calculate order quantities accurately.",
   },
   {
     question: "What are your showroom working hours?",
@@ -628,7 +440,7 @@ export const faqs = [
 export const cta = {
   title: "Ready to Transform Your Space?",
   subtitle:
-    "Visit our Bommidi showroom or request a free quote. Our experts are ready to help you find the perfect surface.",
+    "Visit our Bommidi showroom or request a free quote. Our experts are ready to help you find the perfect Simpolo collection.",
   primary: { label: "Get Free Quote", href: "/contact" },
   secondary: { label: "Call Now", href: "tel:+916309493308" },
 };
@@ -637,17 +449,17 @@ export const contact = {
   eyebrow: "Get In Touch",
   title: "Visit Our Showroom or Send an Enquiry",
   subtitle:
-    "We're here to help with product selection, bulk orders, and project consultations.",
+    "We're here to help with product selection, packing quantities, bulk orders, and project consultations.",
   inquiryTypes: ["General", "Dealer", "Builder", "Architect"],
 };
 
 export const footer = {
   description:
-    "VK Tiles & Granites — your premium wholesale partner for tiles, granite, marble and designer surfaces across Tamil Nadu.",
+    "VK Tiles & Granites — elegance beyond surface. Premium Simpolo tiles wholesale across Tamil Nadu.",
   quickLinks: [
     { href: "/about", label: "About Us" },
     { href: "/products", label: "Products" },
-    { href: "/categories", label: "Categories" },
+    { href: "/categories", label: "Collections" },
     { href: "/gallery", label: "Gallery" },
     { href: "/contact", label: "Contact" },
   ],
@@ -655,7 +467,7 @@ export const footer = {
     { href: "/services", label: "Wholesale Supply" },
     { href: "/services", label: "Design Consultation" },
     { href: "/services", label: "Site Delivery" },
-    { href: "/services", label: "Custom Cutting" },
+    { href: "/services", label: "Packing Guidance" },
   ],
   legal: [
     { href: "/privacy-policy", label: "Privacy Policy" },
@@ -665,20 +477,18 @@ export const footer = {
 
 export const seo = {
   siteUrl: "https://vktilesandgranites.in",
-  defaultTitle: "VK Tiles & Granites | World Ceramics Wholesaler",
+  defaultTitle: "VK Tiles & Granites | Elegance Beyond Surface",
   titleTemplate: "%s | VK Tiles & Granites",
   defaultDescription:
-    "Premium tiles, granite & marble wholesaler in Bommidi, Tamil Nadu. 50+ brands, 1000+ designs, wholesale pricing. Visit our showroom today.",
+    "Premium Simpolo tiles wholesaler in Bommidi, Tamil Nadu. Full packing details, wholesale pricing. Visit our showroom today.",
   keywords: [
-    "tiles wholesaler Tamil Nadu",
-    "granite showroom Bommidi",
-    "marble tiles",
+    "Simpolo tiles Tamil Nadu",
+    "tiles wholesaler Bommidi",
     "vitrified tiles",
     "VK Tiles Granites",
-    "ceramic tiles wholesale",
-    "Kajaria dealer",
-    "floor tiles",
+    "tile packing details",
+    "floor tiles wholesale",
+    "wall tiles",
   ],
-  ogImage:
-    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
+  ogImage: "/logo.jpg",
 };

@@ -5,7 +5,7 @@ import {
   about,
   whyChooseUs,
   categories,
-  products,
+  featuredProducts,
   brands,
   services,
   projects,
@@ -34,7 +34,7 @@ import TestimonialCard from "@/components/cards/TestimonialCard";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 
 export default function HomePage() {
-  const featuredProducts = products.filter((p) => p.featured);
+  const homeCategories = categories.slice(0, 6);
 
   return (
     <>
@@ -43,34 +43,34 @@ export default function HomePage() {
       <AboutPreview data={about} />
       <WhyChooseSection items={whyChooseUs} />
 
-      {/* Categories */}
-      <section className="section-padding bg-white" aria-label="Product categories">
+      {/* Collections */}
+      <section className="section-padding bg-white" aria-label="Product collections">
         <Container>
           <SectionTitle
-            eyebrow="Our Collection"
-            title="Explore by Category"
-            subtitle="From everyday floor tiles to imported marble — find the perfect surface for every space."
+            eyebrow="Simpolo Collections"
+            title="Explore by Collection"
+            subtitle="Browse curated tile collections — wall and floor designs with full packing details."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {categories.map((category) => (
+            {homeCategories.map((category) => (
               <CategoryCard key={category.slug} category={category} />
             ))}
           </div>
           <div className="text-center mt-12">
             <Button href="/categories" variant="outline">
-              View All Categories
+              View All Collections
             </Button>
           </div>
         </Container>
       </section>
 
       {/* Products */}
-      <section className="section-padding bg-background" aria-label="Featured products">
+      <section className="section-padding brand-mesh" aria-label="Featured products">
         <Container>
           <SectionTitle
             eyebrow="Featured"
             title="Premium Product Selection"
-            subtitle="Handpicked designs from our showroom — available for immediate enquiry and delivery."
+            subtitle="Handpicked Simpolo designs from our showroom — enquire for pricing and delivery."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (

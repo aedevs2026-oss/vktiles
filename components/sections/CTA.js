@@ -3,10 +3,10 @@ import Container from "@/components/layout/Container";
 
 export default function CTA({ data }) {
   return (
-    <section className="section-padding bg-dark relative overflow-hidden" aria-label="Call to action">
-      <div className="absolute inset-0 opacity-10" aria-hidden="true">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gold rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+    <section className="section-padding bg-navy relative overflow-hidden" aria-label="Call to action">
+      <div className="absolute inset-0 opacity-30" aria-hidden="true">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-sky rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-sky-bright/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
       </div>
 
       <Container className="relative z-10">
@@ -21,7 +21,12 @@ export default function CTA({ data }) {
             <Button href={data.primary.href} size="lg">
               {data.primary.label}
             </Button>
-            <Button href={data.secondary.href} variant="outline" size="lg" className="!text-white !border-white/50 hover:!bg-white hover:!text-dark">
+            <Button
+              href={data.secondary.href}
+              variant="outline"
+              size="lg"
+              className="!text-white !border-white/50 hover:!bg-white hover:!text-navy"
+            >
               {data.secondary.label}
             </Button>
           </div>

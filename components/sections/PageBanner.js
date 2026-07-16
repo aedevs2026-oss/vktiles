@@ -3,7 +3,7 @@ import Container from "@/components/layout/Container";
 
 export default function PageBanner({ title, subtitle, image }) {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden bg-dark" aria-label="Page header">
+    <section className="relative py-20 md:py-28 overflow-hidden bg-navy" aria-label="Page header">
       {image && (
         <>
           <Image
@@ -14,7 +14,7 @@ export default function PageBanner({ title, subtitle, image }) {
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-dark/70" aria-hidden="true" />
+          <div className="absolute inset-0 hero-overlay opacity-90" aria-hidden="true" />
         </>
       )}
       <Container className="relative z-10 text-center">
@@ -26,7 +26,7 @@ export default function PageBanner({ title, subtitle, image }) {
             {subtitle}
           </p>
         )}
-        <div className="gold-line mx-auto mt-8" aria-hidden="true" />
+        <div className="brand-line mx-auto mt-8" aria-hidden="true" />
       </Container>
     </section>
   );

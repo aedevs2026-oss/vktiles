@@ -2,13 +2,13 @@ import Link from "next/link";
 
 const variants = {
   primary:
-    "bg-gold text-white hover:bg-[#b8944f] border border-gold",
+    "bg-sky text-white hover:bg-sky-bright border border-sky shadow-[0_10px_30px_-12px_rgba(59,164,230,0.7)]",
   secondary:
-    "bg-dark text-white hover:bg-[#3a3a3a] border border-dark",
+    "bg-navy text-white hover:bg-navy-deep border border-navy",
   outline:
-    "bg-transparent text-dark border border-dark hover:bg-dark hover:text-white",
+    "bg-transparent text-navy border border-navy/30 hover:bg-navy hover:text-white",
   ghost:
-    "bg-transparent text-dark hover:bg-accent/40 border border-transparent",
+    "bg-transparent text-navy hover:bg-sky-soft border border-transparent",
   whatsapp:
     "bg-[#25D366] text-white hover:bg-[#1fb855] border border-[#25D366]",
 };

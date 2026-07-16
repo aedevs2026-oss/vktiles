@@ -1,0 +1,459 @@
+{
+  "success": true,
+  "error_code": "",
+  "message": "Product details fetched successfully",
+  "data": {
+    "id": 2,
+    "collection_id": 2,
+    "sub_collection_id": 0,
+    "product_code": "INMATB10294",
+    "collection_name": "SPECTRA",
+    "subcollection_name": "",
+    "product_name": "SPECTRA MUSTARD",
+    "description": "Elevate your interiors and space with this stunning SPECTRA MUSTARD to make your home or office classy",
+    "catalogue": "uploads/imports/tiles/collections/SPECTRA/001-spectra-collection-simpolo.pdf",
+    "application_description": "Simpolo Tiles offers cutting-edge designs with unmatched durability, creating stylish and modern spaces. Our premium quality tiles ensure timeless elegance for both residential and commercial interiors.",
+    "inner_image": "uploads/imports/tiles/products/INMATB10294/Peanut-&-Mustard-P.jpg",
+    "living_room_image": null,
+    "bathware_image": null,
+    "kitchen_image": null,
+    "balcony_image": null,
+    "elevation_image": null,
+    "office_institute_image": null,
+    "commercial_public_image": null,
+    "staircase_image": null,
+    "technical_guide": "uploads/media/guides/Simpolo-Technical.pdf",
+    "selection_guide": "uploads/media/guides/V2-Selection-Guide.pdf",
+    "installation_guide": "uploads/media/guides/Simpolo-Installation.pdf",
+    "width": "1200",
+    "height": "2780",
+    "size": "1200x2780, 1200x2400, 1200x1800, 1200x1200, 198x198",
+    "thickness": "6 mm, 9 mm, 9 mm, 9 mm, 8.5 mm",
+    "finish": "Matt",
+    "classification_of_surface": null,
+    "feature_of_surface": "-",
+    "color": "Special",
+    "look_n_feel": "Concrete",
+    "pattern": "Random",
+    "worktop": null,
+    "indoor_outdoor": "Indoor",
+    "type_of_body": "Color Body",
+    "moh_value": null,
+    "r_value": null,
+    "pei_value": null,
+    "tiles_per_box": "1, 1, 2, 2, 18",
+    "area_per_piece": null,
+    "area_per_box": "35.90, 30.92, 46.37, 31, 7.6",
+    "created_at": "2024-12-11T12:10:02.000000Z",
+    "updated_at": "2026-05-29T07:03:23.000000Z",
+    "created_by": 4,
+    "updated_by": 4,
+    "status": 1,
+    "faces": [],
+    "view_link": "https://smartcode.simpolotiles.com/zYYrdcnL8?fc=0",
+    "design": "Y",
+    "label": null,
+    "locations": "livingroom, bathroom, kitchen, balcony, bedroom , elevation",
+    "features": [
+      {
+        "image": "uploads/media/icon/Heat-Fire-Resistant.svg",
+        "name": "Heat and Fire Resistant"
+      },
+      {
+        "image": "uploads/media/applications/Lowest-Maintenance.png",
+        "name": "Lowest Maintenance"
+      },
+      {
+        "image": "uploads/media/applications/Frost-Resistance.png",
+        "name": "Frost Resistant"
+      }
+    ],
+    "texture_image": "",
+    "mosaic_image": "",
+    "application": "wall, floor",
+    "surface": "SCS",
+    "slug": "spectra-mustard",
+    "collection_slug": "spectra",
+    "meta_title": "Spectra Mustard Special Concrete Tiles for Wall and Floor | Simpolo Tiles & Bathware",
+    "meta_description": "Get SPECTRA MUSTARD Special tiles with a Concrete feel in Matt finishes at Simpolo.com. Perfect for living room, kitchen, bathroom & more. Enquire now!",
+    "collection_link": "/tiles/collection/spectra",
+    "collection_logo": "",
+    "location_links": [
+      {
+        "title": "Livingroom Tiles",
+        "link": "/tiles/livingroom-tiles"
+      },
+      {
+        "title": "Bathroom Tiles",
+        "link": "/tiles/bathroom-tiles"
+      },
+      {
+        "title": "Kitchen Tiles",
+        "link": "/tiles/kitchen-tiles"
+      },
+      {
+        "title": "Balcony Tiles",
+        "link": "/tiles/balcony-tiles"
+      },
+      {
+        "title": "Bedroom Tiles",
+        "link": "/tiles/bedroom-tiles"
+      },
+      {
+        "title": "Elevation Tiles",
+        "link": "/tiles/elevation-tiles"
+      }
+    ],
+    "application_links": [
+      {
+        "title": "Wall Tiles",
+        "link": "/tiles/wall-tiles"
+      },
+      {
+        "title": "Floor Tiles",
+        "link": "/tiles/floor-tiles"
+      }
+    ],
+    "favourite_products": [],
+    "categories": [
+      {
+        "imgSrc": "uploads/media/icon/sizes.svg",
+        "title": "Sizes",
+        "data": [
+          {
+            "title": "1200x2780",
+            "url": ""
+          },
+          {
+            "title": "1200x2400",
+            "url": ""
+          },
+          {
+            "title": "1200x1800",
+            "url": ""
+          },
+          {
+            "title": "1200x1200",
+            "url": ""
+          },
+          {
+            "title": "198x198",
+            "url": ""
+          }
+        ]
+      },
+      {
+        "imgSrc": "uploads/media/icon/thickness.svg",
+        "title": "Thicknesses",
+        "data": [
+          {
+            "title": "6 mm",
+            "url": ""
+          },
+          {
+            "title": "9 mm",
+            "url": ""
+          },
+          {
+            "title": "9 mm",
+            "url": ""
+          },
+          {
+            "title": "9 mm",
+            "url": ""
+          },
+          {
+            "title": "8.5 mm",
+            "url": ""
+          }
+        ]
+      },
+      {
+        "imgSrc": "uploads/media/icon/colors.svg",
+        "title": "Colors",
+        "data": [
+          {
+            "title": "Special",
+            "url": "/tiles/products/special-color-tiles"
+          }
+        ]
+      },
+      {
+        "imgSrc": "uploads/media/icon/finishes.svg",
+        "title": "Finishes",
+        "data": [
+          {
+            "title": "Matt",
+            "url": ""
+          }
+        ]
+      },
+      {
+        "imgSrc": "uploads/media/icon/surface.svg",
+        "title": "Look & Feel",
+        "data": [
+          {
+            "title": "Concrete",
+            "url": ""
+          }
+        ]
+      }
+    ],
+    "gallery": [
+      {
+        "image": "uploads/imports/tiles/products/INMATB10294/Peanut-&-Mustard-P.jpg"
+      },
+      {
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_1200x1200.jpg"
+      },
+      {
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_1200x1800.jpg"
+      },
+      {
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_1200x2400.jpg"
+      },
+      {
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_1200x2780.jpg"
+      },
+      {
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_600x1200.jpg"
+      },
+      {
+        "image": "uploads/imports/tiles/products/INMATB10294/02_Spectra-Mustard_198x198-mm.jpg"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What type of tiles are best for a living room?",
+        "answer": "The best tiles for a living room depend on your style and needs. Porcelain and ceramic tiles are popular for their durability and variety of designs. Our Spectra, Ricco 2.0, and Imperro Collections offer a wide range of options from contemporary to classic, ensuring you find the perfect match for your living space."
+      },
+      {
+        "question": "Are SIMPOLO tiles suitable for high-traffic areas like the living room?",
+        "answer": "Yes, SIMPOLO tiles are designed to withstand high-traffic areas. Our tiles are made from high-quality materials that are durable and resistant to wear and tear, making them ideal for busy living rooms."
+      }
+    ],
+    "related_products": [
+      {
+        "slug": "spectra-salt",
+        "product_code": "INMATA10294",
+        "product_name": "SPECTRA SALT",
+        "image": "uploads/imports/tiles/products/INMATA10294/SPECTRA-SALT_1200x1200.jpg"
+      },
+      {
+        "slug": "spectra-peanut",
+        "product_code": "INMATA90294",
+        "product_name": "SPECTRA PEANUT",
+        "image": "uploads/imports/tiles/products/INMATA90294/SPECTRA-PEANUT_1200x1200.jpg"
+      },
+      {
+        "slug": "spectra-tango",
+        "product_code": "INMATA80294",
+        "product_name": "SPECTRA TANGO",
+        "image": "uploads/imports/tiles/products/INMATA80294/SPECTRA-TANGO_1200x1200.jpg"
+      },
+      {
+        "slug": "spectra-cumin",
+        "product_code": "INMATA60294",
+        "product_name": "SPECTRA CUMIN",
+        "image": "uploads/imports/tiles/products/INMATA60294/SPECTRA CUMIN F2.jpg"
+      },
+      {
+        "slug": "spectra-berry",
+        "product_code": "INMATA70294",
+        "product_name": "SPECTRA BERRY",
+        "image": "uploads/imports/tiles/products/INMATA70294/SPECTRA-BERRY_1200x1200.jpg"
+      },
+      {
+        "slug": "spectra-cheese",
+        "product_code": "INMATA40294",
+        "product_name": "SPECTRA CHEESE",
+        "image": "uploads/imports/tiles/products/INMATA40294/SPECTRA-CHEESE_1200x1200.jpg"
+      },
+      {
+        "slug": "spectra-chilli",
+        "product_code": "INMATA20294",
+        "product_name": "SPECTRA CHILLI",
+        "image": "uploads/imports/tiles/products/INMATA20294/SPECTRA-CHILLI_1200x1200.jpg"
+      },
+      {
+        "slug": "spectra-mushroom",
+        "product_code": "INMATA30294",
+        "product_name": "SPECTRA MUSHROOM",
+        "image": "uploads/imports/tiles/products/INMATA30294/SPECTRA-MUSHROOM_1200x1200.jpg"
+      },
+      {
+        "slug": "spectra-herbs",
+        "product_code": "INMATB00294",
+        "product_name": "SPECTRA HERBS",
+        "image": "uploads/imports/tiles/products/INMATB00294/SPECTRA-HERBS_1200x1200.jpg"
+      },
+      {
+        "slug": "spectra-pepper",
+        "product_code": "INMATA50294",
+        "product_name": "SPECTRA PEPPER",
+        "image": "uploads/imports/tiles/products/INMATA50294/SPECTRA-PEPPER_1200x1200.jpg"
+      }
+    ],
+    "related_collections": [
+      {
+        "title": "SUPRA",
+        "image": "uploads/imports/tiles/collections/SUPRA/Supra.jpg"
+      },
+      {
+        "title": "TERRA DURO",
+        "image": "uploads/imports/tiles/collections/TERRA%20DURO/TerraDuro.jpg"
+      },
+      {
+        "title": "TERRAZZO",
+        "image": "uploads/imports/tiles/collections/TERRAZZO/Terrazzo.jpg"
+      },
+      {
+        "title": "TINY TILES",
+        "image": "uploads/imports/tiles/collections/TINY%20TILES/Tinny-tiles-design.jpg"
+      },
+      {
+        "title": "VARIANCE",
+        "image": "uploads/imports/tiles/collections/VARIANCE/Variance.jpg"
+      },
+      {
+        "title": "ALTAGLOSS",
+        "image": "uploads/imports/tiles/collections/ALTAGLOSS/01_Amazonite—Preview.jpg"
+      },
+      {
+        "title": "COURTYARD",
+        "image": "uploads/imports/tiles/collections/COURTYARD/Courtyard.jpg"
+      },
+      {
+        "title": "FENSO",
+        "image": "uploads/imports/tiles/collections/FENSO/Fenso.jpg"
+      },
+      {
+        "title": "IMPATTO",
+        "image": "uploads/imports/tiles/collections/IMPATTO/MARKSTONE-SLATE-P-01.jpg"
+      },
+      {
+        "title": "IMPERO",
+        "image": "uploads/imports/tiles/collections/IMPERO/Impero.jpg"
+      }
+    ],
+    "before_footer": {
+      "title": "Elevating Spaces with Innovation and Style",
+      "description": "<p>Simpolo Tiles is synonymous with innovation, quality, and exceptional design, delivering tiles that elevate any space. Crafted with precision, our tiles are renowned for their durability and versatility, making them perfect for both residential and commercial projects. Whether you&rsquo;re transforming a modern living room, revamping a chic kitchen, or adding sophistication to a bathroom, Simpolo&rsquo;s wide collection of floor and wall tiles offers a range of sizes, textures, and colors that suit every style and need. Our designs vary from polished tiles that reflect contemporary luxury to matte finishes that provide subtle elegance, ensuring there&rsquo;s something for every taste. Simpolo Tiles are not only visually appealing but also built to last, combining beauty with functionality. Committed to sustainability, we continue to innovate while ensuring that our tiles are environmentally conscious and durable. With Simpolo&rsquo;s premium collection, you can bring any vision to life, creating timeless, stylish interiors.</p>"
+    },
+    "packagings": [
+      {
+        "product_name": "SPECTRA MUSTARD",
+        "size": "1200x2780",
+        "actual_size": "",
+        "thickness": "6 mm",
+        "tiles_per_box": "1",
+        "area_per_box": "35.90"
+      },
+      {
+        "product_name": "SPECTRA MUSTARD",
+        "size": "1200x2400",
+        "actual_size": "",
+        "thickness": "9 mm",
+        "tiles_per_box": "1",
+        "area_per_box": "30.92"
+      },
+      {
+        "product_name": "SPECTRA MUSTARD",
+        "size": "1200x1800",
+        "actual_size": "",
+        "thickness": "9 mm",
+        "tiles_per_box": "2",
+        "area_per_box": "46.37"
+      },
+      {
+        "product_name": "SPECTRA MUSTARD",
+        "size": "1200x1200",
+        "actual_size": "",
+        "thickness": "9 mm",
+        "tiles_per_box": "2",
+        "area_per_box": "31"
+      },
+      {
+        "product_name": "SPECTRA MUSTARD",
+        "size": "198x198",
+        "actual_size": "",
+        "thickness": "8.5 mm",
+        "tiles_per_box": "18",
+        "area_per_box": "7.6"
+      }
+    ],
+    "mosaics": [],
+    "images": [
+      {
+        "id": 76939,
+        "product_id": 2,
+        "image": "uploads/imports/tiles/products/INMATB10294/Peanut-&-Mustard-P.jpg",
+        "type": "gallery",
+        "created_at": "2026-06-24T05:55:10.000000Z",
+        "updated_at": "2026-06-24T05:55:10.000000Z",
+        "created_by": 4,
+        "updated_by": 4
+      },
+      {
+        "id": 76940,
+        "product_id": 2,
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_1200x1200.jpg",
+        "type": "gallery",
+        "created_at": "2026-06-24T05:55:10.000000Z",
+        "updated_at": "2026-06-24T05:55:10.000000Z",
+        "created_by": 4,
+        "updated_by": 4
+      },
+      {
+        "id": 76941,
+        "product_id": 2,
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_1200x1800.jpg",
+        "type": "gallery",
+        "created_at": "2026-06-24T05:55:10.000000Z",
+        "updated_at": "2026-06-24T05:55:10.000000Z",
+        "created_by": 4,
+        "updated_by": 4
+      },
+      {
+        "id": 76942,
+        "product_id": 2,
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_1200x2400.jpg",
+        "type": "gallery",
+        "created_at": "2026-06-24T05:55:10.000000Z",
+        "updated_at": "2026-06-24T05:55:10.000000Z",
+        "created_by": 4,
+        "updated_by": 4
+      },
+      {
+        "id": 76943,
+        "product_id": 2,
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_1200x2780.jpg",
+        "type": "gallery",
+        "created_at": "2026-06-24T05:55:10.000000Z",
+        "updated_at": "2026-06-24T05:55:10.000000Z",
+        "created_by": 4,
+        "updated_by": 4
+      },
+      {
+        "id": 76944,
+        "product_id": 2,
+        "image": "uploads/imports/tiles/products/INMATB10294/SPECTRA-MUSTARD_600x1200.jpg",
+        "type": "gallery",
+        "created_at": "2026-06-24T05:55:10.000000Z",
+        "updated_at": "2026-06-24T05:55:10.000000Z",
+        "created_by": 4,
+        "updated_by": 4
+      },
+      {
+        "id": 76945,
+        "product_id": 2,
+        "image": "uploads/imports/tiles/products/INMATB10294/02_Spectra-Mustard_198x198-mm.jpg",
+        "type": "gallery",
+        "created_at": "2026-06-24T05:55:10.000000Z",
+        "updated_at": "2026-06-24T05:55:10.000000Z",
+        "created_by": 4,
+        "updated_by": 4
+      }
+    ]
+  }
+}

@@ -7,9 +7,9 @@ import CategoryCard from "@/components/cards/CategoryCard";
 import Button from "@/components/ui/Button";
 
 export const metadata = {
-  title: "Categories",
+  title: "Collections",
   description:
-    "Explore tile and stone categories — floor tiles, wall tiles, vitrified, granite, marble, kitchen, bathroom and more.",
+    "Browse Simpolo tile collections at VK Tiles & Granites — curated designs with packing details.",
 };
 
 export default function CategoriesPage() {
@@ -19,12 +19,12 @@ export default function CategoriesPage() {
     <>
       <PageBanner title={header.title} subtitle={header.subtitle} image={header.image} />
 
-      <section className="section-padding bg-white" aria-label="Product categories">
+      <section className="section-padding brand-mesh" aria-label="Product collections">
         <Container>
           <SectionTitle
-            eyebrow="Our Collection"
-            title="Browse by Category"
-            subtitle="From everyday floor tiles to imported marble — find the perfect surface for every space."
+            eyebrow="Simpolo Collections"
+            title="Browse by Collection"
+            subtitle="Categories are based on product collections — not room labels. Explore every design with sizes and packing details."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {categories.map((category) => (

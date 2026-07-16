@@ -1,0 +1,4983 @@
+{
+  "success": true,
+  "error_code": "",
+  "message": "Products fetched successfully",
+  "data": {
+    "products": [
+      {
+        "slug": "spectra-salt"
+      },
+      {
+        "slug": "spectra-mustard"
+      },
+      {
+        "slug": "spectra-peanut"
+      },
+      {
+        "slug": "spectra-tango"
+      },
+      {
+        "slug": "spectra-cumin"
+      },
+      {
+        "slug": "spectra-berry"
+      },
+      {
+        "slug": "spectra-cheese"
+      },
+      {
+        "slug": "spectra-chilli"
+      },
+      {
+        "slug": "spectra-mushroom"
+      },
+      {
+        "slug": "spectra-herbs"
+      },
+      {
+        "slug": "spectra-pepper"
+      },
+      {
+        "slug": "spectra-wine"
+      },
+      {
+        "slug": "spectra-salt-mount-texture"
+      },
+      {
+        "slug": "spectra-mustard-fence-texture"
+      },
+      {
+        "slug": "spectra-peanut-fence-texture"
+      },
+      {
+        "slug": "spectra-tango-fence-texture"
+      },
+      {
+        "slug": "spectra-cumin-fence-texture"
+      },
+      {
+        "slug": "spectra-berry-mount-texture"
+      },
+      {
+        "slug": "spectra-cheese-mount-texture"
+      },
+      {
+        "slug": "spectra-chilli-fence-texture"
+      },
+      {
+        "slug": "spectra-mushroom-mount-texture"
+      },
+      {
+        "slug": "spectra-herbs-mount-texture"
+      },
+      {
+        "slug": "spectra-pepper-mount-texture"
+      },
+      {
+        "slug": "spectra-wine-fence-texture"
+      },
+      {
+        "slug": "brk-spectra-chilli"
+      },
+      {
+        "slug": "brk-spectra-cumin"
+      },
+      {
+        "slug": "brk-spectra-herbs"
+      },
+      {
+        "slug": "brk-spectra-mushroom"
+      },
+      {
+        "slug": "brk-spectra-mustard"
+      },
+      {
+        "slug": "brk-spectra-peanut"
+      },
+      {
+        "slug": "brk-spectra-pepper"
+      },
+      {
+        "slug": "brk-spectra-salt"
+      },
+      {
+        "slug": "brk-spectra-tango"
+      },
+      {
+        "slug": "brk-spectra-wine"
+      },
+      {
+        "slug": "folk-diamond"
+      },
+      {
+        "slug": "folk-origin"
+      },
+      {
+        "slug": "folk-stars"
+      },
+      {
+        "slug": "messa-cheese"
+      },
+      {
+        "slug": "messa-peanut"
+      },
+      {
+        "slug": "messa-salt"
+      },
+      {
+        "slug": "motif-berry"
+      },
+      {
+        "slug": "motif-chilli"
+      },
+      {
+        "slug": "motif-herbs"
+      },
+      {
+        "slug": "motif-mustard"
+      },
+      {
+        "slug": "motif-pepper"
+      },
+      {
+        "slug": "motif-tango"
+      },
+      {
+        "slug": "motif-wine"
+      },
+      {
+        "slug": "white-sand"
+      },
+      {
+        "slug": "silver-chalk"
+      },
+      {
+        "slug": "ash-brown"
+      },
+      {
+        "slug": "river-grey"
+      },
+      {
+        "slug": "cocoa-mud"
+      },
+      {
+        "slug": "black-beach"
+      },
+      {
+        "slug": "lime-stone"
+      },
+      {
+        "slug": "deep-verde"
+      },
+      {
+        "slug": "terra-red"
+      },
+      {
+        "slug": "queen-mint"
+      },
+      {
+        "slug": "burnt-brick"
+      },
+      {
+        "slug": "gomma-camo"
+      },
+      {
+        "slug": "yellow-ocra"
+      },
+      {
+        "slug": "white-sand-brick-texture"
+      },
+      {
+        "slug": "silver-chalk-grid-texture"
+      },
+      {
+        "slug": "ash-brown-brick-texture"
+      },
+      {
+        "slug": "cocoa-mud-brick-texture"
+      },
+      {
+        "slug": "black-beach-grid-texture"
+      },
+      {
+        "slug": "lime-stone-brick-texture"
+      },
+      {
+        "slug": "deep-verde-grid-texture"
+      },
+      {
+        "slug": "terra-red-brick-texture"
+      },
+      {
+        "slug": "queen-mint-grid-texture"
+      },
+      {
+        "slug": "burnt-brick-soil-texture"
+      },
+      {
+        "slug": "gomma-camo-grid-texture"
+      },
+      {
+        "slug": "yellow-ocra-brick-texture"
+      },
+      {
+        "slug": "yellow-ocra-soil-texture"
+      },
+      {
+        "slug": "white-sand-soil-texture"
+      },
+      {
+        "slug": "silver-chalk-dune-texture"
+      },
+      {
+        "slug": "ash-brown-soil-texture"
+      },
+      {
+        "slug": "river-grey-dune-texture"
+      },
+      {
+        "slug": "cocoa-mud-soil-texture"
+      },
+      {
+        "slug": "black-beach-dune-texture"
+      },
+      {
+        "slug": "lime-stone-soil-texture"
+      },
+      {
+        "slug": "deep-verde-dune-texture"
+      },
+      {
+        "slug": "terra-red-soil-texture"
+      },
+      {
+        "slug": "queen-mint-dune-texture"
+      },
+      {
+        "slug": "gomma-camo-dune-texture"
+      },
+      {
+        "slug": "garden-geo"
+      },
+      {
+        "slug": "garden-loop"
+      },
+      {
+        "slug": "soil-heritage"
+      },
+      {
+        "slug": "soil-petals"
+      },
+      {
+        "slug": "garden-geo-border"
+      },
+      {
+        "slug": "garden-geo-corner"
+      },
+      {
+        "slug": "garden-loop-border"
+      },
+      {
+        "slug": "garden-loop-corner"
+      },
+      {
+        "slug": "soil-heritage-corner"
+      },
+      {
+        "slug": "soil-heritageborder"
+      },
+      {
+        "slug": "soil-petals-border"
+      },
+      {
+        "slug": "soil-petals-corner"
+      },
+      {
+        "slug": "antique-fuse"
+      },
+      {
+        "slug": "arti-beige"
+      },
+      {
+        "slug": "arti-dove"
+      },
+      {
+        "slug": "brush-grey"
+      },
+      {
+        "slug": "brush-mud"
+      },
+      {
+        "slug": "mandala-gold"
+      },
+      {
+        "slug": "mandala-red"
+      },
+      {
+        "slug": "mandala-verde"
+      },
+      {
+        "slug": "sense-ash"
+      },
+      {
+        "slug": "sense-slate"
+      },
+      {
+        "slug": "trivia-navy"
+      },
+      {
+        "slug": "trivia-rust"
+      },
+      {
+        "slug": "dacite-ash"
+      },
+      {
+        "slug": "dacite-cream"
+      },
+      {
+        "slug": "dacite-lime"
+      },
+      {
+        "slug": "dacite-pearl"
+      },
+      {
+        "slug": "dacite-silver"
+      },
+      {
+        "slug": "dacite-slate"
+      },
+      {
+        "slug": "horizon-dacite-ash-texture"
+      },
+      {
+        "slug": "horizon-dacite-cream-texture"
+      },
+      {
+        "slug": "horizon-dacite-lime-texture"
+      },
+      {
+        "slug": "horizon-dacite-pearl-texture"
+      },
+      {
+        "slug": "horizon-dacite-silver-texture"
+      },
+      {
+        "slug": "horizon-dacite-slate-texture"
+      },
+      {
+        "slug": "cardo-dove"
+      },
+      {
+        "slug": "cardo-gris"
+      },
+      {
+        "slug": "cardo-thunder"
+      },
+      {
+        "slug": "cementi-ash"
+      },
+      {
+        "slug": "cementi-beige"
+      },
+      {
+        "slug": "cementi-dove"
+      },
+      {
+        "slug": "fort-cementi-ash-texture"
+      },
+      {
+        "slug": "fort-cementi-beige-texture"
+      },
+      {
+        "slug": "fort-cementi-dove-texture"
+      },
+      {
+        "slug": "fort-cementi-khaki-texture"
+      },
+      {
+        "slug": "fort-cementi-verde-texture"
+      },
+      {
+        "slug": "fort-cementi-almond-texture"
+      },
+      {
+        "slug": "cementi-khaki"
+      },
+      {
+        "slug": "cementi-verde"
+      },
+      {
+        "slug": "cementi-almond"
+      },
+      {
+        "slug": "cotta-cream"
+      },
+      {
+        "slug": "cotta-gold"
+      },
+      {
+        "slug": "cotta-peach"
+      },
+      {
+        "slug": "groove-fossil-barley-texture"
+      },
+      {
+        "slug": "groove-fossil-bianco-texture"
+      },
+      {
+        "slug": "groove-fossil-dove-texture"
+      },
+      {
+        "slug": "groove-fossil-grey-texture"
+      },
+      {
+        "slug": "groove-fossil-mud-texture"
+      },
+      {
+        "slug": "groove-fossil-silver-texture"
+      },
+      {
+        "slug": "cotta-pista"
+      },
+      {
+        "slug": "cotta-red"
+      },
+      {
+        "slug": "cotta-verde"
+      },
+      {
+        "slug": "fossil-barley"
+      },
+      {
+        "slug": "fossil-bianco"
+      },
+      {
+        "slug": "fossil-dove"
+      },
+      {
+        "slug": "vibe-markstone-brown-texture"
+      },
+      {
+        "slug": "vibe-markstone-cream-texture"
+      },
+      {
+        "slug": "vibe-markstone-sand-texture"
+      },
+      {
+        "slug": "vibe-markstone-silver-texture"
+      },
+      {
+        "slug": "vibe-markstone-slate-texture"
+      },
+      {
+        "slug": "vibe-markstone-verde-texture"
+      },
+      {
+        "slug": "fossil-grey"
+      },
+      {
+        "slug": "fossil-mud"
+      },
+      {
+        "slug": "fossil-silver"
+      },
+      {
+        "slug": "markstone-brown"
+      },
+      {
+        "slug": "markstone-cream"
+      },
+      {
+        "slug": "markstone-sand"
+      },
+      {
+        "slug": "fort-cotta-cream-texture"
+      },
+      {
+        "slug": "fort-cotta-gold-texture"
+      },
+      {
+        "slug": "fort-cotta-peach-texture"
+      },
+      {
+        "slug": "fort-cotta-pista-texture"
+      },
+      {
+        "slug": "fort-cotta-red-texture"
+      },
+      {
+        "slug": "fort-cotta-verde-texture"
+      },
+      {
+        "slug": "markstone-silver"
+      },
+      {
+        "slug": "markstone-slate"
+      },
+      {
+        "slug": "glide-calcutta-livid-texture"
+      },
+      {
+        "slug": "glide-calcutta-prism-texture"
+      },
+      {
+        "slug": "markstone-verde"
+      },
+      {
+        "slug": "calcutta-livid"
+      },
+      {
+        "slug": "calcutta-prism"
+      },
+      {
+        "slug": "horizon-cardo-dove-texture"
+      },
+      {
+        "slug": "horizon-cardo-gris-texture"
+      },
+      {
+        "slug": "horizon-cardo-thunder-texture"
+      },
+      {
+        "slug": "marfig-bianco"
+      },
+      {
+        "slug": "marfig-grey"
+      },
+      {
+        "slug": "horizon-carrara-fogg-texture"
+      },
+      {
+        "slug": "marfig-pearl"
+      },
+      {
+        "slug": "marfig-taupe"
+      },
+      {
+        "slug": "trasore-beige"
+      },
+      {
+        "slug": "trasore-camel"
+      },
+      {
+        "slug": "trasore-cocoa"
+      },
+      {
+        "slug": "trasore-cream"
+      },
+      {
+        "slug": "vertig-sando-bianco-texture"
+      },
+      {
+        "slug": "vertig-t-sando-cocoa-texture"
+      },
+      {
+        "slug": "vertig-sando-grey-texture"
+      },
+      {
+        "slug": "vertig-sando-mud-texture"
+      },
+      {
+        "slug": "vertig-sando-silver-texture"
+      },
+      {
+        "slug": "vertig-sando-verde-texture"
+      },
+      {
+        "slug": "trasore-snow"
+      },
+      {
+        "slug": "trasore-charcoal"
+      },
+      {
+        "slug": "sando-bianco"
+      },
+      {
+        "slug": "sando-grey"
+      },
+      {
+        "slug": "sando-mud"
+      },
+      {
+        "slug": "sando-silver"
+      },
+      {
+        "slug": "sando-verde"
+      },
+      {
+        "slug": "quartzite-mud"
+      },
+      {
+        "slug": "quartzite-sand"
+      },
+      {
+        "slug": "quartzite-beige"
+      },
+      {
+        "slug": "groove-quartzite-mud-texture"
+      },
+      {
+        "slug": "groove-quartzite-sand-texture"
+      },
+      {
+        "slug": "groove-quartzite-beige-texture"
+      },
+      {
+        "slug": "groove-quartzite-cream-texture"
+      },
+      {
+        "slug": "groove-quartzite-silver-texture"
+      },
+      {
+        "slug": "groove-quartzite-slate-texture"
+      },
+      {
+        "slug": "groove-iron-coffee-texture"
+      },
+      {
+        "slug": "groove-iron-cream-texture"
+      },
+      {
+        "slug": "groove-iron-navy-texture"
+      },
+      {
+        "slug": "groove-iron-pearl-texture"
+      },
+      {
+        "slug": "groove-iron-rust-texture"
+      },
+      {
+        "slug": "groove-iron-slate-texture"
+      },
+      {
+        "slug": "quartzite-cream"
+      },
+      {
+        "slug": "quartzite-silver"
+      },
+      {
+        "slug": "quartzite-slate"
+      },
+      {
+        "slug": "iron-coffee"
+      },
+      {
+        "slug": "iron-cream"
+      },
+      {
+        "slug": "iron-navy"
+      },
+      {
+        "slug": "iron-pearl"
+      },
+      {
+        "slug": "iron-rust"
+      },
+      {
+        "slug": "iron-slate"
+      },
+      {
+        "slug": "carrara-fogg-pgvt-glossy"
+      },
+      {
+        "slug": "glide-marfig-bianco-texture"
+      },
+      {
+        "slug": "glide-marfig-grey-texture"
+      },
+      {
+        "slug": "glide-marfig-pearl-texture"
+      },
+      {
+        "slug": "glide-marfig-taupe-texture"
+      },
+      {
+        "slug": "sando-cocoa"
+      },
+      {
+        "slug": "crystone-bianco"
+      },
+      {
+        "slug": "crystone-grey"
+      },
+      {
+        "slug": "crystone-sand"
+      },
+      {
+        "slug": "crystone-silver"
+      },
+      {
+        "slug": "glide-trasore-beige-texture"
+      },
+      {
+        "slug": "glide-trasore-camel-texture"
+      },
+      {
+        "slug": "glide-trasore-cocoa-texture"
+      },
+      {
+        "slug": "glide-trasore-cream-texture"
+      },
+      {
+        "slug": "glide-trasore-snow-texture"
+      },
+      {
+        "slug": "glide-trasore-charcoal-texture"
+      },
+      {
+        "slug": "afyon-slate"
+      },
+      {
+        "slug": "laurent-mocha"
+      },
+      {
+        "slug": "agate"
+      },
+      {
+        "slug": "black-antique"
+      },
+      {
+        "slug": "mintanic-wave"
+      },
+      {
+        "slug": "black-bamboo"
+      },
+      {
+        "slug": "patagonia"
+      },
+      {
+        "slug": "calacatta-rose"
+      },
+      {
+        "slug": "pearl-panda"
+      },
+      {
+        "slug": "carrara-twig"
+      },
+      {
+        "slug": "pietra-roma"
+      },
+      {
+        "slug": "laurent-slate"
+      },
+      {
+        "slug": "marquina-night"
+      },
+      {
+        "slug": "statuario-oro"
+      },
+      {
+        "slug": "statuario-regalia"
+      },
+      {
+        "slug": "alpinus"
+      },
+      {
+        "slug": "black-antique"
+      },
+      {
+        "slug": "black-bamboo"
+      },
+      {
+        "slug": "calacatta"
+      },
+      {
+        "slug": "calacatta-sun"
+      },
+      {
+        "slug": "calacutta-rose"
+      },
+      {
+        "slug": "calcario-grey"
+      },
+      {
+        "slug": "carrara-arbescato"
+      },
+      {
+        "slug": "copper-roots"
+      },
+      {
+        "slug": "frosty-verde"
+      },
+      {
+        "slug": "golden-silk-white"
+      },
+      {
+        "slug": "lazio-ash"
+      },
+      {
+        "slug": "lazio-merino"
+      },
+      {
+        "slug": "lillac"
+      },
+      {
+        "slug": "macaubas"
+      },
+      {
+        "slug": "marquina-jet"
+      },
+      {
+        "slug": "onyx-beam"
+      },
+      {
+        "slug": "onyx-thunder"
+      },
+      {
+        "slug": "portoro-flame"
+      },
+      {
+        "slug": "pulpis-tan"
+      },
+      {
+        "slug": "snow-onica"
+      },
+      {
+        "slug": "taurus-black"
+      },
+      {
+        "slug": "timber-hazel"
+      },
+      {
+        "slug": "aliot-blue"
+      },
+      {
+        "slug": "amazonite"
+      },
+      {
+        "slug": "amazonite-rust"
+      },
+      {
+        "slug": "azuro-river"
+      },
+      {
+        "slug": "black-moon"
+      },
+      {
+        "slug": "cast-mint"
+      },
+      {
+        "slug": "cast-navy"
+      },
+      {
+        "slug": "cast-rust"
+      },
+      {
+        "slug": "castor"
+      },
+      {
+        "slug": "dalim-mint"
+      },
+      {
+        "slug": "deep-emperador"
+      },
+      {
+        "slug": "estrader-nero"
+      },
+      {
+        "slug": "fluid-brown"
+      },
+      {
+        "slug": "fluid-lava"
+      },
+      {
+        "slug": "fluid-melange"
+      },
+      {
+        "slug": "fluid-purple"
+      },
+      {
+        "slug": "golden-brown"
+      },
+      {
+        "slug": "marmo-opera"
+      },
+      {
+        "slug": "marmo-silk"
+      },
+      {
+        "slug": "midnight-wind"
+      },
+      {
+        "slug": "onyx-olive"
+      },
+      {
+        "slug": "onyx-oro"
+      },
+      {
+        "slug": "onyx-sky"
+      },
+      {
+        "slug": "onyx-viola"
+      },
+      {
+        "slug": "pietra-ash"
+      },
+      {
+        "slug": "pietra-noir"
+      },
+      {
+        "slug": "quartz-gold"
+      },
+      {
+        "slug": "rosso-river"
+      },
+      {
+        "slug": "tiaki-green"
+      },
+      {
+        "slug": "vega-brown"
+      },
+      {
+        "slug": "warm-grey"
+      },
+      {
+        "slug": "storm-grey"
+      },
+      {
+        "slug": "soya-beige"
+      },
+      {
+        "slug": "glory-white"
+      },
+      {
+        "slug": "stary-black"
+      },
+      {
+        "slug": "deep-coffee"
+      },
+      {
+        "slug": "aravali-onyx"
+      },
+      {
+        "slug": "armanzo"
+      },
+      {
+        "slug": "brescia-tan"
+      },
+      {
+        "slug": "brescia-viva"
+      },
+      {
+        "slug": "calacatta"
+      },
+      {
+        "slug": "calacatta-sun"
+      },
+      {
+        "slug": "crystal-beige"
+      },
+      {
+        "slug": "fiama-gold"
+      },
+      {
+        "slug": "forza-decor-1"
+      },
+      {
+        "slug": "forza-decor-2"
+      },
+      {
+        "slug": "forza-decor-3"
+      },
+      {
+        "slug": "forza-decor-4"
+      },
+      {
+        "slug": "framenta"
+      },
+      {
+        "slug": "grey-italia"
+      },
+      {
+        "slug": "grey-sonata"
+      },
+      {
+        "slug": "macaubas"
+      },
+      {
+        "slug": "majestic-aqua"
+      },
+      {
+        "slug": "marfil-moon"
+      },
+      {
+        "slug": "marfil-sun"
+      },
+      {
+        "slug": "marmontis"
+      },
+      {
+        "slug": "onyx-beam"
+      },
+      {
+        "slug": "onyx-thunder"
+      },
+      {
+        "slug": "rotten-armani"
+      },
+      {
+        "slug": "royal-azul"
+      },
+      {
+        "slug": "stylonyx"
+      },
+      {
+        "slug": "travenstone"
+      },
+      {
+        "slug": "tropical-sun"
+      },
+      {
+        "slug": "venus-sand"
+      },
+      {
+        "slug": "wildonyx-bm"
+      },
+      {
+        "slug": "intra-barley"
+      },
+      {
+        "slug": "intra-beige"
+      },
+      {
+        "slug": "intra-cream"
+      },
+      {
+        "slug": "intra-dove"
+      },
+      {
+        "slug": "intra-grey"
+      },
+      {
+        "slug": "intra-slate"
+      },
+      {
+        "slug": "carbolime-cream"
+      },
+      {
+        "slug": "framenta"
+      },
+      {
+        "slug": "spider-crema"
+      },
+      {
+        "slug": "calcutta-dusk"
+      },
+      {
+        "slug": "grey-sonata"
+      },
+      {
+        "slug": "macchia-oro"
+      },
+      {
+        "slug": "onyx-pearl"
+      },
+      {
+        "slug": "aurora-dove"
+      },
+      {
+        "slug": "aurora-pearl"
+      },
+      {
+        "slug": "conment-slate"
+      },
+      {
+        "slug": "crysta-pearl"
+      },
+      {
+        "slug": "majorca-pearl"
+      },
+      {
+        "slug": "glacier-blanco"
+      },
+      {
+        "slug": "catta-snow"
+      },
+      {
+        "slug": "venus-beach"
+      },
+      {
+        "slug": "botto-almond"
+      },
+      {
+        "slug": "fame-white"
+      },
+      {
+        "slug": "conment-dove"
+      },
+      {
+        "slug": "armani-mocha"
+      },
+      {
+        "slug": "armani-sun"
+      },
+      {
+        "slug": "beola"
+      },
+      {
+        "slug": "bottochino-caldo"
+      },
+      {
+        "slug": "cheppo-beach"
+      },
+      {
+        "slug": "cheppo-pure"
+      },
+      {
+        "slug": "cinerea-river"
+      },
+      {
+        "slug": "copper"
+      },
+      {
+        "slug": "fusonyx-beach"
+      },
+      {
+        "slug": "fusonyx-dove"
+      },
+      {
+        "slug": "michelangelo-rust"
+      },
+      {
+        "slug": "neatstone"
+      },
+      {
+        "slug": "royal-taupe"
+      },
+      {
+        "slug": "sandstar"
+      },
+      {
+        "slug": "sandstar-beach"
+      },
+      {
+        "slug": "statuario-nex"
+      },
+      {
+        "slug": "statuario-presto"
+      },
+      {
+        "slug": "statuario-rhyme"
+      },
+      {
+        "slug": "bottochino-caldo"
+      },
+      {
+        "slug": "crema-marfil"
+      },
+      {
+        "slug": "copos-black"
+      },
+      {
+        "slug": "copos-grey"
+      },
+      {
+        "slug": "copos-crema"
+      },
+      {
+        "slug": "copos-sahara"
+      },
+      {
+        "slug": "copos-grey-step"
+      },
+      {
+        "slug": "star-flakes"
+      },
+      {
+        "slug": "matrix-white"
+      },
+      {
+        "slug": "prozzo-white"
+      },
+      {
+        "slug": "ice-onyx"
+      },
+      {
+        "slug": "statuario-varies"
+      },
+      {
+        "slug": "multai-marmo"
+      },
+      {
+        "slug": "viva-arbescato"
+      },
+      {
+        "slug": "remo-bianco"
+      },
+      {
+        "slug": "onixo-bone"
+      },
+      {
+        "slug": "mandys-pink"
+      },
+      {
+        "slug": "onixo-water"
+      },
+      {
+        "slug": "onica-silver"
+      },
+      {
+        "slug": "aqua-prism"
+      },
+      {
+        "slug": "lichen-green"
+      },
+      {
+        "slug": "tracia-camel"
+      },
+      {
+        "slug": "tracia-ash"
+      },
+      {
+        "slug": "abstato-red"
+      },
+      {
+        "slug": "abstato-prism"
+      },
+      {
+        "slug": "carra-volcano"
+      },
+      {
+        "slug": "canery-brescia"
+      },
+      {
+        "slug": "sage-onice"
+      },
+      {
+        "slug": "robegg-onice"
+      },
+      {
+        "slug": "mosaic-azure"
+      },
+      {
+        "slug": "kiwi-onyx"
+      },
+      {
+        "slug": "rivera-fogg"
+      },
+      {
+        "slug": "sparkle-cryst"
+      },
+      {
+        "slug": "rivera-camel"
+      },
+      {
+        "slug": "diana-rust"
+      },
+      {
+        "slug": "mandys-aqua"
+      },
+      {
+        "slug": "onice-misty"
+      },
+      {
+        "slug": "aqua-armanio"
+      },
+      {
+        "slug": "pietra-navy"
+      },
+      {
+        "slug": "zinca-aqua"
+      },
+      {
+        "slug": "thunder-bress"
+      },
+      {
+        "slug": "laurent-roots"
+      },
+      {
+        "slug": "vibe-onica"
+      },
+      {
+        "slug": "oxidize-smoke"
+      },
+      {
+        "slug": "pedra-coral"
+      },
+      {
+        "slug": "igneous-gem"
+      },
+      {
+        "slug": "pedra-sage"
+      },
+      {
+        "slug": "blue-agate"
+      },
+      {
+        "slug": "mosaic-grey"
+      },
+      {
+        "slug": "crema-dinova"
+      },
+      {
+        "slug": "honey-onyx"
+      },
+      {
+        "slug": "burberry-gris"
+      },
+      {
+        "slug": "silversummer-moon"
+      },
+      {
+        "slug": "statuario-eminence"
+      },
+      {
+        "slug": "statuario-enfold"
+      },
+      {
+        "slug": "burberry-beige"
+      },
+      {
+        "slug": "melange-cream"
+      },
+      {
+        "slug": "silversummer-earth"
+      },
+      {
+        "slug": "smoky-beige"
+      },
+      {
+        "slug": "flaky-black"
+      },
+      {
+        "slug": "flaky-brown"
+      },
+      {
+        "slug": "flaky-crema"
+      },
+      {
+        "slug": "flaky-grey"
+      },
+      {
+        "slug": "flaky-white"
+      },
+      {
+        "slug": "solid-ash"
+      },
+      {
+        "slug": "solid-barley"
+      },
+      {
+        "slug": "solid-black"
+      },
+      {
+        "slug": "solid-cotta"
+      },
+      {
+        "slug": "solid-crema"
+      },
+      {
+        "slug": "solid-dove"
+      },
+      {
+        "slug": "solid-white"
+      },
+      {
+        "slug": "splinto-grey"
+      },
+      {
+        "slug": "splinto-barley"
+      },
+      {
+        "slug": "resina-barley"
+      },
+      {
+        "slug": "resina-ash"
+      },
+      {
+        "slug": "platinum-aurora"
+      },
+      {
+        "slug": "brescia-gold"
+      },
+      {
+        "slug": "italia-coin"
+      },
+      {
+        "slug": "clear-onyx"
+      },
+      {
+        "slug": "rosseta-dove"
+      },
+      {
+        "slug": "pearl-beach"
+      },
+      {
+        "slug": "grey-wonder"
+      },
+      {
+        "slug": "siena-cream"
+      },
+      {
+        "slug": "brescia-rosa"
+      },
+      {
+        "slug": "fantacia-sand"
+      },
+      {
+        "slug": "stelo-blush"
+      },
+      {
+        "slug": "pulpis-graphite"
+      },
+      {
+        "slug": "riflesso-white"
+      },
+      {
+        "slug": "carrara-vintage"
+      },
+      {
+        "slug": "silver-paradise"
+      },
+      {
+        "slug": "dove-italia"
+      },
+      {
+        "slug": "rockberry-cream"
+      },
+      {
+        "slug": "turkish-pearl"
+      },
+      {
+        "slug": "polarangelo-rust"
+      },
+      {
+        "slug": "pozzolana-tobacco"
+      },
+      {
+        "slug": "pozzolana-gris"
+      },
+      {
+        "slug": "cinerea-armani"
+      },
+      {
+        "slug": "1001"
+      },
+      {
+        "slug": "1002"
+      },
+      {
+        "slug": "1003"
+      },
+      {
+        "slug": "1004"
+      },
+      {
+        "slug": "1005"
+      },
+      {
+        "slug": "1006"
+      },
+      {
+        "slug": "1008"
+      },
+      {
+        "slug": "1009"
+      },
+      {
+        "slug": "1010"
+      },
+      {
+        "slug": "1012"
+      },
+      {
+        "slug": "1014"
+      },
+      {
+        "slug": "1015"
+      },
+      {
+        "slug": "1016"
+      },
+      {
+        "slug": "1017"
+      },
+      {
+        "slug": "1018"
+      },
+      {
+        "slug": "1020"
+      },
+      {
+        "slug": "1022"
+      },
+      {
+        "slug": "1024"
+      },
+      {
+        "slug": "1032"
+      },
+      {
+        "slug": "1033"
+      },
+      {
+        "slug": "1034"
+      },
+      {
+        "slug": "1042"
+      },
+      {
+        "slug": "1043"
+      },
+      {
+        "slug": "1044"
+      },
+      {
+        "slug": "1045"
+      },
+      {
+        "slug": "1046"
+      },
+      {
+        "slug": "1047"
+      },
+      {
+        "slug": "1048"
+      },
+      {
+        "slug": "1049"
+      },
+      {
+        "slug": "1052"
+      },
+      {
+        "slug": "1053"
+      },
+      {
+        "slug": "1055"
+      },
+      {
+        "slug": "1056"
+      },
+      {
+        "slug": "1057"
+      },
+      {
+        "slug": "1059"
+      },
+      {
+        "slug": "1064"
+      },
+      {
+        "slug": "1065"
+      },
+      {
+        "slug": "1068"
+      },
+      {
+        "slug": "1069"
+      },
+      {
+        "slug": "1070"
+      },
+      {
+        "slug": "1071"
+      },
+      {
+        "slug": "2001-bookmatch"
+      },
+      {
+        "slug": "2002-bookmatch"
+      },
+      {
+        "slug": "2008-bookmatch"
+      },
+      {
+        "slug": "2010-bookmatch"
+      },
+      {
+        "slug": "3001"
+      },
+      {
+        "slug": "3002"
+      },
+      {
+        "slug": "3003"
+      },
+      {
+        "slug": "3004"
+      },
+      {
+        "slug": "3008"
+      },
+      {
+        "slug": "3009"
+      },
+      {
+        "slug": "3010"
+      },
+      {
+        "slug": "3011"
+      },
+      {
+        "slug": "3014"
+      },
+      {
+        "slug": "3015"
+      },
+      {
+        "slug": "3016"
+      },
+      {
+        "slug": "3017"
+      },
+      {
+        "slug": "3022"
+      },
+      {
+        "slug": "3024"
+      },
+      {
+        "slug": "3025"
+      },
+      {
+        "slug": "6008"
+      },
+      {
+        "slug": "6024"
+      },
+      {
+        "slug": "6032"
+      },
+      {
+        "slug": "6048"
+      },
+      {
+        "slug": "6049"
+      },
+      {
+        "slug": "6061"
+      },
+      {
+        "slug": "6067"
+      },
+      {
+        "slug": "8001"
+      },
+      {
+        "slug": "8002"
+      },
+      {
+        "slug": "8003"
+      },
+      {
+        "slug": "8004"
+      },
+      {
+        "slug": "8008"
+      },
+      {
+        "slug": "8014"
+      },
+      {
+        "slug": "8015"
+      },
+      {
+        "slug": "8016"
+      },
+      {
+        "slug": "8017"
+      },
+      {
+        "slug": "8018"
+      },
+      {
+        "slug": "8019"
+      },
+      {
+        "slug": "8020"
+      },
+      {
+        "slug": "8021"
+      },
+      {
+        "slug": "8022"
+      },
+      {
+        "slug": "8023"
+      },
+      {
+        "slug": "8024"
+      },
+      {
+        "slug": "8025"
+      },
+      {
+        "slug": "8028"
+      },
+      {
+        "slug": "8029"
+      },
+      {
+        "slug": "8030"
+      },
+      {
+        "slug": "8031"
+      },
+      {
+        "slug": "8032"
+      },
+      {
+        "slug": "8033"
+      },
+      {
+        "slug": "8034"
+      },
+      {
+        "slug": "bm-2013"
+      },
+      {
+        "slug": "bm-2015"
+      },
+      {
+        "slug": "bm-2017"
+      },
+      {
+        "slug": "bm-2018"
+      },
+      {
+        "slug": "bm-2019"
+      },
+      {
+        "slug": "bm-2020"
+      },
+      {
+        "slug": "bm-2021"
+      },
+      {
+        "slug": "bm-2023"
+      },
+      {
+        "slug": "bm-2026"
+      },
+      {
+        "slug": "bm-2027"
+      },
+      {
+        "slug": "crv-3026"
+      },
+      {
+        "slug": "crv-3030"
+      },
+      {
+        "slug": "crv-3031"
+      },
+      {
+        "slug": "crv-3034"
+      },
+      {
+        "slug": "crv-3037"
+      },
+      {
+        "slug": "crv-3043"
+      },
+      {
+        "slug": "crv-3046"
+      },
+      {
+        "slug": "crv-3049"
+      },
+      {
+        "slug": "crv-3050"
+      },
+      {
+        "slug": "crv-3055"
+      },
+      {
+        "slug": "crv-3082"
+      },
+      {
+        "slug": "crv-3083"
+      },
+      {
+        "slug": "crv-3083-decor"
+      },
+      {
+        "slug": "crv-3084"
+      },
+      {
+        "slug": "crv-3085"
+      },
+      {
+        "slug": "crv-3085-decor"
+      },
+      {
+        "slug": "crv-3086"
+      },
+      {
+        "slug": "crv-3087"
+      },
+      {
+        "slug": "crv-3088"
+      },
+      {
+        "slug": "crv-3090"
+      },
+      {
+        "slug": "crv-3091"
+      },
+      {
+        "slug": "crv-3092"
+      },
+      {
+        "slug": "crv-3093"
+      },
+      {
+        "slug": "crv-3094"
+      },
+      {
+        "slug": "crv-3095"
+      },
+      {
+        "slug": "crv-3095-decor"
+      },
+      {
+        "slug": "crv-3099"
+      },
+      {
+        "slug": "crv-3100"
+      },
+      {
+        "slug": "crv-3101"
+      },
+      {
+        "slug": "crv-3102"
+      },
+      {
+        "slug": "crv-3103"
+      },
+      {
+        "slug": "crv-3104"
+      },
+      {
+        "slug": "crv-3105"
+      },
+      {
+        "slug": "crv-3105-decor"
+      },
+      {
+        "slug": "crv-3108"
+      },
+      {
+        "slug": "crv-3109"
+      },
+      {
+        "slug": "crv-3109-decor"
+      },
+      {
+        "slug": "crv-3110"
+      },
+      {
+        "slug": "crv-3111"
+      },
+      {
+        "slug": "crv-3112"
+      },
+      {
+        "slug": "crv-3113"
+      },
+      {
+        "slug": "crv-3114"
+      },
+      {
+        "slug": "crv-3115"
+      },
+      {
+        "slug": "crv-3115-decor"
+      },
+      {
+        "slug": "crv-3116"
+      },
+      {
+        "slug": "crv-3117"
+      },
+      {
+        "slug": "crv-3118"
+      },
+      {
+        "slug": "crv-3119"
+      },
+      {
+        "slug": "crv-3119-decor"
+      },
+      {
+        "slug": "crv-3120"
+      },
+      {
+        "slug": "crv-3121"
+      },
+      {
+        "slug": "crv-3121-decor"
+      },
+      {
+        "slug": "crv-3126"
+      },
+      {
+        "slug": "crv-3127"
+      },
+      {
+        "slug": "crv-3127-decor"
+      },
+      {
+        "slug": "crv-3130"
+      },
+      {
+        "slug": "crv-3131"
+      },
+      {
+        "slug": "crv-3131-decor"
+      },
+      {
+        "slug": "crv-3134"
+      },
+      {
+        "slug": "crv-3135"
+      },
+      {
+        "slug": "crv-3136"
+      },
+      {
+        "slug": "crv-3137"
+      },
+      {
+        "slug": "crv-3137-decor"
+      },
+      {
+        "slug": "crv-3138"
+      },
+      {
+        "slug": "crv-3139"
+      },
+      {
+        "slug": "crv-3140"
+      },
+      {
+        "slug": "crv-3140-decor"
+      },
+      {
+        "slug": "crv-3141"
+      },
+      {
+        "slug": "crv-3141-decor"
+      },
+      {
+        "slug": "crv-3143"
+      },
+      {
+        "slug": "crv-3143-decor"
+      },
+      {
+        "slug": "crv-3144"
+      },
+      {
+        "slug": "crv-3144-decor"
+      },
+      {
+        "slug": "crv-3145"
+      },
+      {
+        "slug": "crv-3145-decor"
+      },
+      {
+        "slug": "crv-3146"
+      },
+      {
+        "slug": "crv-3147"
+      },
+      {
+        "slug": "crv-3147-decor"
+      },
+      {
+        "slug": "edl-1150"
+      },
+      {
+        "slug": "edl-1151"
+      },
+      {
+        "slug": "edl-1152"
+      },
+      {
+        "slug": "edl-1153"
+      },
+      {
+        "slug": "edl-1154"
+      },
+      {
+        "slug": "edl-1155"
+      },
+      {
+        "slug": "edl-1156"
+      },
+      {
+        "slug": "edl-1157"
+      },
+      {
+        "slug": "edl-1158"
+      },
+      {
+        "slug": "edl-1159"
+      },
+      {
+        "slug": "burberry-fuse"
+      },
+      {
+        "slug": "essence-grey"
+      },
+      {
+        "slug": "arbescato-oro-endless"
+      },
+      {
+        "slug": "bottochino-taupe"
+      },
+      {
+        "slug": "breeze-grey-endless"
+      },
+      {
+        "slug": "brescia-elite-endless"
+      },
+      {
+        "slug": "cosmos-white"
+      },
+      {
+        "slug": "crystalo-crema"
+      },
+      {
+        "slug": "emperador-dove-endless"
+      },
+      {
+        "slug": "onyx-white"
+      },
+      {
+        "slug": "oro-bianco"
+      },
+      {
+        "slug": "ottimo-beige-endless"
+      },
+      {
+        "slug": "pearl-bianco"
+      },
+      {
+        "slug": "statuario-fame"
+      },
+      {
+        "slug": "statuario-royale"
+      },
+      {
+        "slug": "prozzo-1160"
+      },
+      {
+        "slug": "prozzo-1161"
+      },
+      {
+        "slug": "prozzo-1162"
+      },
+      {
+        "slug": "prozzo-1163"
+      },
+      {
+        "slug": "prozzo-1164"
+      },
+      {
+        "slug": "prozzo-1165"
+      },
+      {
+        "slug": "prozzo-1166"
+      },
+      {
+        "slug": "prozzo-1167"
+      },
+      {
+        "slug": "prozzo-1168"
+      },
+      {
+        "slug": "prozzo-1171"
+      },
+      {
+        "slug": "prozzo-1172"
+      },
+      {
+        "slug": "prozzo-1173"
+      },
+      {
+        "slug": "prozzo-1174"
+      },
+      {
+        "slug": "prozzo-1175"
+      },
+      {
+        "slug": "prozzo-1176"
+      },
+      {
+        "slug": "prozzo-1177"
+      },
+      {
+        "slug": "prozzo-1178"
+      },
+      {
+        "slug": "prozzo-1180"
+      },
+      {
+        "slug": "prozzo-1181"
+      },
+      {
+        "slug": "prozzo-1187"
+      },
+      {
+        "slug": "prozzo-1188"
+      },
+      {
+        "slug": "prozzo-1189"
+      },
+      {
+        "slug": "prozzo-1190"
+      },
+      {
+        "slug": "prozzo-1191"
+      },
+      {
+        "slug": "prozzo-1192"
+      },
+      {
+        "slug": "prozzo-1195"
+      },
+      {
+        "slug": "prozzo-1196"
+      },
+      {
+        "slug": "prozzo-1197"
+      },
+      {
+        "slug": "prozzo-1198"
+      },
+      {
+        "slug": "prozzo-1199"
+      },
+      {
+        "slug": "prozzo-1200"
+      },
+      {
+        "slug": "prozzo-1201"
+      },
+      {
+        "slug": "prozzo-1202"
+      },
+      {
+        "slug": "prozzo-1203"
+      },
+      {
+        "slug": "prozzo-1204"
+      },
+      {
+        "slug": "prozzo-1205"
+      },
+      {
+        "slug": "prozzo-1206"
+      },
+      {
+        "slug": "prozzo-1207"
+      },
+      {
+        "slug": "prozzo-1208"
+      },
+      {
+        "slug": "prozzo-1209"
+      },
+      {
+        "slug": "feather-touch-3142"
+      },
+      {
+        "slug": "feather-touch-3143"
+      },
+      {
+        "slug": "feather-touch-3144"
+      },
+      {
+        "slug": "feather-touch-3145"
+      },
+      {
+        "slug": "feather-touch-3146"
+      },
+      {
+        "slug": "feather-touch-3147"
+      },
+      {
+        "slug": "feather-touch-3148"
+      },
+      {
+        "slug": "feather-touch-3149"
+      },
+      {
+        "slug": "feather-touch-3150"
+      },
+      {
+        "slug": "feather-touch-3151"
+      },
+      {
+        "slug": "feather-touch-3152"
+      },
+      {
+        "slug": "feather-touch-3153"
+      },
+      {
+        "slug": "feather-touch-3154"
+      },
+      {
+        "slug": "feather-touch-3155"
+      },
+      {
+        "slug": "feather-touch-3156"
+      },
+      {
+        "slug": "1082"
+      },
+      {
+        "slug": "1083"
+      },
+      {
+        "slug": "1084"
+      },
+      {
+        "slug": "1085"
+      },
+      {
+        "slug": "1086"
+      },
+      {
+        "slug": "1087"
+      },
+      {
+        "slug": "1088"
+      },
+      {
+        "slug": "1089"
+      },
+      {
+        "slug": "1090"
+      },
+      {
+        "slug": "1091"
+      },
+      {
+        "slug": "1093"
+      },
+      {
+        "slug": "1094"
+      },
+      {
+        "slug": "1095"
+      },
+      {
+        "slug": "1096"
+      },
+      {
+        "slug": "1097"
+      },
+      {
+        "slug": "1098"
+      },
+      {
+        "slug": "1099"
+      },
+      {
+        "slug": "1100"
+      },
+      {
+        "slug": "1101"
+      },
+      {
+        "slug": "1105"
+      },
+      {
+        "slug": "1106"
+      },
+      {
+        "slug": "1107"
+      },
+      {
+        "slug": "1108"
+      },
+      {
+        "slug": "1109"
+      },
+      {
+        "slug": "1110"
+      },
+      {
+        "slug": "1111"
+      },
+      {
+        "slug": "1112"
+      },
+      {
+        "slug": "1113"
+      },
+      {
+        "slug": "1114"
+      },
+      {
+        "slug": "1115"
+      },
+      {
+        "slug": "1116"
+      },
+      {
+        "slug": "1123"
+      },
+      {
+        "slug": "1124"
+      },
+      {
+        "slug": "1125"
+      },
+      {
+        "slug": "1126"
+      },
+      {
+        "slug": "1127"
+      },
+      {
+        "slug": "1128"
+      },
+      {
+        "slug": "1130"
+      },
+      {
+        "slug": "1131"
+      },
+      {
+        "slug": "1134"
+      },
+      {
+        "slug": "1135"
+      },
+      {
+        "slug": "1136"
+      },
+      {
+        "slug": "1137"
+      },
+      {
+        "slug": "1138"
+      },
+      {
+        "slug": "1139"
+      },
+      {
+        "slug": "1140"
+      },
+      {
+        "slug": "1141"
+      },
+      {
+        "slug": "1142"
+      },
+      {
+        "slug": "1143"
+      },
+      {
+        "slug": "1144"
+      },
+      {
+        "slug": "1145"
+      },
+      {
+        "slug": "1146"
+      },
+      {
+        "slug": "1147"
+      },
+      {
+        "slug": "6082"
+      },
+      {
+        "slug": "6084"
+      },
+      {
+        "slug": "6086"
+      },
+      {
+        "slug": "6087"
+      },
+      {
+        "slug": "6089"
+      },
+      {
+        "slug": "6095"
+      },
+      {
+        "slug": "6096"
+      },
+      {
+        "slug": "6098"
+      },
+      {
+        "slug": "6100"
+      },
+      {
+        "slug": "6104"
+      },
+      {
+        "slug": "6105"
+      },
+      {
+        "slug": "6107"
+      },
+      {
+        "slug": "6109"
+      },
+      {
+        "slug": "6111"
+      },
+      {
+        "slug": "6113"
+      },
+      {
+        "slug": "6115"
+      },
+      {
+        "slug": "6123"
+      },
+      {
+        "slug": "6124"
+      },
+      {
+        "slug": "6125"
+      },
+      {
+        "slug": "6127"
+      },
+      {
+        "slug": "6128"
+      },
+      {
+        "slug": "6130"
+      },
+      {
+        "slug": "6136"
+      },
+      {
+        "slug": "6138"
+      },
+      {
+        "slug": "6142"
+      },
+      {
+        "slug": "6146"
+      },
+      {
+        "slug": "8083"
+      },
+      {
+        "slug": "8085"
+      },
+      {
+        "slug": "8088"
+      },
+      {
+        "slug": "8090"
+      },
+      {
+        "slug": "8092"
+      },
+      {
+        "slug": "8094"
+      },
+      {
+        "slug": "8097"
+      },
+      {
+        "slug": "8099"
+      },
+      {
+        "slug": "8101"
+      },
+      {
+        "slug": "8106"
+      },
+      {
+        "slug": "8108"
+      },
+      {
+        "slug": "8110"
+      },
+      {
+        "slug": "8112"
+      },
+      {
+        "slug": "8114"
+      },
+      {
+        "slug": "8116"
+      },
+      {
+        "slug": "8131"
+      },
+      {
+        "slug": "8133"
+      },
+      {
+        "slug": "8135"
+      },
+      {
+        "slug": "8137"
+      },
+      {
+        "slug": "8145"
+      },
+      {
+        "slug": "8147"
+      },
+      {
+        "slug": "crv-1088"
+      },
+      {
+        "slug": "crv-1092"
+      },
+      {
+        "slug": "crv-1108"
+      },
+      {
+        "slug": "crv-1114"
+      },
+      {
+        "slug": "crv-1135"
+      },
+      {
+        "slug": "crv-1137"
+      },
+      {
+        "slug": "crv-1139"
+      },
+      {
+        "slug": "d-8124"
+      },
+      {
+        "slug": "d-8131"
+      },
+      {
+        "slug": "d-8147"
+      },
+      {
+        "slug": "rd-01"
+      },
+      {
+        "slug": "rd-02"
+      },
+      {
+        "slug": "rd-04"
+      },
+      {
+        "slug": "rd-06"
+      },
+      {
+        "slug": "rd-07"
+      },
+      {
+        "slug": "rd-09"
+      },
+      {
+        "slug": "rd-10"
+      },
+      {
+        "slug": "rd-11"
+      },
+      {
+        "slug": "rd-12"
+      },
+      {
+        "slug": "rd-14"
+      },
+      {
+        "slug": "rd-15"
+      },
+      {
+        "slug": "rd-16"
+      },
+      {
+        "slug": "rd-18"
+      },
+      {
+        "slug": "rd-19"
+      },
+      {
+        "slug": "rd-20"
+      },
+      {
+        "slug": "rd-21"
+      },
+      {
+        "slug": "rd-23"
+      },
+      {
+        "slug": "rd-24"
+      },
+      {
+        "slug": "rd-25"
+      },
+      {
+        "slug": "rd-26"
+      },
+      {
+        "slug": "rd-27"
+      },
+      {
+        "slug": "rd-28"
+      },
+      {
+        "slug": "rd-34"
+      },
+      {
+        "slug": "rd-35"
+      },
+      {
+        "slug": "rd-36"
+      },
+      {
+        "slug": "rd-37"
+      },
+      {
+        "slug": "rd-38"
+      },
+      {
+        "slug": "rd-40"
+      },
+      {
+        "slug": "rd-42"
+      },
+      {
+        "slug": "rd-43"
+      },
+      {
+        "slug": "rd-44"
+      },
+      {
+        "slug": "rd-45"
+      },
+      {
+        "slug": "rd-46"
+      },
+      {
+        "slug": "rd-47"
+      },
+      {
+        "slug": "rd-48"
+      },
+      {
+        "slug": "cheppo-silver"
+      },
+      {
+        "slug": "cheppo-nero"
+      },
+      {
+        "slug": "cheppo-grey"
+      },
+      {
+        "slug": "cheppo-pearl"
+      },
+      {
+        "slug": "cheppo-olive"
+      },
+      {
+        "slug": "beola-nero"
+      },
+      {
+        "slug": "beola-gris"
+      },
+      {
+        "slug": "beola-silver"
+      },
+      {
+        "slug": "concreto-nero"
+      },
+      {
+        "slug": "concreto-gris"
+      },
+      {
+        "slug": "concreto-barley"
+      },
+      {
+        "slug": "concreto-crema"
+      },
+      {
+        "slug": "quarzo-nero"
+      },
+      {
+        "slug": "quarzo-gris"
+      },
+      {
+        "slug": "quarzo-silver"
+      },
+      {
+        "slug": "quarzo-crema"
+      },
+      {
+        "slug": "rd-49"
+      },
+      {
+        "slug": "rd-50"
+      },
+      {
+        "slug": "rd-51"
+      },
+      {
+        "slug": "rd-52"
+      },
+      {
+        "slug": "rd-53"
+      },
+      {
+        "slug": "rd-54"
+      },
+      {
+        "slug": "rd-55"
+      },
+      {
+        "slug": "rd-56"
+      },
+      {
+        "slug": "rd-57"
+      },
+      {
+        "slug": "rd-58"
+      },
+      {
+        "slug": "rd-59"
+      },
+      {
+        "slug": "rd-60"
+      },
+      {
+        "slug": "rd-61"
+      },
+      {
+        "slug": "rd-62"
+      },
+      {
+        "slug": "rd-63"
+      },
+      {
+        "slug": "rd-64"
+      },
+      {
+        "slug": "rd-65"
+      },
+      {
+        "slug": "rd-66"
+      },
+      {
+        "slug": "rd-67"
+      },
+      {
+        "slug": "rd-68"
+      },
+      {
+        "slug": "rd-69"
+      },
+      {
+        "slug": "rd-70"
+      },
+      {
+        "slug": "rd-71"
+      },
+      {
+        "slug": "rd-72"
+      },
+      {
+        "slug": "rd-73"
+      },
+      {
+        "slug": "rd-74"
+      },
+      {
+        "slug": "rd-75"
+      },
+      {
+        "slug": "rd-76"
+      },
+      {
+        "slug": "rd-77"
+      },
+      {
+        "slug": "rd-78"
+      },
+      {
+        "slug": "rd-79"
+      },
+      {
+        "slug": "rd-80"
+      },
+      {
+        "slug": "rd-81"
+      },
+      {
+        "slug": "rd-82"
+      },
+      {
+        "slug": "rd-83"
+      },
+      {
+        "slug": "barberino-lux"
+      },
+      {
+        "slug": "barberino-verde"
+      },
+      {
+        "slug": "panero-nero"
+      },
+      {
+        "slug": "barberino-brown"
+      },
+      {
+        "slug": "barberino-crema"
+      },
+      {
+        "slug": "barberino-gris"
+      },
+      {
+        "slug": "barberino-negro"
+      },
+      {
+        "slug": "desert-crema"
+      },
+      {
+        "slug": "desert-bianco"
+      },
+      {
+        "slug": "desert-coffee"
+      },
+      {
+        "slug": "desert-gery"
+      },
+      {
+        "slug": "desert-gris"
+      },
+      {
+        "slug": "desert-lun"
+      },
+      {
+        "slug": "desert-negro"
+      },
+      {
+        "slug": "desert-sahara"
+      },
+      {
+        "slug": "desert-verde"
+      },
+      {
+        "slug": "saga-bianco"
+      },
+      {
+        "slug": "saga-barley"
+      },
+      {
+        "slug": "saga-white"
+      },
+      {
+        "slug": "saga-cocoa"
+      },
+      {
+        "slug": "saga-grey"
+      },
+      {
+        "slug": "saga-nero"
+      },
+      {
+        "slug": "armani-grey"
+      },
+      {
+        "slug": "aurora-light"
+      },
+      {
+        "slug": "creama-dinova"
+      },
+      {
+        "slug": "diano-pearl"
+      },
+      {
+        "slug": "dyno-royal"
+      },
+      {
+        "slug": "cannon-nero"
+      },
+      {
+        "slug": "carrara-neo"
+      },
+      {
+        "slug": "novelle-gris"
+      },
+      {
+        "slug": "cannon-shadow"
+      },
+      {
+        "slug": "silver-root"
+      },
+      {
+        "slug": "invisible-dove"
+      },
+      {
+        "slug": "lasa-carrara"
+      },
+      {
+        "slug": "marfo-beach"
+      },
+      {
+        "slug": "cannon-sand"
+      },
+      {
+        "slug": "paris-brown"
+      },
+      {
+        "slug": "passion-grey"
+      },
+      {
+        "slug": "roman-white"
+      },
+      {
+        "slug": "statuario-winds"
+      },
+      {
+        "slug": "twigrey"
+      },
+      {
+        "slug": "arbes-flair"
+      },
+      {
+        "slug": "arbes-white"
+      },
+      {
+        "slug": "meteor-nero"
+      },
+      {
+        "slug": "argentine-root"
+      },
+      {
+        "slug": "arizona"
+      },
+      {
+        "slug": "armani-dove"
+      },
+      {
+        "slug": "bottochino-beach"
+      },
+      {
+        "slug": "meteor-sand"
+      },
+      {
+        "slug": "bottochino-dove"
+      },
+      {
+        "slug": "bright-emperor"
+      },
+      {
+        "slug": "burberry-beach"
+      },
+      {
+        "slug": "burberry-dove"
+      },
+      {
+        "slug": "meteor-steel"
+      },
+      {
+        "slug": "carra-grey"
+      },
+      {
+        "slug": "galaxy-azzurro"
+      },
+      {
+        "slug": "glacier-beach"
+      },
+      {
+        "slug": "grey-amazon"
+      },
+      {
+        "slug": "kaman-beige"
+      },
+      {
+        "slug": "magma-silver"
+      },
+      {
+        "slug": "magma-ash"
+      },
+      {
+        "slug": "magma-grey"
+      },
+      {
+        "slug": "murato-beige"
+      },
+      {
+        "slug": "murato-brown"
+      },
+      {
+        "slug": "recto-beige"
+      },
+      {
+        "slug": "recto-brown"
+      },
+      {
+        "slug": "topbox-brown"
+      },
+      {
+        "slug": "wild-grey"
+      },
+      {
+        "slug": "armania-cream"
+      },
+      {
+        "slug": "vapour-ash"
+      },
+      {
+        "slug": "armania-silver"
+      },
+      {
+        "slug": "arrow-wood"
+      },
+      {
+        "slug": "arto-colonia"
+      },
+      {
+        "slug": "vapour-grey"
+      },
+      {
+        "slug": "arto-milano"
+      },
+      {
+        "slug": "vapour-dune"
+      },
+      {
+        "slug": "bronco-strepo"
+      },
+      {
+        "slug": "cobbled-copper"
+      },
+      {
+        "slug": "cobbled-grey"
+      },
+      {
+        "slug": "cobbled-slate"
+      },
+      {
+        "slug": "crema-sandy"
+      },
+      {
+        "slug": "dust-cedar"
+      },
+      {
+        "slug": "forest-wood"
+      },
+      {
+        "slug": "occult-dove"
+      },
+      {
+        "slug": "occult-grey"
+      },
+      {
+        "slug": "pulpis-coffee"
+      },
+      {
+        "slug": "pulpis-dove"
+      },
+      {
+        "slug": "rug-frema"
+      },
+      {
+        "slug": "semint-brown"
+      },
+      {
+        "slug": "semint-dove"
+      },
+      {
+        "slug": "semint-ivory"
+      },
+      {
+        "slug": "semint-khaki"
+      },
+      {
+        "slug": "semint-navy"
+      },
+      {
+        "slug": "semint-nero"
+      },
+      {
+        "slug": "semint-olive"
+      },
+      {
+        "slug": "semint-verde"
+      },
+      {
+        "slug": "snick-beige"
+      },
+      {
+        "slug": "snick-grey"
+      },
+      {
+        "slug": "timber-grey"
+      },
+      {
+        "slug": "tulpis-beige"
+      },
+      {
+        "slug": "venio-camel"
+      },
+      {
+        "slug": "wavy-oak"
+      },
+      {
+        "slug": "caramel"
+      },
+      {
+        "slug": "chalk"
+      },
+      {
+        "slug": "magician"
+      },
+      {
+        "slug": "morning"
+      },
+      {
+        "slug": "mystery"
+      },
+      {
+        "slug": "night-sky"
+      },
+      {
+        "slug": "crv-3233"
+      },
+      {
+        "slug": "slate"
+      },
+      {
+        "slug": "summer-dark"
+      },
+      {
+        "slug": "summer-lit"
+      },
+      {
+        "slug": "summer-mid"
+      },
+      {
+        "slug": "toast"
+      },
+      {
+        "slug": "winter-dark"
+      },
+      {
+        "slug": "winter-lit"
+      },
+      {
+        "slug": "winter-mid"
+      },
+      {
+        "slug": "misty-brown-matte"
+      },
+      {
+        "slug": "crv-3231"
+      },
+      {
+        "slug": "misty-navy-matte"
+      },
+      {
+        "slug": "misty-slate-matte"
+      },
+      {
+        "slug": "morta-khakhi-matte"
+      },
+      {
+        "slug": "morta-lime-matte"
+      },
+      {
+        "slug": "morta-natural-matte"
+      },
+      {
+        "slug": "morta-natural-decor-crv"
+      },
+      {
+        "slug": "morta-slate-matte"
+      },
+      {
+        "slug": "morta-terra-matte"
+      },
+      {
+        "slug": "morta-terra-decor-crv"
+      },
+      {
+        "slug": "monorock-apricot"
+      },
+      {
+        "slug": "monoplain-steel"
+      },
+      {
+        "slug": "neo-mint-matte"
+      },
+      {
+        "slug": "monoplain-smoky"
+      },
+      {
+        "slug": "monoplain-kota"
+      },
+      {
+        "slug": "monoplain-almond"
+      },
+      {
+        "slug": "edl-3243-matt"
+      },
+      {
+        "slug": "edl-3242-matt"
+      },
+      {
+        "slug": "rusty-brown-matte"
+      },
+      {
+        "slug": "rusty-navy-matte"
+      },
+      {
+        "slug": "rusty-slate-matte"
+      },
+      {
+        "slug": "edl-3241-matt"
+      },
+      {
+        "slug": "brickon-beige-dark"
+      },
+      {
+        "slug": "brickon-beige-lit"
+      },
+      {
+        "slug": "brickon-beige-mid"
+      },
+      {
+        "slug": "brickon-brown-dark"
+      },
+      {
+        "slug": "3251-matt"
+      },
+      {
+        "slug": "brickon-brown-lit"
+      },
+      {
+        "slug": "brickon-brown-mid"
+      },
+      {
+        "slug": "bristy-beige"
+      },
+      {
+        "slug": "haze-beige"
+      },
+      {
+        "slug": "3250-matt"
+      },
+      {
+        "slug": "haze-grey"
+      },
+      {
+        "slug": "linia-white"
+      },
+      {
+        "slug": "stone-beige"
+      },
+      {
+        "slug": "3249-matt"
+      },
+      {
+        "slug": "swood-beige"
+      },
+      {
+        "slug": "trunk-beige"
+      },
+      {
+        "slug": "bloom-beige"
+      },
+      {
+        "slug": "bloom-teal"
+      },
+      {
+        "slug": "3248-matt"
+      },
+      {
+        "slug": "bloom-olive"
+      },
+      {
+        "slug": "corolla-navy"
+      },
+      {
+        "slug": "persian-leaf"
+      },
+      {
+        "slug": "corolla-grey"
+      },
+      {
+        "slug": "jewel-khakhi"
+      },
+      {
+        "slug": "jewel-terra"
+      },
+      {
+        "slug": "jewel-mose"
+      },
+      {
+        "slug": "3246-matt"
+      },
+      {
+        "slug": "jewel-navy"
+      },
+      {
+        "slug": "terra-badge"
+      },
+      {
+        "slug": "jewel-silver"
+      },
+      {
+        "slug": "histo-terra-base"
+      },
+      {
+        "slug": "3230-matt"
+      },
+      {
+        "slug": "histo-graphite-base"
+      },
+      {
+        "slug": "histo-night-base"
+      },
+      {
+        "slug": "vintage-gold-base"
+      },
+      {
+        "slug": "vintage-teal-base"
+      },
+      {
+        "slug": "3229-matt"
+      },
+      {
+        "slug": "vintage-navy-base"
+      },
+      {
+        "slug": "ethnic-terra-base"
+      },
+      {
+        "slug": "turkish-azul-base"
+      },
+      {
+        "slug": "damask-legasy-base-2"
+      },
+      {
+        "slug": "3228-matt"
+      },
+      {
+        "slug": "damask-legasy-base-1"
+      },
+      {
+        "slug": "damask-lotus-base-2"
+      },
+      {
+        "slug": "damask-lotus-base-1"
+      },
+      {
+        "slug": "3227-matt"
+      },
+      {
+        "slug": "histo-terra-border"
+      },
+      {
+        "slug": "histo-graphite-border"
+      },
+      {
+        "slug": "histo-night-border"
+      },
+      {
+        "slug": "vintage-gold-border"
+      },
+      {
+        "slug": "3226-matt"
+      },
+      {
+        "slug": "vintage-teal-border"
+      },
+      {
+        "slug": "vintage-navy-border"
+      },
+      {
+        "slug": "ethnic-terra-border"
+      },
+      {
+        "slug": "turkish-azul-border"
+      },
+      {
+        "slug": "damask-legasy-border-2"
+      },
+      {
+        "slug": "damask-legasy-border-1"
+      },
+      {
+        "slug": "damask-lotus-border-2"
+      },
+      {
+        "slug": "3224-matt"
+      },
+      {
+        "slug": "damask-lotus-border-1"
+      },
+      {
+        "slug": "histo-terra-corner"
+      },
+      {
+        "slug": "histo-graphite-corner"
+      },
+      {
+        "slug": "histo-night-corner"
+      },
+      {
+        "slug": "3223-matt"
+      },
+      {
+        "slug": "vintage-gold-corner"
+      },
+      {
+        "slug": "vintage-teal-corner"
+      },
+      {
+        "slug": "vintage-navy-corner"
+      },
+      {
+        "slug": "3222-matt"
+      },
+      {
+        "slug": "ethnic-terra-corner"
+      },
+      {
+        "slug": "turkish-azul-corner"
+      },
+      {
+        "slug": "tropical-viva-poster-a"
+      },
+      {
+        "slug": "tropical-viva-poster-b"
+      },
+      {
+        "slug": "3221-matt"
+      },
+      {
+        "slug": "lorenzo-dove"
+      },
+      {
+        "slug": "lorenzo-gris"
+      },
+      {
+        "slug": "michelangelo-tranquil"
+      },
+      {
+        "slug": "statuario-acute"
+      },
+      {
+        "slug": "3220-matt"
+      },
+      {
+        "slug": "alicante-dove"
+      },
+      {
+        "slug": "alicante-rena"
+      },
+      {
+        "slug": "antique-oro"
+      },
+      {
+        "slug": "armani-lumi"
+      },
+      {
+        "slug": "3219-matt"
+      },
+      {
+        "slug": "bianco-dove"
+      },
+      {
+        "slug": "brescia-dove"
+      },
+      {
+        "slug": "brescia-rena"
+      },
+      {
+        "slug": "cloud-onyx"
+      },
+      {
+        "slug": "3218-matt"
+      },
+      {
+        "slug": "crystal-beige"
+      },
+      {
+        "slug": "dyna-classico"
+      },
+      {
+        "slug": "marfuse-grey"
+      },
+      {
+        "slug": "marmo-dove"
+      },
+      {
+        "slug": "3217-matt"
+      },
+      {
+        "slug": "marmo-beige"
+      },
+      {
+        "slug": "michelangelo-rena"
+      },
+      {
+        "slug": "miele-onyx"
+      },
+      {
+        "slug": "mono-beige"
+      },
+      {
+        "slug": "mono-cream"
+      },
+      {
+        "slug": "mono-grey"
+      },
+      {
+        "slug": "mono-myst"
+      },
+      {
+        "slug": "mono-slate"
+      },
+      {
+        "slug": "mono-taupe"
+      },
+      {
+        "slug": "palissandro"
+      },
+      {
+        "slug": "pietra-slate"
+      },
+      {
+        "slug": "3214-matt"
+      },
+      {
+        "slug": "pietra-tan"
+      },
+      {
+        "slug": "rosalia"
+      },
+      {
+        "slug": "sofita-dove"
+      },
+      {
+        "slug": "sofita-sand"
+      },
+      {
+        "slug": "3213-matt"
+      },
+      {
+        "slug": "statuario-equita"
+      },
+      {
+        "slug": "statuario-gold"
+      },
+      {
+        "slug": "statuario-mark"
+      },
+      {
+        "slug": "statuario-ray"
+      },
+      {
+        "slug": "3212-matt"
+      },
+      {
+        "slug": "statuario-wolf"
+      },
+      {
+        "slug": "traven-cream"
+      },
+      {
+        "slug": "traven-grey"
+      },
+      {
+        "slug": "victoria-toast"
+      },
+      {
+        "slug": "3211-matt"
+      },
+      {
+        "slug": "alchimia-pearl"
+      },
+      {
+        "slug": "alchimia-peach"
+      },
+      {
+        "slug": "alchimia-graphite"
+      },
+      {
+        "slug": "alchimia-hazel"
+      },
+      {
+        "slug": "3210-matt"
+      },
+      {
+        "slug": "alchimia-leaf"
+      },
+      {
+        "slug": "alchimia-shell"
+      },
+      {
+        "slug": "alchimia-pearl-raw-texture"
+      },
+      {
+        "slug": "alchimia-peach-raw-texture"
+      },
+      {
+        "slug": "savona-grey"
+      },
+      {
+        "slug": "alchimia-graphite-raw-texture"
+      },
+      {
+        "slug": "alchimia-hazel-raw-texture"
+      },
+      {
+        "slug": "alchimia-leaf-raw-texture"
+      },
+      {
+        "slug": "alchimia-shell-raw-texture"
+      },
+      {
+        "slug": "perador-beige"
+      },
+      {
+        "slug": "ritual-hazel"
+      },
+      {
+        "slug": "tradition-leaf"
+      },
+      {
+        "slug": "speck-dusk"
+      },
+      {
+        "slug": "speck-monsoon"
+      },
+      {
+        "slug": "speck-night"
+      },
+      {
+        "slug": "perador-brown"
+      },
+      {
+        "slug": "speck-noon"
+      },
+      {
+        "slug": "basaltino-cocoa"
+      },
+      {
+        "slug": "sparko-white"
+      },
+      {
+        "slug": "sparko-cream"
+      },
+      {
+        "slug": "sparko-ash"
+      },
+      {
+        "slug": "pietra-light"
+      },
+      {
+        "slug": "sparko-dove"
+      },
+      {
+        "slug": "sparko-nero"
+      },
+      {
+        "slug": "sparko-khaki"
+      },
+      {
+        "slug": "sparko-white-ardesia-texture"
+      },
+      {
+        "slug": "marmoris-cream"
+      },
+      {
+        "slug": "sparko-cream-ardesia-texture"
+      },
+      {
+        "slug": "sparko-ash-ardesia-texture"
+      },
+      {
+        "slug": "sparko-dove-ardesia-texture"
+      },
+      {
+        "slug": "sparko-nero-ardesia-texture"
+      },
+      {
+        "slug": "roman-oro"
+      },
+      {
+        "slug": "sparko-khaki-ardesia-texture"
+      },
+      {
+        "slug": "venitto-morning"
+      },
+      {
+        "slug": "venitto-sand"
+      },
+      {
+        "slug": "venitto-monsoon"
+      },
+      {
+        "slug": "venitto-beach"
+      },
+      {
+        "slug": "venitto-night"
+      },
+      {
+        "slug": "venitto-mud"
+      },
+      {
+        "slug": "belvedere-forest"
+      },
+      {
+        "slug": "brera-poem"
+      },
+      {
+        "slug": "italus-ivory"
+      },
+      {
+        "slug": "apuan-marvel"
+      },
+      {
+        "slug": "alps-dream"
+      },
+      {
+        "slug": "italic-treasure"
+      },
+      {
+        "slug": "tuscany-pride"
+      },
+      {
+        "slug": "tivoli-travertino"
+      },
+      {
+        "slug": "palio-enchant"
+      },
+      {
+        "slug": "florence-macaubas"
+      },
+      {
+        "slug": "roma-empire"
+      },
+      {
+        "slug": "como-crystal"
+      },
+      {
+        "slug": "statuario-poem"
+      },
+      {
+        "slug": "venice-laguna"
+      },
+      {
+        "slug": "ladakh-barley"
+      },
+      {
+        "slug": "ladakh-beige"
+      },
+      {
+        "slug": "negev-sand"
+      },
+      {
+        "slug": "negev-pearl"
+      },
+      {
+        "slug": "italus-beige"
+      },
+      {
+        "slug": "dowth-sun"
+      },
+      {
+        "slug": "dowth-cream"
+      },
+      {
+        "slug": "alta-beach"
+      },
+      {
+        "slug": "onega-grey"
+      },
+      {
+        "slug": "onega-silver"
+      },
+      {
+        "slug": "lava-bres"
+      },
+      {
+        "slug": "camun-ash"
+      },
+      {
+        "slug": "camun-dove"
+      },
+      {
+        "slug": "alta-khaki"
+      },
+      {
+        "slug": "trail-barley"
+      },
+      {
+        "slug": "trail-beige"
+      },
+      {
+        "slug": "dream-onyx-cream"
+      },
+      {
+        "slug": "thread-sand"
+      },
+      {
+        "slug": "thread-pearl"
+      },
+      {
+        "slug": "stipple-sun"
+      },
+      {
+        "slug": "stipple-cream"
+      },
+      {
+        "slug": "weave-grey"
+      },
+      {
+        "slug": "fosina-cream"
+      },
+      {
+        "slug": "weave-silver"
+      },
+      {
+        "slug": "braids-ash"
+      },
+      {
+        "slug": "braids-dove"
+      },
+      {
+        "slug": "oblique-khaki"
+      },
+      {
+        "slug": "oblique-beach"
+      },
+      {
+        "slug": "garden"
+      },
+      {
+        "slug": "rain"
+      },
+      {
+        "slug": "floral"
+      },
+      {
+        "slug": "fern"
+      },
+      {
+        "slug": "jungle"
+      },
+      {
+        "slug": "mandala"
+      },
+      {
+        "slug": "agra-camel"
+      },
+      {
+        "slug": "agra-red"
+      },
+      {
+        "slug": "agra-sand"
+      },
+      {
+        "slug": "arde-camel"
+      },
+      {
+        "slug": "sarda-beige"
+      },
+      {
+        "slug": "arde-dove"
+      },
+      {
+        "slug": "arde-rusty"
+      },
+      {
+        "slug": "ashlar-ash"
+      },
+      {
+        "slug": "ashlar-desert"
+      },
+      {
+        "slug": "ashlar-grey"
+      },
+      {
+        "slug": "castle-cotta"
+      },
+      {
+        "slug": "sarda-cream"
+      },
+      {
+        "slug": "castle-grey"
+      },
+      {
+        "slug": "castle-tan"
+      },
+      {
+        "slug": "clastic-grey"
+      },
+      {
+        "slug": "clastic-pearl"
+      },
+      {
+        "slug": "cottas-lime"
+      },
+      {
+        "slug": "dewstone-ash"
+      },
+      {
+        "slug": "armani-light"
+      },
+      {
+        "slug": "limos-grey"
+      },
+      {
+        "slug": "limos-lime"
+      },
+      {
+        "slug": "salco-barley"
+      },
+      {
+        "slug": "pietra-natura"
+      },
+      {
+        "slug": "salco-silver"
+      },
+      {
+        "slug": "sediment-brown"
+      },
+      {
+        "slug": "basaltino-nero"
+      },
+      {
+        "slug": "fusio-grey"
+      },
+      {
+        "slug": "basaltino-barley"
+      },
+      {
+        "slug": "basaltino-grey"
+      },
+      {
+        "slug": "basaltino-bianco"
+      },
+      {
+        "slug": "basaltino-white"
+      },
+      {
+        "slug": "punti-bruno"
+      },
+      {
+        "slug": "punti-nero"
+      },
+      {
+        "slug": "telaio-bruno"
+      },
+      {
+        "slug": "telaio-nero"
+      },
+      {
+        "slug": "basque-bricks"
+      },
+      {
+        "slug": "estrada-bricks"
+      },
+      {
+        "slug": "alps-dream-brick"
+      },
+      {
+        "slug": "italic-treasure-brick"
+      },
+      {
+        "slug": "tuscany-pride-brick"
+      },
+      {
+        "slug": "belvedere-forest-brick"
+      },
+      {
+        "slug": "peramix-beige"
+      },
+      {
+        "slug": "brera-poem-brick"
+      },
+      {
+        "slug": "apuan-marvel-brick"
+      },
+      {
+        "slug": "tivoli-travertino-brick"
+      },
+      {
+        "slug": "palio-enchant-brick"
+      },
+      {
+        "slug": "florence-macaubas-brick"
+      },
+      {
+        "slug": "roma-empire-brick"
+      },
+      {
+        "slug": "como-crystal-brick"
+      },
+      {
+        "slug": "venice-laguna-brick"
+      },
+      {
+        "slug": "crv-1147"
+      },
+      {
+        "slug": "cannon-silver"
+      },
+      {
+        "slug": "meteor-ash"
+      },
+      {
+        "slug": "magma-lava"
+      },
+      {
+        "slug": "vapour-tan"
+      },
+      {
+        "slug": "edl-crv3245"
+      },
+      {
+        "slug": "edl-crv3244"
+      },
+      {
+        "slug": "crv-3240"
+      },
+      {
+        "slug": "crv-3239"
+      },
+      {
+        "slug": "crv-3238"
+      },
+      {
+        "slug": "crv-3237"
+      },
+      {
+        "slug": "crv-3236"
+      },
+      {
+        "slug": "crv-3232"
+      },
+      {
+        "slug": "3247-matt"
+      },
+      {
+        "slug": "3225-matt"
+      },
+      {
+        "slug": "3216-matt"
+      },
+      {
+        "slug": "3215-matt"
+      },
+      {
+        "slug": "marmoris-grey"
+      },
+      {
+        "slug": "beach-bres"
+      },
+      {
+        "slug": "onyx-fantasia"
+      },
+      {
+        "slug": "italus-exotica"
+      },
+      {
+        "slug": "armani-natura"
+      },
+      {
+        "slug": "dynos-beige"
+      },
+      {
+        "slug": "calacatta-glacier"
+      },
+      {
+        "slug": "ingot-lake"
+      },
+      {
+        "slug": "ingot-ocean"
+      },
+      {
+        "slug": "bricka-maroon-dark"
+      },
+      {
+        "slug": "ingot-thunder"
+      },
+      {
+        "slug": "ingot-forest"
+      },
+      {
+        "slug": "ingot-nightsea"
+      },
+      {
+        "slug": "ingot-clear"
+      },
+      {
+        "slug": "ingot-brass"
+      },
+      {
+        "slug": "opulent-emerald"
+      },
+      {
+        "slug": "opulent-sapphire"
+      },
+      {
+        "slug": "opulent-bronze"
+      },
+      {
+        "slug": "opulent-opale"
+      },
+      {
+        "slug": "opulent-garnet"
+      },
+      {
+        "slug": "opulent-ruby"
+      },
+      {
+        "slug": "recta-emerald"
+      },
+      {
+        "slug": "recta-sapphire"
+      },
+      {
+        "slug": "recta-bronze"
+      },
+      {
+        "slug": "recta-opale"
+      },
+      {
+        "slug": "recta-garnet"
+      },
+      {
+        "slug": "recta-ruby"
+      },
+      {
+        "slug": "malaki-brown"
+      },
+      {
+        "slug": "regal-brown"
+      },
+      {
+        "slug": "studio-brown"
+      },
+      {
+        "slug": "malaki-yellow"
+      },
+      {
+        "slug": "regal-yellow"
+      },
+      {
+        "slug": "studio-yellow"
+      },
+      {
+        "slug": "malaki-indigo"
+      },
+      {
+        "slug": "regal-indigo"
+      },
+      {
+        "slug": "studio-indigo"
+      },
+      {
+        "slug": "malaki-teal"
+      },
+      {
+        "slug": "regal-teal"
+      },
+      {
+        "slug": "studio-teal"
+      },
+      {
+        "slug": "malaki-blue"
+      },
+      {
+        "slug": "regal-blue"
+      },
+      {
+        "slug": "studio-blue"
+      },
+      {
+        "slug": "malaki-mint"
+      },
+      {
+        "slug": "regal-mint"
+      },
+      {
+        "slug": "studio-mint"
+      },
+      {
+        "slug": "neck-brown"
+      },
+      {
+        "slug": "strings-brown"
+      },
+      {
+        "slug": "bars-brown"
+      },
+      {
+        "slug": "neck-yellow"
+      },
+      {
+        "slug": "strings-yellow"
+      },
+      {
+        "slug": "bars-yellow"
+      },
+      {
+        "slug": "neck-indigo"
+      },
+      {
+        "slug": "strings-indigo"
+      },
+      {
+        "slug": "bars-indigo"
+      },
+      {
+        "slug": "neck-teal"
+      },
+      {
+        "slug": "strings-teal"
+      },
+      {
+        "slug": "bars-teal"
+      },
+      {
+        "slug": "neck-blue"
+      },
+      {
+        "slug": "strings-blue"
+      },
+      {
+        "slug": "bars-blue"
+      },
+      {
+        "slug": "neck-mint"
+      },
+      {
+        "slug": "strings-mint"
+      },
+      {
+        "slug": "bars-mint"
+      },
+      {
+        "slug": "palm-ocean-light"
+      },
+      {
+        "slug": "palm-grove-decor"
+      },
+      {
+        "slug": "palm-grove-dark"
+      },
+      {
+        "slug": "palm-grove-light"
+      },
+      {
+        "slug": "rosette-fern-decor"
+      },
+      {
+        "slug": "hoof-black"
+      },
+      {
+        "slug": "hoof-red"
+      },
+      {
+        "slug": "hoof-blue"
+      },
+      {
+        "slug": "hoof-brown"
+      },
+      {
+        "slug": "hoof-white"
+      },
+      {
+        "slug": "zebra-black"
+      },
+      {
+        "slug": "zebra-red"
+      },
+      {
+        "slug": "zebra-blue"
+      },
+      {
+        "slug": "zebra-white"
+      },
+      {
+        "slug": "zebra-green"
+      },
+      {
+        "slug": "zebra-brown"
+      },
+      {
+        "slug": "piccolo-ocean"
+      },
+      {
+        "slug": "piccolo-caribbean"
+      },
+      {
+        "slug": "piccolo-rust"
+      },
+      {
+        "slug": "piccolo-aquarust"
+      },
+      {
+        "slug": "cubo-ocean"
+      },
+      {
+        "slug": "cubo-caribbean"
+      },
+      {
+        "slug": "cubo-rust"
+      },
+      {
+        "slug": "cubo-aquarust"
+      },
+      {
+        "slug": "bricka-white"
+      },
+      {
+        "slug": "squara-indigo-dark"
+      },
+      {
+        "slug": "squara-indigo"
+      },
+      {
+        "slug": "arbitra-indigo"
+      },
+      {
+        "slug": "squara-teal-dark"
+      },
+      {
+        "slug": "squara-teal"
+      },
+      {
+        "slug": "arbitra-teal"
+      },
+      {
+        "slug": "squara-maroon-dark"
+      },
+      {
+        "slug": "squara-maroon"
+      },
+      {
+        "slug": "arbitra-maroon"
+      },
+      {
+        "slug": "squara-black-dark"
+      },
+      {
+        "slug": "squara-black"
+      },
+      {
+        "slug": "squara-orange-dark"
+      },
+      {
+        "slug": "squara-orange"
+      },
+      {
+        "slug": "arbitra-orange"
+      },
+      {
+        "slug": "squara-white-gold"
+      },
+      {
+        "slug": "arbitra-white"
+      },
+      {
+        "slug": "stripa-indigo"
+      },
+      {
+        "slug": "bricka-indigo-dark"
+      },
+      {
+        "slug": "bricka-indigo"
+      },
+      {
+        "slug": "stripa-teal"
+      },
+      {
+        "slug": "bricka-teal-dark"
+      },
+      {
+        "slug": "bricka-teal"
+      },
+      {
+        "slug": "stripa-maroon"
+      },
+      {
+        "slug": "bricka-maroon"
+      },
+      {
+        "slug": "stripa-black"
+      },
+      {
+        "slug": "bricka-black-dark"
+      },
+      {
+        "slug": "bricka-black"
+      },
+      {
+        "slug": "stripa-orange"
+      },
+      {
+        "slug": "bricka-orange-dark"
+      },
+      {
+        "slug": "bricka-orange"
+      },
+      {
+        "slug": "stripa-white"
+      },
+      {
+        "slug": "bricka-white-gold"
+      },
+      {
+        "slug": "ingot-sunshine"
+      },
+      {
+        "slug": "tetris-sage-base"
+      },
+      {
+        "slug": "tetris-sage-border"
+      },
+      {
+        "slug": "tetris-sage-corner"
+      },
+      {
+        "slug": "tetris-decor-1"
+      },
+      {
+        "slug": "tetris-wine-base"
+      },
+      {
+        "slug": "tetris-wine-border"
+      },
+      {
+        "slug": "tetris-wine-corner"
+      },
+      {
+        "slug": "tetris-ocre-base"
+      },
+      {
+        "slug": "tetris-ocre-border"
+      },
+      {
+        "slug": "tetris-ocre-corner"
+      },
+      {
+        "slug": "tetris-decor-2"
+      },
+      {
+        "slug": "tetris-azul-base"
+      },
+      {
+        "slug": "tetris-azul-border"
+      },
+      {
+        "slug": "tetris-azul-corner"
+      },
+      {
+        "slug": "tetris-black-base"
+      },
+      {
+        "slug": "tetris-black-border"
+      },
+      {
+        "slug": "tetris-black-corner"
+      },
+      {
+        "slug": "tetris-decor-3"
+      },
+      {
+        "slug": "tetris-white-base"
+      },
+      {
+        "slug": "douglas-aqua-dark"
+      },
+      {
+        "slug": "douglas-aqua-mid"
+      },
+      {
+        "slug": "douglas-aqua-light"
+      },
+      {
+        "slug": "douglas-leaf-dark"
+      },
+      {
+        "slug": "douglas-leaf-mid"
+      },
+      {
+        "slug": "douglas-leaf-light"
+      },
+      {
+        "slug": "douglas-rays-dark"
+      },
+      {
+        "slug": "douglas-rays-mid"
+      },
+      {
+        "slug": "douglas-rays-light"
+      },
+      {
+        "slug": "douglas-shade-dark"
+      },
+      {
+        "slug": "douglas-shade-mid"
+      },
+      {
+        "slug": "douglas-shade-light"
+      },
+      {
+        "slug": "douglas-ripe-dark"
+      },
+      {
+        "slug": "douglas-ripe-mid"
+      },
+      {
+        "slug": "douglas-ripe-light"
+      },
+      {
+        "slug": "douglas-trunk-dark"
+      },
+      {
+        "slug": "douglas-trunk-mid"
+      },
+      {
+        "slug": "douglas-trunk-light"
+      },
+      {
+        "slug": "maiolica-bloom-decor-1"
+      },
+      {
+        "slug": "maiolica-bloom-decor-2"
+      },
+      {
+        "slug": "maiolica-square-decor-1"
+      },
+      {
+        "slug": "maiolica-square-decor-2"
+      },
+      {
+        "slug": "maiolica-diamond-decor-1"
+      },
+      {
+        "slug": "maiolica-diamond-decor-2"
+      },
+      {
+        "slug": "native-crown-base"
+      },
+      {
+        "slug": "native-crown-border"
+      },
+      {
+        "slug": "native-vine-base"
+      },
+      {
+        "slug": "native-vine-border"
+      },
+      {
+        "slug": "native-flora-base"
+      },
+      {
+        "slug": "native-flora-border"
+      },
+      {
+        "slug": "native-warli-base"
+      },
+      {
+        "slug": "native-warli-border"
+      },
+      {
+        "slug": "native-royale-base"
+      },
+      {
+        "slug": "native-royale-border"
+      },
+      {
+        "slug": "native-ornate-base"
+      },
+      {
+        "slug": "native-ornate-border"
+      },
+      {
+        "slug": "palm-viola-decor"
+      },
+      {
+        "slug": "palm-viola-dark"
+      },
+      {
+        "slug": "palm-viola-light"
+      },
+      {
+        "slug": "palm-ocean-decor"
+      },
+      {
+        "slug": "palm-ocean-dark"
+      },
+      {
+        "slug": "rhythm-corner"
+      },
+      {
+        "slug": "rhythm-marigold"
+      },
+      {
+        "slug": "rhythm-marigold-decor-1"
+      },
+      {
+        "slug": "rhythm-marigold-decor-2"
+      },
+      {
+        "slug": "rhythm-pickle"
+      },
+      {
+        "slug": "rhythm-pickle-decor-1"
+      },
+      {
+        "slug": "rhythm-pickle-decor-2"
+      },
+      {
+        "slug": "rhythm-terra"
+      },
+      {
+        "slug": "rhythm-terra-decor-1"
+      },
+      {
+        "slug": "rhythm-terra-decor-2"
+      },
+      {
+        "slug": "sapphire-crimson-border"
+      },
+      {
+        "slug": "sapphire-crimson-corner"
+      },
+      {
+        "slug": "sapphire-crimson"
+      },
+      {
+        "slug": "sapphire-crimson-decor"
+      },
+      {
+        "slug": "sapphire-umber"
+      },
+      {
+        "slug": "sapphire-umber-border"
+      },
+      {
+        "slug": "sapphire-umber-corner"
+      },
+      {
+        "slug": "sapphire-umber-decor"
+      },
+      {
+        "slug": "sapphire-vivid"
+      },
+      {
+        "slug": "sapphire-vivid-border"
+      },
+      {
+        "slug": "sapphire-vivid-corner"
+      },
+      {
+        "slug": "sapphire-vivid-decor"
+      },
+      {
+        "slug": "calane-decor"
+      },
+      {
+        "slug": "calane-marigold"
+      },
+      {
+        "slug": "calane-pickle"
+      },
+      {
+        "slug": "calane-pickle-corner"
+      },
+      {
+        "slug": "calane-terra"
+      },
+      {
+        "slug": "calane-marigold-border"
+      },
+      {
+        "slug": "calane-marigold-corner"
+      },
+      {
+        "slug": "calane-terra-decor"
+      },
+      {
+        "slug": "burst-teal"
+      },
+      {
+        "slug": "burst-blue"
+      },
+      {
+        "slug": "burst-olive"
+      },
+      {
+        "slug": "burst-tamarind"
+      },
+      {
+        "slug": "burst-violet"
+      },
+      {
+        "slug": "burst-marone"
+      },
+      {
+        "slug": "burst-sand"
+      },
+      {
+        "slug": "burst-honey"
+      },
+      {
+        "slug": "arise-neptune-light"
+      },
+      {
+        "slug": "arise-jupiter-dark"
+      },
+      {
+        "slug": "arise-jupiter-light"
+      },
+      {
+        "slug": "arise-earth-dark"
+      },
+      {
+        "slug": "arise-earth-light"
+      },
+      {
+        "slug": "arise-space-black"
+      },
+      {
+        "slug": "arise-moon-white"
+      },
+      {
+        "slug": "arise-mars-dark"
+      },
+      {
+        "slug": "arise-mars-light"
+      },
+      {
+        "slug": "arise-sun-bright"
+      },
+      {
+        "slug": "arise-sun-light"
+      },
+      {
+        "slug": "vista-neptune-dark"
+      },
+      {
+        "slug": "vista-neptune-light"
+      },
+      {
+        "slug": "vista-jupiter-dark"
+      },
+      {
+        "slug": "vista-jupiter-light"
+      },
+      {
+        "slug": "vista-earth-light"
+      },
+      {
+        "slug": "vista-space-black"
+      },
+      {
+        "slug": "vista-moon-white"
+      },
+      {
+        "slug": "vista-mars-dark"
+      },
+      {
+        "slug": "vista-mars-light"
+      },
+      {
+        "slug": "vista-sun-bright"
+      },
+      {
+        "slug": "vista-sun-light"
+      },
+      {
+        "slug": "greco-curve-oliva"
+      },
+      {
+        "slug": "greco-curve-viola"
+      },
+      {
+        "slug": "greco-curve-rosa"
+      },
+      {
+        "slug": "greco-curve-aqua"
+      },
+      {
+        "slug": "greco-curve-pistachio"
+      },
+      {
+        "slug": "greco-curve-jungle"
+      },
+      {
+        "slug": "greco-edge-chili"
+      },
+      {
+        "slug": "greco-edge-sangria"
+      },
+      {
+        "slug": "greco-edge-tan"
+      },
+      {
+        "slug": "greco-edge-peach"
+      },
+      {
+        "slug": "greco-edge-meadow"
+      },
+      {
+        "slug": "greco-edge-navy"
+      },
+      {
+        "slug": "maiolica-bloom"
+      },
+      {
+        "slug": "maiolica-square"
+      },
+      {
+        "slug": "maiolica-diamond"
+      },
+      {
+        "slug": "maiolica-basil"
+      },
+      {
+        "slug": "maiolica-azul"
+      },
+      {
+        "slug": "rosette-orchid-decor"
+      },
+      {
+        "slug": "rosette-tulip-decor"
+      },
+      {
+        "slug": "verandah-bone"
+      },
+      {
+        "slug": "verandah-brick"
+      },
+      {
+        "slug": "verandah-silver"
+      },
+      {
+        "slug": "verandah-green"
+      },
+      {
+        "slug": "verandah-cocoa"
+      },
+      {
+        "slug": "verandah-camo"
+      },
+      {
+        "slug": "verandah-black"
+      },
+      {
+        "slug": "verandah-mint"
+      },
+      {
+        "slug": "verandah-grey"
+      },
+      {
+        "slug": "verandah-ocra"
+      },
+      {
+        "slug": "verandah-brown"
+      },
+      {
+        "slug": "verandah-luna-garden"
+      },
+      {
+        "slug": "verandah-luna-soil"
+      },
+      {
+        "slug": "verandah-drift-garden"
+      },
+      {
+        "slug": "verandah-drift-soil"
+      },
+      {
+        "slug": "bling-slate-decor"
+      },
+      {
+        "slug": "bling-slate-base"
+      },
+      {
+        "slug": "bling-grey-decor"
+      },
+      {
+        "slug": "bling-grey-base"
+      },
+      {
+        "slug": "bling-mocha-decor"
+      },
+      {
+        "slug": "bling-mocha-base"
+      },
+      {
+        "slug": "bling-cream-decor"
+      },
+      {
+        "slug": "bling-cream-base"
+      },
+      {
+        "slug": "bling-tiffany-decor"
+      },
+      {
+        "slug": "bling-tiffany-base"
+      },
+      {
+        "slug": "bling-cobalt-decor"
+      },
+      {
+        "slug": "bling-cobalt-base"
+      },
+      {
+        "slug": "bling-emerald-decor"
+      },
+      {
+        "slug": "bling-emerald-base"
+      },
+      {
+        "slug": "bling-opal-decor"
+      },
+      {
+        "slug": "bling-opal-base"
+      },
+      {
+        "slug": "burst-energy"
+      },
+      {
+        "slug": "burst-midas"
+      },
+      {
+        "slug": "burst-marone-graph"
+      },
+      {
+        "slug": "burst-blue-graph"
+      },
+      {
+        "slug": "burst-violet-graph"
+      },
+      {
+        "slug": "burst-teal-graph"
+      },
+      {
+        "slug": "burst-tamarind-graph"
+      },
+      {
+        "slug": "burst-olive-graph"
+      },
+      {
+        "slug": "calane-pickle-border"
+      },
+      {
+        "slug": "rhythm-border"
+      },
+      {
+        "slug": "ingot-rain"
+      }
+    ]
+  }
+}
