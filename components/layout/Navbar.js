@@ -10,8 +10,10 @@ import Container from "@/components/layout/Container";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const navLinks = navigation.filter((l) => l.href !== "/products");
+
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-navy/8">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-navy/8">
       <div className="hidden md:block bg-navy text-white text-xs">
         <Container className="flex items-center justify-between py-2">
           <p className="text-white/70">{business.tagline} · {business.address}</p>
@@ -40,12 +42,19 @@ export default function Navbar() {
           </Link>
 
           <ul className="hidden lg:flex items-center gap-1">
-            {navigation.map((link) => (
+            <li>
+              <Link href="/" className="px-3 py-2 text-sm text-navy/80 hover:text-sky transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/products" className="px-3 py-2 text-sm text-navy/80 hover:text-sky transition-colors">
+                Products
+              </Link>
+            </li>
+            {navLinks.slice(1).map((link) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="px-3 py-2 text-sm text-navy/80 hover:text-sky transition-colors"
-                >
+                <Link href={link.href} className="px-3 py-2 text-sm text-navy/80 hover:text-sky transition-colors">
                   {link.label}
                 </Link>
               </li>
@@ -53,10 +62,12 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden lg:flex items-center gap-3">
+            <Button href="/products" variant="secondary" size="sm">
+              Catalog
+            </Button>
             <Button href={business.whatsapp} variant="whatsapp" size="sm" external>
               WhatsApp
             </Button>
-        
           </div>
 
           <button
@@ -78,10 +89,15 @@ export default function Navbar() {
       </Container>
 
       {open && (
-        <div className="lg:hidden border-t border-navy/8 bg-white">
+        <div className="lg:hidden border-t border-navy/8 bg-white max-h-[80vh] overflow-y-auto">
           <Container className="py-4">
             <ul className="flex flex-col gap-1">
-              {navigation.map((link) => (
+              <li>
+                <Link href="/products" className="block px-3 py-3 text-navy font-medium" onClick={() => setOpen(false)}>
+                  Products
+                </Link>
+              </li>
+              {navLinks.slice(1).map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -94,12 +110,8 @@ export default function Navbar() {
               ))}
             </ul>
             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-navy/8">
-              <Button href={business.whatsapp} variant="whatsapp" external>
-                WhatsApp
-              </Button>
-              <Button href={`tel:${business.phoneRaw}`} variant="secondary">
-                Call {business.phone}
-              </Button>
+              <Button href="/products" variant="primary">View Catalog</Button>
+              <Button href={business.whatsapp} variant="whatsapp" external>WhatsApp</Button>
             </div>
           </Container>
         </div>

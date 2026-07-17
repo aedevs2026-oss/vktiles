@@ -3,7 +3,7 @@ import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
 import SectionTitle from "@/components/sections/SectionTitle";
-import TestimonialCard from "@/components/cards/TestimonialCard";
+import TestimonialsCarousel from "@/components/sections/TestimonialsCarousel";
 
 export const metadata = {
   title: "Testimonials",
@@ -25,11 +25,7 @@ export default function TestimonialsPage() {
             title="What Our Customers Say"
             subtitle="5000+ happy homes, hotels and commercial projects delivered across Tamil Nadu."
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.name} testimonial={testimonial} />
-            ))}
-          </div>
+          <TestimonialsCarousel items={testimonials} />
         </Container>
       </section>
 

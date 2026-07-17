@@ -1,17 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BLUR_DATA_URL } from "@/lib/images";
 
 export default function CategoryCard({ category }) {
   return (
     <article className="group relative overflow-hidden card-hover">
-      <Link href={`/products?collection=${category.slug}`} className="block">
+      <Link href={`/products?category=${category.dataCategory || category.slug}`} className="block">
         <div className="relative aspect-[3/4] bg-navy/10">
           {category.image ? (
             <Image
               src={category.image}
               alt={category.name}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
+              className="object-cover category-image-pan transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           ) : null}

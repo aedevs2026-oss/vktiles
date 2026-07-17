@@ -138,3 +138,39 @@ body {
 .animate-fade-up-delay {
   animation: fade-up 0.8s ease 0.15s both;
 }
+
+.swiper-slide-active .hero-ken-burns {
+  animation: hero-ken-burns 6s ease-out forwards;
+}
+
+@keyframes hero-ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero-ken-burns-slow {
+  animation: hero-ken-burns 7s ease-out forwards;
+}
+
+.group:hover .category-image-pan {
+  animation: hero-ken-burns 5s ease-out forwards;
+}
+
+/* Swiper pagination — carousel sections */
+.carousel-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(11, 31, 58, 0.25);
+  opacity: 1;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.carousel-swiper .swiper-pagination-bullet-active {
+  width: 28px;
+  border-radius: 999px;
+  background: var(--sky);
+}

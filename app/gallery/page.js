@@ -1,9 +1,10 @@
-import { gallery, pageHeaders, cta } from "@/content/data";
+import { gallery, pageHeaders, cta, bannerCarouselImages } from "@/content/data";
 import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
 import SectionTitle from "@/components/sections/SectionTitle";
 import GalleryCard from "@/components/cards/GalleryCard";
+import GalleryCarousel from "@/components/sections/GalleryCarousel";
 
 export const metadata = {
   title: "Gallery",
@@ -16,7 +17,7 @@ export default function GalleryPage() {
 
   return (
     <>
-      <PageBanner title={header.title} subtitle={header.subtitle} image={header.image} />
+      <PageBanner title={header.title} subtitle={header.subtitle} images={bannerCarouselImages} />
 
       <section className="section-padding bg-white" aria-label="Photo gallery">
         <Container>
@@ -25,11 +26,7 @@ export default function GalleryPage() {
             title="Installation Gallery"
             subtitle="Real homes, hotels and commercial spaces featuring our premium surfaces."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {gallery.map((item) => (
-              <GalleryCard key={item.slug} item={item} />
-            ))}
-          </div>
+          <GalleryCarousel items={gallery} />
         </Container>
       </section>
 

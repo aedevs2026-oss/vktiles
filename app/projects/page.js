@@ -3,7 +3,7 @@ import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
 import SectionTitle from "@/components/sections/SectionTitle";
-import ProjectCard from "@/components/cards/ProjectCard";
+import ProjectsCarousel from "@/components/sections/ProjectsCarousel";
 
 export const metadata = {
   title: "Projects",
@@ -25,11 +25,7 @@ export default function ProjectsPage() {
             title="Projects We've Delivered"
             subtitle="Residential villas, apartment complexes, hotels and commercial spaces across Tamil Nadu."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
+          <ProjectsCarousel items={projects} />
         </Container>
       </section>
 
