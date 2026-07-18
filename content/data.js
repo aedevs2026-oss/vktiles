@@ -224,8 +224,8 @@ export const whyChooseUs = [
 
 export const brands = [
   {
-    slug: "vk-tiles",
-    name: "VK Tiles & Granites",
+    slug: "simpolo",
+    name: "Simpolo",
     tagline: "Premium GVT & PGVT Tiles",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop",
