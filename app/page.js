@@ -8,12 +8,11 @@ import {
   brands,
   services,
   projects,
-  gallery,
-  testimonials,
   faqs,
   cta,
   contact,
 } from "@/content/data";
+import { getGallery, getTestimonials } from "@/lib/site-content";
 import { getFeaturedProducts } from "@/lib/products";
 import Hero from "@/components/sections/Hero";
 import StatsSection from "@/components/sections/StatsSection";
@@ -37,6 +36,8 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts(8);
+  const gallery = getGallery();
+  const testimonials = getTestimonials();
 
   return (
     <>
@@ -59,10 +60,10 @@ export default function HomePage() {
           aria-label="Product categories"
         >
           <Container>
-            <SectionTitle
+              <SectionTitle
               eyebrow="VK Tiles"
               title="Product Categories"
-              subtitle="Wall, floor, parking, wooden strip, elevation, and natural stone — select a line to browse sizes and designs."
+              subtitle="Browse our floor tile and wooden strip collections — all sizes and designs from the VK catalogue."
             />
             <Carousel
               id="categories"

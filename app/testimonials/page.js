@@ -1,4 +1,5 @@
-import { testimonials, pageHeaders, cta } from "@/content/data";
+import { pageHeaders, cta } from "@/content/data";
+import { getTestimonials } from "@/lib/site-content";
 import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
@@ -13,6 +14,7 @@ export const metadata = {
 
 export default function TestimonialsPage() {
   const header = pageHeaders.testimonials;
+  const testimonials = getTestimonials();
 
   return (
     <>

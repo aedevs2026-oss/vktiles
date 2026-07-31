@@ -7,15 +7,24 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "verify-images": "node scripts/verify-catalog-images.mjs"
+    "verify-images": "node scripts/verify-catalog-images.mjs",
+    "extract-catalog": "python scripts/extract-pdf-catalog.py",
+    "clean-catalog": "python scripts/clean-vk-catalog.py",
+    "import-supabase": "node scripts/import-catalog-to-supabase.mjs",
+    "import-site-content": "node scripts/import-site-content.mjs",
+    "cleanup-public-images": "node scripts/cleanup-public-images.mjs"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.4",
+    "@supabase/supabase-js": "^2.109.0",
     "framer-motion": "^12.42.2",
     "next": "16.2.10",
+    "nodemailer": "^9.0.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "sharp": "^0.35.3",
-    "swiper": "^14.0.5"
+    "swiper": "^14.0.5",
+    "ws": "^8.21.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

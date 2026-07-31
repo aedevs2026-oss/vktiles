@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import ConditionalSiteChrome from "@/components/layout/ConditionalSiteChrome";
 import { seo, business } from "@/content/data";
 
 const playfair = Playfair_Display({
@@ -47,9 +46,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${poppins.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased bg-background text-foreground">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ConditionalSiteChrome>{children}</ConditionalSiteChrome>
       </body>
     </html>
   );

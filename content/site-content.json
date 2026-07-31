@@ -1,0 +1,117 @@
+{
+  "updatedAt": "2026-07-31T07:01:07.312Z",
+  "business": {
+    "name": "VK Tiles & Granites",
+    "tagline": "Elegance Beyond Surface",
+    "description": "Tamil Nadu's trusted wholesale destination for premium premium tiles and designer surfaces. Visit our Bommidi showroom or enquire for bulk supply across the state.",
+    "address": "Plot No. 2/289, Bommidi, Tamil Nadu - 635301",
+    "phone": "+91 63094 93308",
+    "phoneRaw": "+916309493308",
+    "email": "info@vktilesandgranites.in",
+    "whatsapp": "https://wa.me/916309493308",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5!2d78.0!3d12.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAwJzAwLjAiTiA3OMKwMDAnMDAuMCJF!5e0!2sen!2sin!4v1700000000000",
+    "mapLink": "https://maps.google.com/?q=VK+Tiles+Granites+Bommidi",
+    "founded": 2010
+  },
+  "businessHours": [
+    {
+      "day": "Monday – Saturday",
+      "hours": "9:00 AM – 8:00 PM"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ],
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Visit Our Showroom or Send an Enquiry",
+    "subtitle": "We're here to help with product selection, packing quantities, bulk orders, and project consultations.",
+    "inquiryTypes": [
+      "General",
+      "Dealer",
+      "Builder",
+      "Architect"
+    ]
+  },
+  "emailConfig": {
+    "formRecipientEmail": "info@vktilesandgranites.in",
+    "sendAutoReply": true,
+    "autoReplyMessage": "Thank you for contacting VK Tiles & Granites. We have received your enquiry and will respond shortly."
+  },
+  "gallery": [
+    {
+      "slug": "concrete-collection",
+      "caption": "Concrete Look — Alchimia & Spectra",
+      "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1400&auto=format&fit=crop",
+      "thumb": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=700&auto=format&fit=crop"
+    },
+    {
+      "slug": "large-format-floor",
+      "caption": "Large Format Floor Installation",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop",
+      "thumb": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=700&auto=format&fit=crop"
+    },
+    {
+      "slug": "matt-finish-wall",
+      "caption": "Matt Finish Feature Wall",
+      "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1400&auto=format&fit=crop",
+      "thumb": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=700&auto=format&fit=crop"
+    },
+    {
+      "slug": "commercial-lobby",
+      "caption": "Commercial Lobby — Seamless Grout Lines",
+      "image": "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1400&auto=format&fit=crop",
+      "thumb": "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=700&auto=format&fit=crop"
+    },
+    {
+      "slug": "polished-interior",
+      "caption": "Polished Interior Flooring",
+      "image": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1400&auto=format&fit=crop",
+      "thumb": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=700&auto=format&fit=crop"
+    },
+    {
+      "slug": "showroom-display",
+      "caption": "VK Showroom Collection Display",
+      "image": "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1400&auto=format&fit=crop",
+      "thumb": "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=700&auto=format&fit=crop"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Ramesh Kumar",
+      "role": "Homeowner, Salem",
+      "avatar": "https://i.pravatar.cc/120?img=32",
+      "quote": "The finish and quality of the premium tiles we bought was beyond our expectations. VK's team helped us choose exactly what suited our project.",
+      "rating": 5
+    },
+    {
+      "name": "Suresh Babu",
+      "role": "Civil Contractor, Dharmapuri",
+      "avatar": "https://i.pravatar.cc/120?img=51",
+      "quote": "As a contractor, I rely on consistent stock and honest packing data. VK Tiles has never let a project down.",
+      "rating": 5
+    },
+    {
+      "name": "Priya Lakshmi",
+      "role": "Interior Designer, Erode",
+      "avatar": "https://i.pravatar.cc/120?img=47",
+      "quote": "From large-format floors to feature walls, everything came from VK. Their showroom made choosing so much easier.",
+      "rating": 5
+    },
+    {
+      "name": "Karthik Rajan",
+      "role": "Builder, Salem",
+      "avatar": "https://i.pravatar.cc/120?img=12",
+      "quote": "We've sourced premium tiles for four apartment projects from VK. Competitive wholesale rates and reliable delivery every time.",
+      "rating": 5
+    },
+    {
+      "name": "Meena Devi",
+      "role": "Homeowner, Dharmapuri",
+      "avatar": "https://i.pravatar.cc/120?img=23",
+      "quote": "The team patiently showed us dozens of collection options until we found the perfect match. Highly recommended!",
+      "rating": 5
+    }
+  ]
+}

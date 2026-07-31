@@ -1,10 +1,5 @@
-import {
-  business,
-  businessHours,
-  contact,
-  pageHeaders,
-  cta,
-} from "@/content/data";
+import { pageHeaders, cta } from "@/content/data";
+import { getBusiness, getContactConfig } from "@/lib/site-content";
 import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
@@ -15,11 +10,13 @@ import Button from "@/components/ui/Button";
 export const metadata = {
   title: "Contact",
   description:
-    "Contact VK Tiles & Granites — visit our Bommidi showroom, call +91 63094 93308 or send an enquiry for tiles, granite and marble.",
+    "Contact VK Tiles & Granites — visit our Bommidi showroom, call us or send an enquiry for tiles, granite and marble.",
 };
 
 export default function ContactPage() {
   const header = pageHeaders.contact;
+  const business = getBusiness();
+  const { contact, businessHours } = getContactConfig();
 
   return (
     <>
@@ -31,7 +28,7 @@ export default function ContactPage() {
             <div>
               <SectionTitle
                 eyebrow={contact.eyebrow}
-                title="Send an Enquiry"
+                title={contact.title || "Send an Enquiry"}
                 subtitle={contact.subtitle}
                 align="left"
                 className="mb-8"

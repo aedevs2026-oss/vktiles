@@ -1,9 +1,9 @@
-import { gallery, pageHeaders, cta, bannerCarouselImages } from "@/content/data";
+import { pageHeaders, cta, bannerCarouselImages } from "@/content/data";
+import { getBusiness, getContactConfig, getGallery } from "@/lib/site-content";
 import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
 import SectionTitle from "@/components/sections/SectionTitle";
-import GalleryCard from "@/components/cards/GalleryCard";
 import GalleryCarousel from "@/components/sections/GalleryCarousel";
 
 export const metadata = {
@@ -14,6 +14,7 @@ export const metadata = {
 
 export default function GalleryPage() {
   const header = pageHeaders.gallery;
+  const gallery = getGallery();
 
   return (
     <>

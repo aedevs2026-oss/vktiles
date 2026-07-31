@@ -118,6 +118,18 @@ export default async function ProductDetailPage({ params }) {
                 <SpecCard label="Pattern" value={product.pattern} />
                 <SpecCard label="Collection" value={product.collection} />
                 <SpecCard label="Thickness" value={product.thickness} />
+                {product.specifications?.material && (
+                  <SpecCard label="Material" value={product.specifications.material} />
+                )}
+                {product.specifications?.coverage && (
+                  <SpecCard label="Coverage / Box" value={product.specifications.coverage} />
+                )}
+                {product.specifications?.tilesPerBox && (
+                  <SpecCard label="Tiles / Box" value={String(product.specifications.tilesPerBox)} />
+                )}
+                {product.specifications?.weightPerBox && (
+                  <SpecCard label="Weight / Box" value={product.specifications.weightPerBox} />
+                )}
               </dl>
 
               {product.features?.length > 0 && (

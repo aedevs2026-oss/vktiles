@@ -1,37 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState } from "react";
 import Button from "@/components/ui/Button";
+import { submitContactEnquiryAction } from "@/app/admin/actions/enquiries";
 
 export default function ContactForm({ inquiryTypes = [] }) {
-  const [status, setStatus] = useState("idle");
+  const [state, formAction, pending] = useActionState(submitContactEnquiryAction, null);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setStatus("success");
-    e.target.reset();
-  }
-
-  if (status === "success") {
+  if (state?.success) {
     return (
       <div className="bg-accent/30 border border-gold/30 p-8 text-center">
         <p className="font-display text-xl text-dark mb-2">Thank you!</p>
-        <p className="text-gray text-sm">
-          Your enquiry has been received. We&apos;ll get back to you shortly.
-        </p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className="mt-4 text-gold text-sm font-medium hover:underline"
-        >
-          Send another message
-        </button>
+        <p className="text-gray text-sm">{state.message}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form action={formAction} className="space-y-5">
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        className="absolute opacity-0 pointer-events-none h-0 w-0"
+        aria-hidden="true"
+      />
+
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block text-xs font-medium text-dark mb-2 uppercase tracking-wider">
@@ -107,8 +102,10 @@ export default function ContactForm({ inquiryTypes = [] }) {
         />
       </div>
 
-      <Button type="submit" size="lg" className="w-full sm:w-auto">
-        Send Enquiry
+      {state?.error && <p className="text-red-600 text-sm">{state.error}</p>}
+
+      <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={pending}>
+        {pending ? "Sending..." : "Send Enquiry"}
       </Button>
     </form>
   );
