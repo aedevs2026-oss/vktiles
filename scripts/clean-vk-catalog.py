@@ -1,16 +1,19 @@
-"""Clean VK catalog: keep VKPdf products only, enrich specs, remove duplicates."""
+"""Clean VK catalog: enrich specs, descriptions, dedupe by series+name."""
 import json
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "content" / "valenza-catalog.json"
+SRC = ROOT / "content" / "vk-catalog.json"
 OUT = ROOT / "content" / "vk-catalog.json"
 
 BRAND = "VK Tiles & Granites"
 MATERIAL = {
     "gvt-pgvt": "Glazed Vitrified Tile (GVT/PGVT)",
     "wooden-strip": "Porcelain Wood-Look Tile",
+    "wall-tiles": "Ceramic Wall Tile",
+    "elevation-tiles": "Elevation / High Depth Tile",
+    "parking-tiles": "Parking Floor Tile",
 }
 
 
@@ -18,16 +21,13 @@ def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", (text or "").strip().lower()).strip("-")
 
 
-def is_vkpdf_product(p: dict) -> bool:
-    image = p.get("image") or ""
-    return image.startswith("/products/vk-pdf/")
-
-
 def norm_name(name: str) -> str:
     return re.sub(r"\s+", " ", (name or "").strip().upper())
 
 
 def build_description(p: dict) -> str:
+    if p.get("description") and len(p["description"].split()) >= 40:
+        return p["description"]
     packing = (p.get("packing") or [{}])[0]
     apps = ", ".join((p.get("applications") or [])[:4])
     material = MATERIAL.get(p.get("category"), "Premium Ceramic Tile")
@@ -44,7 +44,8 @@ def build_description(p: dict) -> str:
 
 def build_specifications(p: dict) -> dict:
     packing = (p.get("packing") or [{}])[0]
-    return {
+    specs = p.get("specifications") or {}
+    base = {
         "size": p.get("size"),
         "thickness": p.get("thickness"),
         "finish": p.get("finish"),
@@ -59,6 +60,7 @@ def build_specifications(p: dict) -> dict:
         "frostResistant": True,
         "stainResistant": True,
     }
+    return {**base, **specs}
 
 
 def build_seo(p: dict) -> dict:
@@ -66,9 +68,10 @@ def build_seo(p: dict) -> dict:
     finish = p.get("finish", "")
     collection = p.get("collection", "")
     packing = (p.get("packing") or [{}])[0]
+    desc = (p.get("description") or "")[:160]
     return {
         "title": f"{p['name']} | {size} {finish} | {BRAND}",
-        "description": (
+        "description": desc or (
             f"Buy {p['name']} {size} {finish} tile from {BRAND}. "
             f"{packing.get('tilesPerBox', 2)} tiles/box, {packing.get('coverage', '1.44 SQM')} coverage."
         ),
@@ -78,7 +81,7 @@ def build_seo(p: dict) -> dict:
 
 def main() -> None:
     catalog = json.loads(SRC.read_text(encoding="utf-8"))
-    products = [p for p in catalog.get("products", []) if is_vkpdf_product(p)]
+    products = catalog.get("products", [])
 
     seen = set()
     cleaned = []
@@ -93,12 +96,11 @@ def main() -> None:
         p["specifications"] = build_specifications(p)
         p["seo"] = build_seo(p)
         p["collectionSlug"] = slugify(p.get("collection", ""))
-        p["downloads"] = {
-            "catalog": f"/VKPdf/{p.get('series', 'catalog')}.pdf",
-            "specification": "/contact",
-        }
-        if "sourceUrl" in p:
-            del p["sourceUrl"]
+        pdf_name = p.get("downloads", {}).get("catalog", "").replace("/Vkpdf/", "")
+        if not pdf_name or pdf_name.endswith(".pdf"):
+            pass
+        elif p.get("series"):
+            p.setdefault("downloads", {})["catalog"] = f"/Vkpdf/{pdf_name or p.get('series')}.pdf"
         cleaned.append(p)
 
     categories = {}
@@ -124,7 +126,7 @@ def main() -> None:
         "source": "VKPdf local catalog",
         "categories": sorted(categories.values(), key=lambda c: (c["category"], c["name"])),
         "products": cleaned,
-        "errors": [],
+        "errors": catalog.get("errors", []),
     }
 
     OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

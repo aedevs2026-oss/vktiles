@@ -2,7 +2,7 @@
 import fitz
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1] / "VKPdf"
+ROOT = Path(__file__).resolve().parents[1] / "Vkpdf"
 
 total = 0
 for pdf in sorted(ROOT.glob("*.pdf")):

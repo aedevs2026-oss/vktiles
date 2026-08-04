@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Import content/vk-catalog.json into Supabase.
+ * Import content/vk-catalog.json into Supabase (idempotent upsert).
  * Usage: node scripts/import-catalog-to-supabase.mjs
  */
 import fs from "fs";
@@ -41,6 +41,9 @@ function slugify(text) {
 const CATEGORY_LABELS = {
   "gvt-pgvt": "GVT / PGVT Floor Tiles",
   "wooden-strip": "Wooden Strip",
+  "wall-tiles": "Wall Tiles",
+  "elevation-tiles": "Elevation Tiles",
+  "parking-tiles": "Parking Tiles",
 };
 
 async function upsertCategories() {
@@ -55,7 +58,7 @@ async function upsertCategories() {
   }));
   const { error } = await supabase.from("categories").upsert(rows, { onConflict: "slug" });
   if (error) throw error;
-  console.log(`Categories: ${rows.length}`);
+  console.log(`[ok] Categories upserted: ${rows.length}`);
 }
 
 async function upsertCollections() {
@@ -78,30 +81,75 @@ async function upsertCollections() {
   const rows = [...map.values()];
   const { error } = await supabase.from("collections").upsert(rows, { onConflict: "slug" });
   if (error) throw error;
-  console.log(`Collections: ${rows.length}`);
+  console.log(`[ok] Collections upserted: ${rows.length}`);
+}
+
+async function fetchExistingSlugs(slugs) {
+  const existing = new Set();
+  const batchSize = 50;
+  for (let i = 0; i < slugs.length; i += batchSize) {
+    const batch = slugs.slice(i, i + batchSize);
+    const { data, error } = await supabase.from("products").select("slug").in("slug", batch);
+    if (error) throw error;
+    for (const row of data || []) {
+      existing.add(row.slug);
+    }
+  }
+  return existing;
 }
 
 async function upsertProducts() {
   const batchSize = 100;
-  const products = catalog.products;
-  for (let i = 0; i < products.length; i += batchSize) {
-    const batch = products.slice(i, i + batchSize).map((p) => {
+  const seenSlugs = new Set();
+  let duplicatesSkipped = 0;
+  let inserted = 0;
+  let updated = 0;
+
+  const uniqueProducts = [];
+  for (const p of catalog.products) {
+    if (seenSlugs.has(p.slug)) {
+      duplicatesSkipped += 1;
+      continue;
+    }
+    seenSlugs.add(p.slug);
+    uniqueProducts.push(p);
+  }
+
+  const existingSlugs = await fetchExistingSlugs(uniqueProducts.map((p) => p.slug));
+
+  for (let i = 0; i < uniqueProducts.length; i += batchSize) {
+    const batch = uniqueProducts.slice(i, i + batchSize).map((p) => {
       const row = productToRow(p);
       row.collection_slug = p.collectionSlug || slugify(p.collection);
       return row;
     });
+
+    for (const row of batch) {
+      if (existingSlugs.has(row.slug)) {
+        updated += 1;
+      } else {
+        inserted += 1;
+        existingSlugs.add(row.slug);
+      }
+    }
+
     const { error } = await supabase.from("products").upsert(batch, { onConflict: "slug" });
     if (error) throw error;
-    console.log(`Products: ${Math.min(i + batchSize, products.length)} / ${products.length}`);
   }
+
+  console.log(`[ok] Products inserted:  ${inserted}`);
+  console.log(`[ok] Products updated:   ${updated}`);
+  console.log(`[skip] Duplicates skipped: ${duplicatesSkipped}`);
+  console.log(`[ok] Total in catalog:   ${uniqueProducts.length}`);
 }
 
 async function main() {
   console.log("Importing VK catalog to Supabase...");
+  console.log(`Catalog: ${catalog.count ?? catalog.products?.length} products\n`);
   await upsertCategories();
   await upsertCollections();
   await upsertProducts();
-  console.log("Done.");
+  console.log("\nDone.");
 }
 
 main().catch((err) => {

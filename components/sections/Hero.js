@@ -20,14 +20,15 @@ export default function Hero({ slides = [], data, compact = false }) {
 
   const slide = items[activeIndex] || items[0];
   const hasMultiple = items.length > 1;
-  const minHeight = compact ? "min-h-[72vh]" : "min-h-[88vh]";
+  const heightClass = compact
+    ? "min-h-[72vh]"
+    : "h-[56vw] md:h-[40vw] lg:h-screen";
 
   return (
     <section
-      className={`relative ${minHeight} flex items-center overflow-hidden bg-navy`}
+      className={`relative ${heightClass} flex items-center overflow-hidden bg-navy`}
       aria-label="Hero banner"
     >
-      {/* Auto-sliding background */}
       <Swiper
         modules={[Autoplay, EffectFade, A11y]}
         effect="fade"
@@ -45,99 +46,38 @@ export default function Hero({ slides = [], data, compact = false }) {
       >
         {items.map((item, i) => (
           <SwiperSlide key={item.id || i} className="!h-full">
-            <div className={`relative h-full ${minHeight}`}>
-              <Image
-                src={item.image}
-                alt=""
-                fill
-                priority={i === 0}
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
-                className="object-cover object-center hero-ken-burns"
-                sizes="100vw"
-              />
-              <div className="absolute inset-0 hero-overlay" />
+            <div className="relative h-full">
+              {item.video ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="absolute inset-0 h-full w-full min-h-full min-w-full object-cover object-center"
+                  poster={item.poster || ""}
+                >
+                  <source src={item.video} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  priority={i === 0}
+                  placeholder="blur"
+                  blurDataURL={BLUR_DATA_URL}
+                  className="object-cover object-center hero-ken-burns"
+                  sizes="100vw"
+                />
+              )}
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Content panel — spans full width so its own dedicated background image is visible; text stays pinned left */}
-      <div className="absolute inset-0 z-10">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={slide.id || activeIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-full w-full overflow-hidden"
-          >
-            {/* Dedicated background image for this panel — slow Ken Burns on each slide change */}
-            <motion.div
-              className="absolute inset-0"
-              initial={{ scale: 1.12, opacity: 0.85 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 5.5, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <Image
-                src={slide.contentImage || slide.image}
-                alt=""
-                fill
-                priority={activeIndex === 0}
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
-                className="object-cover object-center hero-ken-burns-slow"
-                sizes="100vw"
-              />
-            </motion.div>
-            {/* Gradient so the image reads clearly on the right while text stays legible on the left */}
-            <div className="absolute inset-0 bg-gradient-to-r from-navy/88 via-navy/50 to-navy/15" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/30 via-black/10 to-transparent" />
 
-            <Container className="relative h-full">
-              <div className="flex h-full items-center py-24 md:py-32">
-                <motion.div
-                  initial={{ opacity: 0, x: -24 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  className="max-w-3xl text-left"
-                >
-                  {slide.eyebrow && (
-                    <p className="text-sky-bright text-xs font-semibold uppercase tracking-[0.28em] mb-5">
-                      {slide.eyebrow}
-                    </p>
-                  )}
-                  <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.08] text-balance mb-6">
-                    {slide.title}
-                  </h1>
-                  <p className="text-white/85 text-base md:text-lg leading-relaxed max-w-xl mb-10">
-                    {slide.subtitle}
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    {slide.ctaPrimary && (
-                      <Button href={slide.ctaPrimary.href} size="lg">
-                        {slide.ctaPrimary.label}
-                      </Button>
-                    )}
-                    {slide.ctaSecondary && (
-                      <Button
-                        href={slide.ctaSecondary.href}
-                        variant="outline"
-                        size="lg"
-                        className="!text-white !border-white/50 hover:!bg-white hover:!text-navy"
-                      >
-                        {slide.ctaSecondary.label}
-                      </Button>
-                    )}
-                  </div>
-                </motion.div>
-              </div>
-            </Container>
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      {/* Minimal slide progress — no nav buttons */}
       {hasMultiple && (
         <div
           className="absolute bottom-8 left-0 right-0 z-10 flex justify-center gap-2 pointer-events-none"

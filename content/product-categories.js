@@ -16,6 +16,20 @@ export const HOME_PRODUCT_CATEGORIES = [
     dataCategory: "wooden-strip",
     image: CATEGORY_IMAGES["wooden-strip"],
   },
+  {
+    slug: "wall-tiles",
+    name: "Wall Tiles",
+    blurb: "Decorative wall tiles — 400×400 mm (16×16)",
+    dataCategory: "wall-tiles",
+    image: CATEGORY_IMAGES["wall-tiles"],
+  },
+  {
+    slug: "elevation-tiles",
+    name: "Elevation Tiles",
+    blurb: "High depth elevation tiles — 300×450 mm",
+    dataCategory: "elevation-tiles",
+    image: CATEGORY_IMAGES["elevation-tiles"],
+  },
 ];
 
 export const CATALOG_FILTER_CATEGORIES = HOME_PRODUCT_CATEGORIES.map((c) => ({

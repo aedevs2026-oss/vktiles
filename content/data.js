@@ -54,47 +54,19 @@ export const hero = {
 export const heroSlides = [
   {
     id: "elegance",
-    eyebrow: "VK Tiles & Granites",
-    title: "Elegance Beyond Surface",
-    subtitle:
-      "Premium vitrified & ceramic tiles with full packing details, wholesale pricing, and delivery across Tamil Nadu.",
-    image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1920&auto=format&fit=crop",
-    ctaPrimary: { label: "Explore Products", href: "/products" },
-    ctaSecondary: { label: "Visit Showroom", href: "/contact" },
+    video: "/hero/hero-3.mp4",
   },
   {
     id: "gvt-floor",
-    eyebrow: "Floor Tiles",
-    title: "GVT & PGVT Collections",
-    subtitle:
-      "Large-format glazed vitrified tiles — marble, stone and concrete looks for homes and commercial spaces.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop",
-    ctaPrimary: { label: "View Floor Tiles", href: "/products?category=gvt-pgvt" },
-    ctaSecondary: { label: "Get Quote", href: "/contact" },
+    video: "/hero/hero-2.mp4",
   },
   {
     id: "wall-design",
-    eyebrow: "Wall Tiles",
-    title: "Designer Wall Finishes",
-    subtitle:
-      "Digital wall tiles for kitchens, bathrooms and feature walls — every size with exact coverage data.",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1920&auto=format&fit=crop",
-    ctaPrimary: { label: "Browse Wall Tiles", href: "/products?category=wall-tiles" },
-    ctaSecondary: { label: "WhatsApp Us", href: "https://wa.me/916309493308" },
+    video: "/hero/hero-1.mp4",
   },
   {
     id: "showroom",
-    eyebrow: "Bommidi Showroom",
-    title: "275+ Designs In Stock",
-    subtitle:
-      "Walk our showroom, compare finishes in natural light, and order with confidence.",
-    image:
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1920&auto=format&fit=crop",
-    ctaPrimary: { label: "View Categories", href: "/#product-categories" },
-    ctaSecondary: { label: "Contact Us", href: "/contact" },
+    video: "/hero/hero-2.mp4",
   },
 ];
 
