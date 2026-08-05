@@ -2,7 +2,7 @@
 
 import AppImage from "@/components/ui/AppImage";
 import { motion, AnimatePresence } from "framer-motion";
-import { useId, useState } from "react";
+import { useId, useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, A11y, Navigation } from "swiper/modules";
 import Button from "@/components/ui/Button";
@@ -15,6 +15,41 @@ import "swiper/css/navigation";
 const heroNavBtn =
   "w-11 h-11 rounded-full border border-white/25 bg-navy/45 backdrop-blur-md flex items-center justify-center text-white hover:bg-sky hover:border-sky transition-all shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky focus-visible:ring-offset-2 focus-visible:ring-offset-navy";
 
+function HeroVideo({ src, poster }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+
+    const tryPlay = () => {
+      video.play().catch(() => {});
+    };
+
+    tryPlay();
+    video.addEventListener("canplay", tryPlay);
+
+    return () => {
+      video.removeEventListener("canplay", tryPlay);
+    };
+  }, [src]);
+
+  return (
+    <video
+      ref={ref}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      poster={poster || ""}
+      className="absolute inset-0 h-full w-full object-cover object-center bg-navy"
+    >
+      <source src={src} type="video/mp4" />
+    </video>
+  );
+}
+
 export default function Hero({ slides = [], data, compact = false }) {
   const items = slides.length ? slides : data ? [{ ...data, id: "hero-1" }] : [];
   const [activeIndex, setActiveIndex] = useState(0);
@@ -25,79 +60,85 @@ export default function Hero({ slides = [], data, compact = false }) {
   if (!items.length) return null;
 
   const slide = items[activeIndex] || items[0];
-  const hasMultiple = items.length > 1;
-  const hasContent = Boolean(slide.title || slide.eyebrow || slide.subtitle);
+  const content = {
+    eyebrow: slide?.eyebrow || data?.eyebrow,
+    title: slide?.title || data?.title,
+    subtitle: slide?.subtitle || data?.subtitle,
+    ctaPrimary: slide?.ctaPrimary || data?.ctaPrimary,
+    ctaSecondary: slide?.ctaSecondary || data?.ctaSecondary,
+  };
+  const hasContent = Boolean(
+    content.eyebrow || content.title || content.subtitle || content.ctaPrimary || content.ctaSecondary
+  );
 
   const heightClass = compact
     ? hasContent
       ? "min-h-[min(72vh,640px)] md:min-h-[min(68vh,560px)]"
       : "min-h-[min(72vh,640px)]"
-    : "h-[56vw] md:h-[40vw] lg:h-screen";
+    : hasContent
+      ? "min-h-[min(88vh,820px)] sm:min-h-[min(82vh,760px)] md:min-h-[min(75vh,700px)] lg:h-screen lg:min-h-0"
+      : "h-[72vh] min-h-[300px] sm:h-[70vh] md:h-[42vw] lg:h-screen";
 
   const showHeroArrows = false;
+  const hasMultiple = items.length > 1;
+
+  const contentAnimKey =
+    slide?.title || slide?.eyebrow || slide?.subtitle ? slide.id || activeIndex : "hero-overlay";
 
   return (
     <section
-      className={`relative ${heightClass} flex items-center overflow-hidden bg-navy`}
+      className={`relative ${heightClass} overflow-hidden bg-navy isolate`}
       aria-label="Hero banner"
     >
-      <Swiper
-        modules={[Autoplay, EffectFade, A11y, Navigation]}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-        speed={1000}
-        loop={hasMultiple}
-        autoplay={
-          hasMultiple
-            ? { delay: 5500, disableOnInteraction: false, pauseOnMouseEnter: true }
-            : false
-        }
-        navigation={
-          showHeroArrows
-            ? { prevEl: `.${prevClass}`, nextEl: `.${nextClass}` }
-            : false
-        }
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-        className="absolute inset-0 !h-full !w-full hero-bg-swiper"
-        aria-hidden={hasContent ? true : undefined}
-      >
-        {items.map((item, i) => (
-          <SwiperSlide key={item.id || i} className="!h-full">
-            <div className="relative h-full min-h-[280px]">
-              {item.video ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="absolute inset-0 h-full w-full min-h-full min-w-full object-cover object-center"
-                  poster={item.poster || item.image || ""}
-                >
-                  <source src={item.video} type="video/mp4" />
-                </video>
-              ) : item.image ? (
-                <AppImage
-                  src={item.image}
-                  alt=""
-                  fill
-                  priority={i === 0}
-                  className="object-cover object-center hero-ken-burns"
-                  sizes="100vw"
-                />
-              ) : null}
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="absolute inset-0 z-0">
+        <Swiper
+          modules={[Autoplay, EffectFade, A11y, Navigation]}
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          speed={1000}
+          loop={hasMultiple}
+          autoplay={
+            hasMultiple
+              ? { delay: 5500, disableOnInteraction: false, pauseOnMouseEnter: true }
+              : false
+          }
+          navigation={
+            showHeroArrows
+              ? { prevEl: `.${prevClass}`, nextEl: `.${nextClass}` }
+              : false
+          }
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          className="hero-bg-swiper h-full w-full"
+          aria-hidden={hasContent ? true : undefined}
+        >
+          {items.map((item, i) => (
+            <SwiperSlide key={item.id || i}>
+              <div className="relative h-full w-full">
+                {item.video ? (
+                  <HeroVideo src={item.video} poster={item.poster || item.image} />
+                ) : item.image ? (
+                  <AppImage
+                    src={item.image}
+                    alt=""
+                    fill
+                    priority={i === 0}
+                    className="object-cover object-center hero-ken-burns"
+                    sizes="100vw"
+                  />
+                ) : null}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
       <div
-        className={`absolute inset-0 z-10 ${
+        className={`absolute inset-0 z-[1] pointer-events-none ${
           hasContent
             ? compact
               ? "bg-gradient-to-r from-navy/82 via-navy/55 to-navy/25 hero-overlay"
               : "bg-gradient-to-r from-navy/92 via-navy/70 to-navy/35 md:to-navy/20"
-            : "bg-gradient-to-r from-black/30 via-black/10 to-transparent"
+            : "bg-gradient-to-b from-black/20 via-transparent to-black/25"
         }`}
       />
 
@@ -121,61 +162,61 @@ export default function Hero({ slides = [], data, compact = false }) {
       )}
 
       {hasContent && (
-        <Container className="relative z-20 py-16 md:py-20">
+        <Container className="relative z-20 py-10 pb-12 sm:py-14 md:py-20">
           <div className="max-w-2xl">
             <AnimatePresence mode="wait">
               <motion.div
-                key={slide.id || activeIndex}
+                key={contentAnimKey}
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
-                {slide.eyebrow && (
-                  <p className="text-sky-bright text-xs font-semibold uppercase tracking-[0.25em] mb-4">
-                    {slide.eyebrow}
+                {content.eyebrow && (
+                  <p className="text-sky-bright text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] sm:tracking-[0.25em] mb-3 sm:mb-4">
+                    {content.eyebrow}
                   </p>
                 )}
-                {slide.title && (
-                  <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white text-balance leading-tight mb-5">
-                    {slide.title}
+                {content.title && (
+                  <h1 className="font-display text-[2rem] leading-[1.12] sm:text-4xl md:text-5xl lg:text-6xl text-white text-balance mb-4 sm:mb-5">
+                    {content.title}
                   </h1>
                 )}
-                {slide.subtitle && (
-                  <p className="text-white/75 text-base md:text-lg leading-relaxed max-w-xl mb-8">
-                    {slide.subtitle}
+                {content.subtitle && (
+                  <p className="text-white/75 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mb-6 sm:mb-8">
+                    {content.subtitle}
                   </p>
                 )}
-                {(slide.ctaPrimary || slide.ctaSecondary) && (
-                  <div className="flex flex-wrap gap-3">
-                    {slide.ctaPrimary && (
-                      <Button href={slide.ctaPrimary.href} size="lg">
-                        {slide.ctaPrimary.label}
+                {(content.ctaPrimary || content.ctaSecondary) && (
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                    {content.ctaPrimary && (
+                      <Button href={content.ctaPrimary.href} size="lg" className="w-full sm:w-auto justify-center">
+                        {content.ctaPrimary.label}
                       </Button>
                     )}
-                    {slide.ctaSecondary && (
+                    {content.ctaSecondary && (
                       <Button
-                        href={slide.ctaSecondary.href}
+                        href={content.ctaSecondary.href}
                         variant="outline"
                         size="lg"
-                        className="!border-white/35 !text-white hover:!bg-white/10"
-                        external={slide.ctaSecondary.href?.startsWith("http")}
+                        className="w-full sm:w-auto justify-center !border-white/35 !text-white hover:!bg-white/10"
+                        external={content.ctaSecondary.href?.startsWith("http")}
                       >
-                        {slide.ctaSecondary.label}
+                        {content.ctaSecondary.label}
                       </Button>
                     )}
                   </div>
                 )}
-                <div className="brand-line mt-8 !bg-gradient-to-r from-sky to-sky-bright" aria-hidden="true" />
+                <div className="brand-line mt-6 sm:mt-8 !bg-gradient-to-r from-sky to-sky-bright" aria-hidden="true" />
               </motion.div>
             </AnimatePresence>
           </div>
         </Container>
       )}
 
-      {hasMultiple && !compact && (
+      {hasMultiple && !compact && !hasContent && (
         <div
-          className="absolute bottom-8 left-0 right-0 z-20 flex justify-center gap-2 pointer-events-none"
+          className="absolute bottom-6 sm:bottom-8 left-0 right-0 z-20 flex justify-center gap-2 pointer-events-none"
           aria-hidden="true"
         >
           {items.map((item, i) => (

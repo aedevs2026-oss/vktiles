@@ -103,6 +103,18 @@ body {
     );
 }
 
+.hero-bg-swiper,
+.hero-bg-swiper .swiper-wrapper,
+.hero-bg-swiper .swiper-slide {
+  height: 100% !important;
+  min-height: 100%;
+}
+
+.hero-bg-swiper .swiper-slide > div {
+  height: 100%;
+  min-height: 100%;
+}
+
 .brand-mesh {
   background:
     radial-gradient(ellipse at 20% 20%, rgba(59, 164, 230, 0.18), transparent 45%),

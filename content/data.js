@@ -51,18 +51,26 @@ export const heroSlides = [
   {
     id: "elegance",
     video: "/hero/hero-3.mp4",
+    poster:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "gvt-floor",
     video: "/hero/hero-2.mp4",
+    poster:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "wall-design",
     video: "/hero/hero-1.mp4",
+    poster:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "showroom",
     video: "/hero/hero-2.mp4",
+    poster:
+      "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
