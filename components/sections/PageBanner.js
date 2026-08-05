@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import AppImage from "@/components/ui/AppImage";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, A11y } from "swiper/modules";
 import Container from "@/components/layout/Container";
@@ -22,14 +22,16 @@ export default function PageBanner({ title, subtitle, image, images }) {
         <div className="absolute inset-0">
           {slides.length === 1 ? (
             <>
-              <Image
-                src={slides[0]}
-                alt=""
-                fill
-                className="object-cover opacity-30 scale-105"
-                sizes="100vw"
-                priority
-              />
+              <div className="absolute inset-0 opacity-30">
+                <AppImage
+                  src={slides[0]}
+                  alt=""
+                  fill
+                  priority
+                  className="object-cover scale-105"
+                  sizes="100vw"
+                />
+              </div>
             </>
           ) : (
             <Swiper
@@ -43,8 +45,8 @@ export default function PageBanner({ title, subtitle, image, images }) {
             >
               {slides.map((src) => (
                 <SwiperSlide key={src}>
-                  <div className="relative h-full min-h-[280px]">
-                    <Image src={src} alt="" fill className="object-cover opacity-30 scale-105" sizes="100vw" />
+                  <div className="relative h-full min-h-[280px] opacity-30">
+                    <AppImage src={src} alt="" fill className="object-cover scale-105" sizes="100vw" />
                   </div>
                 </SwiperSlide>
               ))}

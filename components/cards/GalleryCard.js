@@ -1,16 +1,16 @@
-import Image from "next/image";
+import AppImage from "@/components/ui/AppImage";
 import Link from "next/link";
 
 export default function GalleryCard({ item }) {
   return (
     <article className="group relative overflow-hidden card-hover">
       <Link href="/gallery" className="block">
-        <div className="relative aspect-[4/3]">
-          <Image
+        <div className="relative aspect-[4/3] bg-navy/5">
+          <AppImage
             src={item.thumb || item.image}
             alt={item.caption}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           <div className="absolute inset-0 image-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">

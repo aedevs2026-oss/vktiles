@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import AppImage from "@/components/ui/AppImage";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { productNav, categoryIcons } from "@/content/catalog-nav";
-import { BLUR_DATA_URL } from "@/lib/images";
 
 function navSlugToCategory(slug) {
   if (slug === "floor-tiles") return "gvt-pgvt";
@@ -32,14 +31,12 @@ function PreviewProduct({ product }) {
       className="relative h-full min-h-[280px] rounded-2xl overflow-hidden bg-navy/5 shadow-lg shadow-navy/10"
     >
       {product.image && (
-        <Image
+        <AppImage
           src={product.image}
           alt={product.name}
           fill
           className="object-cover"
           sizes="400px"
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />

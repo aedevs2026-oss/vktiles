@@ -31,12 +31,8 @@ export const navigation = [
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
   { href: "/#product-categories", label: "Collections" },
-  { href: "/brands", label: "Brands" },
   { href: "/gallery", label: "Gallery" },
   { href: "/services", label: "Services" },
-  { href: "/projects", label: "Projects" },
-  { href: "/testimonials", label: "Testimonials" },
-  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -70,50 +66,50 @@ export const heroSlides = [
   },
 ];
 
-/** Products page hero — left content + full-width background carousel */
+/** Products page hero — full-width showcase backgrounds */
 export const productHeroSlides = [
   {
     id: "catalog",
     eyebrow: "VK Tiles Catalogue",
     title: "Find Your Perfect Tile",
     subtitle:
-      "Wall, floor, parking, elevation and natural stone — every size with finish, packing and coverage details.",
+      "GVT floor tiles, wall tiles, elevation, parking and wooden strip — every size with finish, packing and coverage details.",
     image:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1920&auto=format&fit=crop",
-    ctaPrimary: { label: "Browse All Products", href: "#catalogue" },
+    ctaPrimary: { label: "Browse Catalogue", href: "#catalogue" },
     ctaSecondary: { label: "Get Quote", href: "/contact" },
   },
   {
-    id: "parking",
-    eyebrow: "Parking Tiles",
-    title: "Heavy-Duty Outdoor Tiles",
+    id: "wall",
+    eyebrow: "Wall Tiles",
+    title: "400×400 Designer Wall Tiles",
     subtitle:
-      "Anti-skid parking tiles in 300×300 to 600×600 mm — built for driveways, basements and commercial lots.",
+      "16×16 wall collections — matt finishes, glitter, plain and decorative patterns for bathrooms and living spaces.",
     image:
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1920&auto=format&fit=crop",
-    ctaPrimary: { label: "View Parking Tiles", href: "/products?category=parking-tiles" },
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1920&auto=format&fit=crop",
+    ctaPrimary: { label: "View Wall Tiles", href: "/products?category=wall-tiles" },
     ctaSecondary: { label: "WhatsApp Us", href: "https://wa.me/916309493308" },
   },
   {
     id: "elevation",
     eyebrow: "Elevation Tiles",
-    title: "Facade & Exterior Finishes",
+    title: "High Depth Facade Finishes",
     subtitle:
-      "Weather-resistant elevation tiles for building facades, compound walls and architectural features.",
+      "300×450 mm elevation tiles for building facades, exterior walls and architectural features.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop",
-    ctaPrimary: { label: "View Elevation Tiles", href: "/products?category=elevation-tiles" },
+    ctaPrimary: { label: "View Elevation", href: "/products?category=elevation-tiles" },
     ctaSecondary: { label: "Visit Showroom", href: "/contact" },
   },
   {
-    id: "natural-stone",
-    eyebrow: "Natural Stones",
-    title: "Stone Elevation Collections",
+    id: "gvt",
+    eyebrow: "GVT / PGVT",
+    title: "Premium Floor Collections",
     subtitle:
-      "Sandstone, granite, slate and travertine looks — natural finishes for premium exterior elevations.",
+      "600×1200 mm glazed vitrified tiles — matt, glossy, carving and wood-look finishes with full packing specs.",
     image:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1920&auto=format&fit=crop",
-    ctaPrimary: { label: "View Natural Stones", href: "/products?category=elevation-natural-stones" },
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop",
+    ctaPrimary: { label: "Floor Tiles", href: "/products?category=gvt-pgvt" },
     ctaSecondary: { label: "Browse Categories", href: "/#product-categories" },
   },
 ];

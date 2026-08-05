@@ -1,4 +1,4 @@
-import Image from "next/image";
+import AppImage from "@/components/ui/AppImage";
 import Button from "@/components/ui/Button";
 import Container from "@/components/layout/Container";
 import SectionTitle from "@/components/sections/SectionTitle";
@@ -9,7 +9,7 @@ export default function AboutPreview({ data }) {
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative aspect-[4/5] overflow-hidden">
-            <Image
+            <AppImage
               src={data.image}
               alt={data.title}
               fill

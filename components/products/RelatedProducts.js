@@ -13,14 +13,14 @@ export default function RelatedProducts({ products, title = "Related Products" }
         id="related"
         slidesPerView={1.15}
         spaceBetween={20}
+        navigation={false}
+        pagination={false}
         autoplay={{ delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true }}
         breakpoints={{
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
           1280: { slidesPerView: 4 },
         }}
-        navigation
-        pagination
       >
         {products.map((product) => (
           <ProductCard key={product.slug} product={product} />

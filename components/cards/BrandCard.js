@@ -1,4 +1,4 @@
-import Image from "next/image";
+import AppImage from "@/components/ui/AppImage";
 import Link from "next/link";
 
 export default function BrandCard({ brand }) {
@@ -6,11 +6,11 @@ export default function BrandCard({ brand }) {
     <article className="group bg-white card-hover overflow-hidden text-center">
       <Link href={`/brands#${brand.slug}`} className="block">
         <div className="relative aspect-square overflow-hidden bg-accent/20">
-          <Image
+          <AppImage
             src={brand.image}
             alt={brand.name}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
           />
         </div>

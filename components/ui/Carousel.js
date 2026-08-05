@@ -27,6 +27,7 @@ export default function Carousel({
   spaceBetween = 20,
   breakpoints,
   navigation = true,
+  navigationPosition = "top",
   pagination = true,
   centeredSlides = false,
   className = "",
@@ -44,27 +45,45 @@ export default function Carousel({
 
   const slides = Array.isArray(children) ? children : [children];
   const navBtnClass =
-    "w-11 h-11 rounded-full border border-navy/15 bg-white/95 backdrop-blur-sm flex items-center justify-center text-navy hover:border-sky hover:bg-sky-soft/50 hover:text-sky transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky focus-visible:ring-offset-2";
+    "w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-navy/12 bg-white/95 backdrop-blur-sm flex items-center justify-center text-navy hover:border-sky hover:bg-sky-soft/60 hover:text-sky transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky focus-visible:ring-offset-2";
+
+  const showTopNav = navigation && slides.length > 1 && navigationPosition === "top";
+  const showBottomNav = navigation && slides.length > 1 && navigationPosition === "bottom";
+  const showEdgeNav =
+    navigation && slides.length > 1 && (navigationPosition === "edges" || navigationPosition === "sides");
+
+  const swiperPb = pagination && slides.length > 1 && !showEdgeNav ? "!pb-10" : "!pb-0";
 
   return (
     <div className={`relative group/carousel ${className}`}>
-      {navigation && slides.length > 1 && (
+      {showTopNav && (
         <div className="hidden sm:flex absolute -top-14 right-0 gap-2 z-10 carousel-nav">
+          <button type="button" className={`${prevClass} ${navBtnClass}`} aria-label="Previous slide">
+            <IconChevronLeft className="w-5 h-5" />
+          </button>
+          <button type="button" className={`${nextClass} ${navBtnClass}`} aria-label="Next slide">
+            <IconChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
+
+      {showEdgeNav && (
+        <>
           <button
             type="button"
-            className={`${prevClass} ${navBtnClass}`}
+            className={`${prevClass} absolute left-0 top-[30%] -translate-y-1/2 z-30 ${navBtnClass}`}
             aria-label="Previous slide"
           >
             <IconChevronLeft className="w-5 h-5" />
           </button>
           <button
             type="button"
-            className={`${nextClass} ${navBtnClass}`}
+            className={`${nextClass} absolute right-0 top-[30%] -translate-y-1/2 z-30 ${navBtnClass}`}
             aria-label="Next slide"
           >
             <IconChevronRight className="w-5 h-5" />
           </button>
-        </div>
+        </>
       )}
 
       <Swiper
@@ -92,7 +111,7 @@ export default function Carousel({
             : false
         }
         pagination={
-          pagination && slides.length > 1
+          pagination && slides.length > 1 && !showEdgeNav
             ? { clickable: true, dynamicBullets: true }
             : false
         }
@@ -102,7 +121,7 @@ export default function Carousel({
           nextSlideMessage: "Next slide",
           paginationBulletMessage: "Go to slide {{index}}",
         }}
-        className="carousel-swiper !pb-10"
+        className={`carousel-swiper ${swiperPb}`}
       >
         {slides.map((child, i) => (
           <SwiperSlide key={i} className={`!h-auto ${slideClassName}`}>
@@ -110,6 +129,17 @@ export default function Carousel({
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {showBottomNav && (
+        <div className="flex justify-center items-center gap-3 mt-5 carousel-nav-bottom">
+          <button type="button" className={`${prevClass} ${navBtnClass}`} aria-label="Previous slide">
+            <IconChevronLeft className="w-5 h-5" />
+          </button>
+          <button type="button" className={`${nextClass} ${navBtnClass}`} aria-label="Next slide">
+            <IconChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

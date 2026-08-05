@@ -4,6 +4,13 @@ import Link from "next/link";
 import ProductImage from "@/components/products/ProductImage";
 import { useState } from "react";
 
+const BADGE_STYLES = {
+  featured: "bg-sky text-white",
+  new: "bg-emerald-500 text-white",
+  bestseller: "bg-amber-500 text-navy",
+  popular: "bg-navy text-white",
+};
+
 function HeartIcon() {
   return (
     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -12,17 +19,21 @@ function HeartIcon() {
   );
 }
 
-function EyeIcon() {
-  return (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-    </svg>
-  );
-}
-
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, badge, badgeLabel }) {
   const [wishlist, setWishlist] = useState(false);
+
+  const resolvedBadge = badge || null;
+  const resolvedLabel =
+    badgeLabel ||
+    (resolvedBadge === "featured"
+      ? "Featured"
+      : resolvedBadge === "new"
+        ? "New"
+        : resolvedBadge === "bestseller"
+          ? "Best Seller"
+          : resolvedBadge === "popular"
+            ? "Popular"
+            : null);
 
   return (
     <article className="group bg-white rounded-2xl overflow-hidden shadow-sm shadow-navy/5 border border-navy/5 card-hover transition-all duration-300 hover:shadow-xl hover:shadow-navy/10">
@@ -47,7 +58,6 @@ export default function ProductCard({ product }) {
 
           <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-          {/* Overlay quick-view button */}
           <div className="absolute inset-0 flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
             <span className="bg-white/95 text-navy text-xs font-semibold uppercase tracking-widest px-5 py-2.5 rounded-full shadow-lg">
               Quick View
@@ -55,21 +65,21 @@ export default function ProductCard({ product }) {
           </div>
         </Link>
 
-        {/* Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-          {product.featured && (
-            <span className="bg-sky text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-              New
+        {resolvedBadge && resolvedLabel && (
+          <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+            <span
+              className={`text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm ${BADGE_STYLES[resolvedBadge] || BADGE_STYLES.featured}`}
+            >
+              {resolvedLabel}
             </span>
-          )}
-        </div>
+          </div>
+        )}
 
-        {/* Wishlist */}
         <button
           type="button"
           onClick={() => setWishlist(!wishlist)}
           aria-label="Add to wishlist"
-          className={`absolute top-3 right-3 w-8 h-8 rounded-full backdrop-blur-sm flex items-center justify-center transition-all duration-300 ${
+          className={`absolute top-3 right-3 w-8 h-8 rounded-full backdrop-blur-sm flex items-center justify-center transition-all duration-300 z-10 ${
             wishlist
               ? "bg-red-500 text-white"
               : "bg-white/90 text-navy/50 hover:text-red-500"

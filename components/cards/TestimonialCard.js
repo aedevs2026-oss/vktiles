@@ -1,4 +1,4 @@
-import Image from "next/image";
+import AppImage from "@/components/ui/AppImage";
 
 export default function TestimonialCard({ testimonial }) {
   return (
@@ -14,11 +14,12 @@ export default function TestimonialCard({ testimonial }) {
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
       <footer className="flex items-center gap-4">
-        <Image
+        <AppImage
           src={testimonial.avatar}
           alt={testimonial.name}
           width={48}
           height={48}
+          wrapperClassName="shrink-0 rounded-full"
           className="rounded-full object-cover"
         />
         <div>

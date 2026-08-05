@@ -13,7 +13,7 @@ import {
   contact,
 } from "@/content/data";
 import { getGallery, getTestimonials } from "@/lib/site-content";
-import { getFeaturedProducts } from "@/lib/products";
+import { getFeaturedProducts, getNewArrivals, getBestSellers } from "@/lib/products";
 import Hero from "@/components/sections/Hero";
 import StatsSection from "@/components/sections/StatsSection";
 import AboutPreview from "@/components/sections/AboutPreview";
@@ -26,8 +26,8 @@ import Button from "@/components/ui/Button";
 import Carousel from "@/components/ui/Carousel";
 import Reveal, { RevealStagger, RevealItem } from "@/components/ui/Reveal";
 import CategoryCard from "@/components/cards/CategoryCard";
-import ProductCard from "@/components/cards/ProductCard";
-import BrandCard from "@/components/cards/BrandCard";
+import ProductShowcaseSection from "@/components/sections/ProductShowcaseSection";
+import PartnersStrip from "@/components/sections/PartnersStrip";
 import ServiceCard from "@/components/cards/ServiceCard";
 import ProjectCard from "@/components/cards/ProjectCard";
 import GalleryCard from "@/components/cards/GalleryCard";
@@ -35,7 +35,9 @@ import TestimonialCard from "@/components/cards/TestimonialCard";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 
 export default function HomePage() {
-  const featuredProducts = getFeaturedProducts(8);
+  const featuredProducts = getFeaturedProducts(10);
+  const newArrivals = getNewArrivals(10);
+  const bestSellers = getBestSellers(10);
   const gallery = getGallery();
   const testimonials = getTestimonials();
 
@@ -44,6 +46,51 @@ export default function HomePage() {
       <Hero slides={heroSlides} />
 
       <StatsSection stats={statistics} />
+
+      <Reveal>
+        <ProductShowcaseSection
+          id="new-arrivals"
+          title="New Arrivals"
+          subtitle="Fresh wall tile, elevation and catalogue lines recently added to our VK collection."
+          products={newArrivals}
+          badge="new"
+          badgeLabel="New Arrival"
+          variant="white"
+          viewAllHref="/products?category=wall-tiles"
+          viewAllLabel="Explore new lines"
+          autoplayDelay={5000}
+        />
+      </Reveal>
+
+      <Reveal delay={0.05}>
+        <ProductShowcaseSection
+          id="featured-products"
+          title="Featured Products"
+          subtitle="Handpicked premium designs from our showroom — GVT, wall tiles, elevation and wooden strip collections."
+          products={featuredProducts}
+          badge="featured"
+          badgeLabel="Featured"
+          variant="mesh"
+          viewAllHref="/products"
+          viewAllLabel="All featured"
+          autoplayDelay={4500}
+        />
+      </Reveal>
+
+      <Reveal delay={0.08}>
+        <ProductShowcaseSection
+          id="best-sellers"
+          title="Best Sellers & Popular Picks"
+          subtitle="Top-requested collections from Plain, Deserto, Albert Boston and our widest catalogue ranges."
+          products={bestSellers}
+          badge="bestseller"
+          badgeLabel="Best Seller"
+          variant="muted"
+          viewAllHref="/products"
+          viewAllLabel="Shop popular"
+          autoplayDelay={4800}
+        />
+      </Reveal>
 
       <Reveal>
         <AboutPreview data={about} />
@@ -60,7 +107,7 @@ export default function HomePage() {
           aria-label="Product categories"
         >
           <Container>
-              <SectionTitle
+            <SectionTitle
               eyebrow="VK Tiles"
               title="Product Categories"
               subtitle="Browse our floor tile and wooden strip collections — all sizes and designs from the VK catalogue."
@@ -88,71 +135,7 @@ export default function HomePage() {
         </section>
       </Reveal>
 
-      <Reveal>
-        <section className="section-padding brand-mesh" aria-label="Featured products">
-          <Container>
-            <SectionTitle
-              eyebrow="Featured"
-              title="Premium Product Selection"
-              subtitle="Handpicked designs from our showroom — enquire for pricing and delivery."
-            />
-            <Carousel
-              id="featured"
-              slidesPerView={1.15}
-              spaceBetween={20}
-              autoplay={{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-              breakpoints={{
-                640: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-                1280: { slidesPerView: 4 },
-              }}
-              navigation
-              pagination
-            >
-              {featuredProducts.map((product) => (
-                <ProductCard key={product.slug} product={product} />
-              ))}
-            </Carousel>
-            <div className="text-center mt-12">
-              <Button href="/products">Browse Full Catalogue</Button>
-            </div>
-          </Container>
-        </section>
-      </Reveal>
-
-      <Reveal>
-        <section className="section-padding bg-white" aria-label="Partner brands">
-          <Container>
-            <SectionTitle
-              eyebrow="Trusted Partners"
-              title="Top International Brands"
-              subtitle="Authorised dealer for India's leading tile and stone manufacturers."
-            />
-            <Carousel
-              id="brands"
-              slidesPerView={2}
-              spaceBetween={16}
-              autoplay={{ delay: 3500, disableOnInteraction: false }}
-              breakpoints={{
-                640: { slidesPerView: 3 },
-                1024: { slidesPerView: 4 },
-                1280: { slidesPerView: 6 },
-              }}
-              navigation={false}
-              pagination
-            >
-              {brands.map((brand) => (
-                <BrandCard key={brand.slug} brand={brand} />
-              ))}
-            </Carousel>
-            <div className="text-center mt-12">
-              <Button href="/brands" variant="outline">
-                All Brands
-              </Button>
-            </div>
-          </Container>
-        </section>
-      </Reveal>
+      <PartnersStrip brands={brands} />
 
       <Reveal>
         <section className="section-padding bg-background" aria-label="Our services">

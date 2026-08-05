@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   getProductBySlug,
@@ -9,6 +8,7 @@ import {
 import { business, cta } from "@/content/data";
 import { generateProductMetadata } from "@/lib/seo";
 import { generateProductJsonLd, generateBreadcrumbJsonLd } from "@/lib/schema";
+import ProductDetailHero from "@/components/products/ProductDetailHero";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 import CTA from "@/components/sections/CTA";
@@ -73,22 +73,11 @@ export default async function ProductDetailPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbJsonLd(breadcrumbs)) }}
       />
 
-      <section className="bg-white/80 backdrop-blur-sm border-b border-navy/8">
-        <Container className="py-4 text-sm text-gray">
-          {breadcrumbs.map((item, i) => (
-            <span key={item.label}>
-              {i > 0 && <span className="mx-2 text-navy/30">/</span>}
-              {item.href ? (
-                <Link href={item.href} className="hover:text-sky transition-colors">
-                  {item.label}
-                </Link>
-              ) : (
-                <span className="text-navy">{item.label}</span>
-              )}
-            </span>
-          ))}
-        </Container>
-      </section>
+      <ProductDetailHero
+        product={product}
+        breadcrumbs={breadcrumbs}
+        categoryLabel={categoryLabel}
+      />
 
       <section className="section-padding bg-white pb-28 lg:pb-16">
         <Container>
@@ -101,12 +90,6 @@ export default async function ProductDetailPage({ params }) {
 
             <div className="lg:sticky lg:top-36 space-y-6">
               <div>
-                <p className="text-sky text-xs font-semibold uppercase tracking-[0.2em] mb-3">
-                  {product.brand} · {categoryLabel}
-                </p>
-                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-navy mb-4">
-                  {product.name}
-                </h1>
                 <p className="text-gray leading-relaxed">{product.description}</p>
               </div>
 

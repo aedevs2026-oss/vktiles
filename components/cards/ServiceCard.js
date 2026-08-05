@@ -1,16 +1,16 @@
-import Image from "next/image";
+import AppImage from "@/components/ui/AppImage";
 import Link from "next/link";
 
 export default function ServiceCard({ service }) {
   return (
     <article className="group bg-white card-hover overflow-hidden">
       <Link href={`/services#${service.slug}`} className="block">
-        <div className="relative aspect-[16/10] overflow-hidden">
-          <Image
+        <div className="relative aspect-[16/10] overflow-hidden bg-navy/5">
+          <AppImage
             src={service.image}
             alt={service.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
         </div>

@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
-import { BLUR_DATA_URL } from "@/lib/images";
+import AppImage from "@/components/ui/AppImage";
 
 export default function ProductImage({
   src,
@@ -21,20 +20,17 @@ export default function ProductImage({
     if (fallbackSrc && current !== fallbackSrc) setCurrent(fallbackSrc);
   };
 
-  const props = {
-    src: current,
-    alt,
-    className,
-    onError: handleError,
-    placeholder: "blur",
-    blurDataURL: BLUR_DATA_URL,
-    priority,
-    sizes,
-  };
-
-  if (fill) {
-    return <Image {...props} fill />;
-  }
-
-  return <Image {...props} width={width} height={height} />;
+  return (
+    <AppImage
+      src={current}
+      alt={alt}
+      fill={fill}
+      width={width}
+      height={height}
+      className={className}
+      sizes={sizes}
+      priority={priority}
+      onError={handleError}
+    />
+  );
 }

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import AppImage from "@/components/ui/AppImage";
 import Link from "next/link";
 import { business, footer, socialLinks, businessHours } from "@/content/data";
 import Container from "@/components/layout/Container";
@@ -10,11 +10,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <Image
+              <AppImage
                 src="/logo.png"
                 alt={business.name}
                 width={180}
                 height={64}
+                priority
+                wrapperClassName="inline-block"
                 className="h-12 w-auto object-contain rounded-sm mb-3"
               />
               <span className="block text-[10px] uppercase tracking-[0.22em] text-sky-bright/90">
