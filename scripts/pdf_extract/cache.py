@@ -5,6 +5,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .meta import pdf_cache_key
 from .utils import file_sha256
 
 
@@ -22,11 +23,16 @@ def save_cache(path: Path, cache: dict) -> None:
     path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")
 
 
-def should_skip_pdf(pdf_path: Path, cache: dict, force: bool = False) -> bool:
+def should_skip_pdf(
+    pdf_path: Path,
+    cache: dict,
+    pdf_dir: Path,
+    force: bool = False,
+) -> bool:
     if force:
         return False
-    rel = pdf_path.name
-    entry = cache.get("files", {}).get(rel)
+    key = pdf_cache_key(pdf_path, pdf_dir)
+    entry = cache.get("files", {}).get(key)
     if not entry:
         return False
     try:
@@ -35,10 +41,16 @@ def should_skip_pdf(pdf_path: Path, cache: dict, force: bool = False) -> bool:
         return False
 
 
-def update_cache_entry(cache: dict, pdf_path: Path, product_count: int) -> None:
-    rel = pdf_path.name
-    cache.setdefault("files", {})[rel] = {
+def update_cache_entry(
+    cache: dict,
+    pdf_path: Path,
+    pdf_dir: Path,
+    product_count: int,
+) -> None:
+    key = pdf_cache_key(pdf_path, pdf_dir)
+    cache.setdefault("files", {})[key] = {
         "sha256": file_sha256(pdf_path),
         "processedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "productCount": product_count,
+        "path": key,
     }

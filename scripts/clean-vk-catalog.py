@@ -96,11 +96,18 @@ def main() -> None:
         p["specifications"] = build_specifications(p)
         p["seo"] = build_seo(p)
         p["collectionSlug"] = slugify(p.get("collection", ""))
-        pdf_name = p.get("downloads", {}).get("catalog", "").replace("/Vkpdf/", "")
-        if not pdf_name or pdf_name.endswith(".pdf"):
-            pass
-        elif p.get("series"):
-            p.setdefault("downloads", {})["catalog"] = f"/Vkpdf/{pdf_name or p.get('series')}.pdf"
+        catalog_url = (p.get("downloads") or {}).get("catalog", "")
+        if catalog_url.startswith("/Vkpdf/"):
+            pdf_name = catalog_url.replace("/Vkpdf/", "")
+            vk_path = ROOT / "public" / "VKProducts" / pdf_name
+            if vk_path.exists():
+                p.setdefault("downloads", {})["catalog"] = f"/VKProducts/{pdf_name}"
+            elif pdf_name:
+                p.setdefault("downloads", {})["catalog"] = f"/VKProducts/{pdf_name}"
+        elif not catalog_url and p.get("series"):
+            series_pdf = ROOT / "public" / "VKProducts" / f"{p['series']}.pdf"
+            if series_pdf.exists():
+                p.setdefault("downloads", {})["catalog"] = f"/VKProducts/{series_pdf.name}"
         cleaned.append(p)
 
     categories = {}
@@ -123,14 +130,14 @@ def main() -> None:
         "scrapedAt": catalog.get("scrapedAt"),
         "count": len(cleaned),
         "brand": BRAND,
-        "source": "VKPdf local catalog",
+        "source": "VKProducts local catalog",
         "categories": sorted(categories.values(), key=lambda c: (c["category"], c["name"])),
         "products": cleaned,
         "errors": catalog.get("errors", []),
     }
 
     OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Wrote {len(cleaned)} VKPdf products -> {OUT}")
+    print(f"Wrote {len(cleaned)} VKProducts products -> {OUT}")
 
 
 if __name__ == "__main__":

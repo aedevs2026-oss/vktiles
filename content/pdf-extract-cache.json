@@ -139,6 +139,252 @@
       "sha256": "b5b0f80f25a8c0961b9651bc3f6d0bfdade76cd84c8bdcd41ab280472e09efb0",
       "processedAt": "2026-08-04T14:47:28.823026Z",
       "productCount": 82
+    },
+    "FISH.pdf": {
+      "sha256": "f02a284c23465090d749a03dd3f876c18741cebba59ee937051007eb23250c4e",
+      "processedAt": "2026-08-06T07:29:25.278045Z",
+      "productCount": 46,
+      "path": "FISH.pdf"
+    },
+    "MATT.pdf": {
+      "sha256": "36ed148cfe36a68103dd4b4ccb34e7b9f3ca011c4226053d21d568a8d8ce52ea",
+      "processedAt": "2026-08-06T07:42:53.710692Z",
+      "productCount": 95,
+      "path": "MATT.pdf"
+    },
+    "3D.pdf": {
+      "sha256": "4348c2587f25bb7129956f84b5aa713ddaba5886a82b94fb920e9a7281752960",
+      "processedAt": "2026-08-06T07:06:46.487840Z",
+      "productCount": 19,
+      "path": "3D.pdf"
+    },
+    "C-1.pdf": {
+      "sha256": "c430688259d93f2a3be989666139b56f365b2c8ec787cac8db201c49e5733cad",
+      "processedAt": "2026-08-06T07:09:54.484007Z",
+      "productCount": 68,
+      "path": "C-1.pdf"
+    },
+    "C-2.pdf": {
+      "sha256": "e0cc77c82d6308049904e49f423e5240dc8f6cf3063cd4f872b016ac1a207459",
+      "processedAt": "2026-08-06T07:12:09.159740Z",
+      "productCount": 83,
+      "path": "C-2.pdf"
+    },
+    "C-3.pdf": {
+      "sha256": "bf9910817fce0c45f43a0e10ef9e6939edeb18d52218ba4295f0560b37ad15c5",
+      "processedAt": "2026-08-06T07:14:00.579105Z",
+      "productCount": 61,
+      "path": "C-3.pdf"
+    },
+    "C-4.pdf": {
+      "sha256": "aaffd64aa3efd55f467493880adee476e98181c119c77eda2b5d5de045bacbbc",
+      "processedAt": "2026-08-06T07:16:28.801314Z",
+      "productCount": 114,
+      "path": "C-4.pdf"
+    },
+    "C-6.pdf": {
+      "sha256": "491f0e1e2c52f1bd6911c087f5b1977dce5bd74e0846be7770563d5742d97f05",
+      "processedAt": "2026-08-06T07:17:52.730931Z",
+      "productCount": 120,
+      "path": "C-6.pdf"
+    },
+    "CARVING.pdf": {
+      "sha256": "b9339312c9159c7572a54f822ef9442c8306eae9ea8e5cb9aea9066de613248a",
+      "processedAt": "2026-08-06T07:20:42.473684Z",
+      "productCount": 99,
+      "path": "CARVING.pdf"
+    },
+    "ELE-1.pdf": {
+      "sha256": "36a96efcb778ac47e1719155fb66c450ecd30ce5547acd7d2be569cdee7e862f",
+      "processedAt": "2026-08-06T07:21:17.788920Z",
+      "productCount": 73,
+      "path": "ELE-1.pdf"
+    },
+    "ELE-2.pdf": {
+      "sha256": "2fe7785f76aa678a222036cbef338b54b4083dca7a0f904f7c9140658fb60772",
+      "processedAt": "2026-08-06T07:24:22.789768Z",
+      "productCount": 79,
+      "path": "ELE-2.pdf"
+    },
+    "ELE-4.pdf": {
+      "sha256": "66c72ecf5d9b2f89f33e43a345bed7185779a90068ec24811c31ac27497eead9",
+      "processedAt": "2026-08-06T07:27:11.193554Z",
+      "productCount": 108,
+      "path": "ELE-4.pdf"
+    },
+    "ELE-3.pdf": {
+      "sha256": "82d127917627214597d2452fa77f919afabfc9aa89ab7aca2aa9da50782b2e8b",
+      "processedAt": "2026-08-06T07:28:34.981733Z",
+      "productCount": 158,
+      "path": "ELE-3.pdf"
+    },
+    "ELE-5.pdf": {
+      "sha256": "ee9c380da973a1d4ef48ac75ddc6b74c72295de0726f21fd492e26c27f86af6b",
+      "processedAt": "2026-08-06T07:29:09.965724Z",
+      "productCount": 44,
+      "path": "ELE-5.pdf"
+    },
+    "EXTERIA COLLECTION.pdf": {
+      "sha256": "b3fb260f397e5139f049e507066d52b943103babf0c8ababc9fbc3c95a1a9a95",
+      "processedAt": "2026-08-06T07:30:33.372911Z",
+      "productCount": 42,
+      "path": "EXTERIA COLLECTION.pdf"
+    },
+    "FLOWER.pdf": {
+      "sha256": "3dced7860beaf403ef70048f29c0c24ad5870f4865ca97ba1e62385698a3fbc1",
+      "processedAt": "2026-08-06T07:31:32.764847Z",
+      "productCount": 58,
+      "path": "FLOWER.pdf"
+    },
+    "GLOSSY ENDLESS 1.pdf": {
+      "sha256": "01ede2d61ebfce3b762719361d8e44058ec82869c9e8265e966ab7bff175fb76",
+      "processedAt": "2026-08-06T07:33:13.704300Z",
+      "productCount": 86,
+      "path": "GLOSSY ENDLESS 1.pdf"
+    },
+    "GLOSSY ENDLESS 2.pdf": {
+      "sha256": "1f90ffcde956516c7fc2f231fd4ee8fa2a2f2a2c4ab3595f07b85bd820a49098",
+      "processedAt": "2026-08-06T07:33:35.895404Z",
+      "productCount": 78,
+      "path": "GLOSSY ENDLESS 2.pdf"
+    },
+    "GLOSSY RANDOM 1.pdf": {
+      "sha256": "b694892de0627475c32fb6509cc241bc15508a452f696aad99e4dcf2f4005406",
+      "processedAt": "2026-08-06T07:34:30.957411Z",
+      "productCount": 72,
+      "path": "GLOSSY RANDOM 1.pdf"
+    },
+    "GLOSSY RANDOM 2.pdf": {
+      "sha256": "4f6adcf42bda9763ad868e85236aed4c9b15d94f825fc4288d63970cda54b0e4",
+      "processedAt": "2026-08-06T07:35:24.177541Z",
+      "productCount": 82,
+      "path": "GLOSSY RANDOM 2.pdf"
+    },
+    "GOLDEN SERIES C-5.pdf": {
+      "sha256": "7c507c8245c01e2f09a9e9a5ccbce3cdda66748c0fe71abb0af2914d9cd9a062",
+      "processedAt": "2026-08-06T07:35:58.658890Z",
+      "productCount": 29,
+      "path": "GOLDEN SERIES C-5.pdf"
+    },
+    "GLOSSY STAUARIO & ONYX.pdf": {
+      "sha256": "e7f3bcfad1a06e1b6a563becb5bb9508efd8457b949ac0cfa3da2e71bdbd32f2",
+      "processedAt": "2026-08-06T07:36:43.821583Z",
+      "productCount": 122,
+      "path": "GLOSSY STAUARIO & ONYX.pdf"
+    },
+    "INKY_1.pdf": {
+      "sha256": "a428156eaba358063db5f6bc5c94206a3b26fa4947e80d53fc652de60442c081",
+      "processedAt": "2026-08-06T07:38:39.651483Z",
+      "productCount": 88,
+      "path": "INKY_1.pdf"
+    },
+    "HIGH GLOSSY.pdf": {
+      "sha256": "75a0f463f70619baa678e52ffb6da01086e0caa3cc76469bed9ed050ea0b7261",
+      "processedAt": "2026-08-06T07:38:43.462955Z",
+      "productCount": 103,
+      "path": "HIGH GLOSSY.pdf"
+    },
+    "INKY_2.pdf": {
+      "sha256": "21607f952a21907e7b3dae0833e853dd3da5ee5b18f06473576fef9713c5e7b2",
+      "processedAt": "2026-08-06T07:40:17.786554Z",
+      "productCount": 82,
+      "path": "INKY_2.pdf"
+    },
+    "INTERIOR COLLECTION.pdf": {
+      "sha256": "5ff2c0ce2cf47835b94fa6e68572b1ddb66b3c97e77fc5a38d73437c7020cd02",
+      "processedAt": "2026-08-06T07:40:26.443434Z",
+      "productCount": 101,
+      "path": "INTERIOR COLLECTION.pdf"
+    },
+    "KITCHEN COLLECTION.pdf": {
+      "sha256": "0421ae897627bfd6f32164c6a2464efd56e9c189903cc22b13f6a4d8f3e680c9",
+      "processedAt": "2026-08-06T07:40:45.184184Z",
+      "productCount": 30,
+      "path": "KITCHEN COLLECTION.pdf"
+    },
+    "KITCHEN-1.pdf": {
+      "sha256": "f7c2ddd71c13dd5f320b58a0cda39c740137c0f15401f1f0d314993168e37059",
+      "processedAt": "2026-08-06T07:41:28.171159Z",
+      "productCount": 59,
+      "path": "KITCHEN-1.pdf"
+    },
+    "KITCHEN-2.pdf": {
+      "sha256": "01034ad773d9db8c2ac1c11bed8f58ff717ee65e2c5d7fa5e830c5cc30d4825d",
+      "processedAt": "2026-08-06T07:41:49.857836Z",
+      "productCount": 63,
+      "path": "KITCHEN-2.pdf"
+    },
+    "MATT-1.pdf": {
+      "sha256": "52f080d3a4ac884e9580d73aa595a077d99e87152f48e633f3912e0fa3f530b4",
+      "processedAt": "2026-08-06T07:42:21.913562Z",
+      "productCount": 56,
+      "path": "MATT-1.pdf"
+    },
+    "NEW FLOWER.pdf": {
+      "sha256": "824875da65faa0cd92ac2b2b04388a4f76edaaf0f8a031b6a6e3f9d3f4285e89",
+      "processedAt": "2026-08-06T07:52:18.087253Z",
+      "productCount": 34,
+      "path": "NEW FLOWER.pdf"
+    },
+    "POOJA ROOM.pdf": {
+      "sha256": "82e601bb084637517a7b441025b45de66a901d13b3e2813fb040448632a6a90c",
+      "processedAt": "2026-08-06T07:52:28.805229Z",
+      "productCount": 25,
+      "path": "POOJA ROOM.pdf"
+    },
+    "POOJA.pdf": {
+      "sha256": "28ea0e6aa06ed65f6e10b48215069ff606a499cc4f19d53e652b47461a607e90",
+      "processedAt": "2026-08-06T07:43:32.194892Z",
+      "productCount": 34,
+      "path": "POOJA.pdf"
+    },
+    "SCENERY.pdf": {
+      "sha256": "27e46fbf0806bf744a0b834b857c5ea48a74bb442804d823d51d24cdd639d39c",
+      "processedAt": "2026-08-06T07:52:40.450431Z",
+      "productCount": 26,
+      "path": "SCENERY.pdf"
+    },
+    "SPECIAL COLOUR.pdf": {
+      "sha256": "e30664c2a89aa65fbde66d8ac4bdecdebc715ba53d6b047edb08f6c9eac9ff40",
+      "processedAt": "2026-08-06T07:43:39.470305Z",
+      "productCount": 8,
+      "path": "SPECIAL COLOUR.pdf"
+    },
+    "SUPER HIGH GLOSSY.pdf": {
+      "sha256": "acfb49343855e5030f2fbb45e5885eeeee2c058b663ebe6937f199fb519a79c0",
+      "processedAt": "2026-08-06T07:44:44.579246Z",
+      "productCount": 60,
+      "path": "SUPER HIGH GLOSSY.pdf"
+    },
+    "NEW GLOSSY 2.pdf": {
+      "sha256": "43916e4b42647e88816e116b68e8d226c2db4631a180310059155c55b16d8e65",
+      "processedAt": "2026-08-06T07:45:36.386781Z",
+      "productCount": 153,
+      "path": "NEW GLOSSY 2.pdf"
+    },
+    "W&M-1.pdf": {
+      "sha256": "f5fdd47e36d71ad5ee736dd99a5b9177858df3e42fd237feaf0bb0482ee950cb",
+      "processedAt": "2026-08-06T07:47:07.664359Z",
+      "productCount": 47,
+      "path": "W&M-1.pdf"
+    },
+    "W&M-2.pdf": {
+      "sha256": "43a7b4db49c747b245c452684d966b0be91c7780865ff694b3fdbac9a4ab2be1",
+      "processedAt": "2026-08-06T07:49:22.306867Z",
+      "productCount": 82,
+      "path": "W&M-2.pdf"
+    },
+    "WOODEN MATT.pdf": {
+      "sha256": "d90a5eefcbd6e58e67ff791101d96ed004469e3ede82a858423d89d62b776930",
+      "processedAt": "2026-08-06T07:50:26.964311Z",
+      "productCount": 1,
+      "path": "WOODEN MATT.pdf"
+    },
+    "VALENZA NEW CARVING.pdf": {
+      "sha256": "de293d33fe18d0d4f961b925d1e4314e50e99a11396cc08cabcd37df0c617b57",
+      "processedAt": "2026-08-06T07:50:31.029215Z",
+      "productCount": 40,
+      "path": "VALENZA NEW CARVING.pdf"
     }
   }
 }

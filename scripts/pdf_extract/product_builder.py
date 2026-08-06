@@ -115,6 +115,27 @@ def build_seo(raw: RawProduct, specs: dict, description: str) -> dict:
     }
 
 
+def detect_missing_fields(product: dict) -> list[str]:
+    """Return human-readable labels for important fields that are empty."""
+    missing: list[str] = []
+    if not product.get("name"):
+        missing.append("name")
+    if not product.get("image"):
+        missing.append("image")
+    if not product.get("description"):
+        missing.append("description")
+    if not product.get("size"):
+        missing.append("size")
+    specs = product.get("specifications") or {}
+    if not specs.get("finish") and not product.get("finish"):
+        missing.append("finish")
+    if not product.get("collection"):
+        missing.append("collection")
+    if not product.get("category"):
+        missing.append("category")
+    return missing
+
+
 def raw_to_product(raw: RawProduct, featured: bool = False) -> dict:
     meta = raw.meta
     size = meta.get("size", "400x400 MM")
@@ -123,9 +144,9 @@ def raw_to_product(raw: RawProduct, featured: bool = False) -> dict:
     specs = build_specifications(raw)
     description = generate_description(raw, specs)
     primary = raw.image_paths[0] if raw.image_paths else ""
-    pdf_name = meta.get("pdf_rel_path", meta.get("series_slug", ""))
+    catalog_url = meta.get("pdf_catalog_url") or f"/VKProducts/{meta.get('pdf_rel_path', '')}"
 
-    return {
+    product = {
         "slug": raw.product_slug,
         "name": norm_name(raw.name),
         "brand": BRAND,
@@ -156,11 +177,13 @@ def raw_to_product(raw: RawProduct, featured: bool = False) -> dict:
         "sourcePdf": raw.series_slug,
         "sourcePage": raw.page + 1,
         "downloads": {
-            "catalog": f"/Vkpdf/{pdf_name}",
+            "catalog": catalog_url,
             "specification": "/contact",
         },
         "seo": build_seo(raw, specs, description),
     }
+    product["_missingFields"] = detect_missing_fields(product)
+    return product
 
 
 def parse_page_specs(page_text: str) -> dict:

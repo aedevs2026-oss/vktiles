@@ -8,7 +8,7 @@ from PIL import Image
 from ..images import (
     abs_image_path,
     extract_page_images,
-    filter_tile_images,
+    filter_fullpage_images,
     load_image_from_xref,
     rel_image_path,
     save_webp,
@@ -49,9 +49,7 @@ def extract_fullpage_pdf(
     for page_num in range(doc.page_count):
         page = doc[page_num]
         page_images = extract_page_images(page, doc)
-        tiles = filter_tile_images(page_images, hero=True)
-        if not tiles:
-            tiles = filter_tile_images(page_images, hero=False)
+        tiles = filter_fullpage_images(page_images)
         if not tiles:
             continue
 
