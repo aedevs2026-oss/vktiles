@@ -28,7 +28,9 @@ export default function AdminLoginForm() {
 
           {unauthorized && (
             <p className={`mb-4 ${ui.alertError}`}>
-              Your account is not authorized for admin access.
+              Your account is not authorized for admin access. Add your email to{" "}
+              <code className="text-xs">ADMIN_ALLOWED_EMAILS</code> in <code className="text-xs">.env.local</code>,
+              then restart the dev server.
             </p>
           )}
 

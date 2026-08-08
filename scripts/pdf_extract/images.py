@@ -7,7 +7,13 @@ from pathlib import Path
 
 from PIL import Image
 
-from .constants import MAX_ASPECT_RATIO, MAX_FULLPAGE_ASPECT_RATIO, MIN_HERO_AREA, MIN_TILE_AREA, MIN_TILE_DIM
+from .constants import (
+    MAX_ASPECT_RATIO,
+    MAX_POSTER_ASPECT_RATIO,
+    MIN_HERO_AREA,
+    MIN_TILE_AREA,
+    MIN_TILE_DIM,
+)
 
 
 @dataclass
@@ -33,27 +39,27 @@ def is_logo_or_banner(pixel_w: int, pixel_h: int) -> bool:
     return False
 
 
-def is_tile_image(pixel_w: int, pixel_h: int, min_area: int = MIN_TILE_AREA, max_ratio: float = MAX_ASPECT_RATIO) -> bool:
+def is_tile_image(
+    pixel_w: int,
+    pixel_h: int,
+    min_area: int = MIN_TILE_AREA,
+    max_aspect: float = MAX_ASPECT_RATIO,
+) -> bool:
     if pixel_w < MIN_TILE_DIM or pixel_h < MIN_TILE_DIM:
         return False
     if is_logo_or_banner(pixel_w, pixel_h):
         return False
     ratio = max(pixel_w, pixel_h) / min(pixel_w, pixel_h)
-    if ratio > max_ratio:
+    if ratio > max_aspect:
         return False
     if pixel_w * pixel_h < min_area:
         return False
     return True
 
 
-def is_fullpage_catalog_image(pixel_w: int, pixel_h: int) -> bool:
-    """Relaxed filter for full-page catalog spreads (wider aspect ratios)."""
-    return is_tile_image(
-        pixel_w,
-        pixel_h,
-        min_area=MIN_TILE_AREA,
-        max_ratio=MAX_FULLPAGE_ASPECT_RATIO,
-    )
+def is_poster_page_image(pixel_w: int, pixel_h: int, min_area: int = MIN_HERO_AREA) -> bool:
+    """Full-page poster layouts — allow taller aspect ratios than standard tiles."""
+    return is_tile_image(pixel_w, pixel_h, min_area=min_area, max_aspect=MAX_POSTER_ASPECT_RATIO)
 
 
 def extract_page_images(page, doc) -> list[PageImage]:
@@ -122,17 +128,17 @@ def abs_image_path(root: Path, rel_path: str) -> Path:
     return root / "public" / rel_path.lstrip("/")
 
 
-def filter_fullpage_images(images: list[PageImage]) -> list[PageImage]:
-    filtered = [img for img in images if is_fullpage_catalog_image(img.pixel_w, img.pixel_h)]
-    return sorted(filtered, key=lambda i: (-i.pixel_area, -i.display_area))
-
-
-def filter_tile_images(images: list[PageImage], hero: bool = False) -> list[PageImage]:
+def filter_tile_images(
+    images: list[PageImage],
+    hero: bool = False,
+    poster: bool = False,
+) -> list[PageImage]:
     min_area = MIN_HERO_AREA if hero else MIN_TILE_AREA
+    max_aspect = MAX_POSTER_ASPECT_RATIO if poster else MAX_ASPECT_RATIO
     filtered = [
         img
         for img in images
-        if is_tile_image(img.pixel_w, img.pixel_h, min_area=min_area)
+        if is_tile_image(img.pixel_w, img.pixel_h, min_area=min_area, max_aspect=max_aspect)
     ]
     return sorted(filtered, key=lambda i: (-i.pixel_area, -i.display_area))
 

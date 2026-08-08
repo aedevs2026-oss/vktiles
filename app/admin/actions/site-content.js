@@ -178,7 +178,7 @@ export async function getContactSettings() {
   return map;
 }
 
-export async function saveContactSettingsAction(formData) {
+export async function saveContactSettingsAction(_prevState, formData) {
   try {
     const supabase = await getSupabase();
 
@@ -254,7 +254,7 @@ export async function saveContactSettingsAction(formData) {
   }
 }
 
-export async function sendTestEmailAction(formData) {
+export async function sendTestEmailAction(_prevState, formData) {
   try {
     const to = String(formData.get("testEmail") || "").trim();
     await sendTestEmail(to);
@@ -265,7 +265,7 @@ export async function sendTestEmailAction(formData) {
 }
 
 export async function sendTestEmailFormAction(formData) {
-  const result = await sendTestEmailAction(formData);
+  const result = await sendTestEmailAction(null, formData);
   if (result?.error) throw new Error(result.error);
 }
 

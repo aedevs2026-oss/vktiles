@@ -13,7 +13,7 @@ import {
   contact,
 } from "@/content/data";
 import { getGallery, getTestimonials } from "@/lib/site-content";
-import { getFeaturedProducts, getNewArrivals, getBestSellers } from "@/lib/products";
+import { getFeaturedProducts, getNewArrivals, getBestSellers, getProducts } from "@/lib/products";
 import Hero from "@/components/sections/Hero";
 import StatsSection from "@/components/sections/StatsSection";
 import AboutPreview from "@/components/sections/AboutPreview";
@@ -34,12 +34,23 @@ import GalleryCard from "@/components/cards/GalleryCard";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts(10);
   const newArrivals = getNewArrivals(10);
   const bestSellers = getBestSellers(10);
   const gallery = getGallery();
   const testimonials = getTestimonials();
+
+  const productCounts = {};
+  for (const p of getProducts()) {
+    productCounts[p.category] = (productCounts[p.category] || 0) + 1;
+  }
+  const homeCategories = HOME_PRODUCT_CATEGORIES.map((category) => ({
+    ...category,
+    count: productCounts[category.dataCategory] || 0,
+  }));
 
   return (
     <>
@@ -51,13 +62,13 @@ export default function HomePage() {
         <ProductShowcaseSection
           id="new-arrivals"
           title="New Arrivals"
-          subtitle="Fresh wall tile, elevation and catalogue lines recently added to our VK collection."
+          subtitle="Fresh random picks from our latest VKNew catalogue lines — crystal, high gloss and glitter collections."
           products={newArrivals}
           badge="new"
           badgeLabel="New Arrival"
           variant="white"
-          viewAllHref="/products?category=wall-tiles"
-          viewAllLabel="Explore new lines"
+          viewAllHref="/products"
+          viewAllLabel="Browse catalogue"
           autoplayDelay={5000}
         />
       </Reveal>
@@ -124,7 +135,7 @@ export default function HomePage() {
               navigation
               pagination
             >
-              {HOME_PRODUCT_CATEGORIES.map((category) => (
+              {homeCategories.map((category) => (
                 <CategoryCard key={category.slug} category={category} />
               ))}
             </Carousel>

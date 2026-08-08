@@ -22,9 +22,15 @@ export default function ContactSettingsForm({ settings = {} }) {
 
 
 
-  const [state, formAction, pending] = useActionState(saveContactSettingsAction, null);
+  const [state, formAction, pending] = useActionState(
+    async (_prev, formData) => saveContactSettingsAction(_prev, formData),
+    null
+  );
 
-  const [testState, testAction, testPending] = useActionState(sendTestEmailAction, null);
+  const [testState, testAction, testPending] = useActionState(
+    async (_prev, formData) => sendTestEmailAction(_prev, formData),
+    null
+  );
 
 
 

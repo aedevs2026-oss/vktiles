@@ -7,40 +7,56 @@ from pathlib import Path
 from .constants import LEGACY_PDF_CONFIGS
 from .utils import normalize_size, slugify
 
-# Preferred PDF source folders (first match wins).
-PDF_DIR_CANDIDATES = (
-    "public/VKProducts",
-    "VKProducts",
-    "Vkpdf",
-    "VKPdf",
-)
+
+# PDF source folders scanned recursively (relative to repo root).
+PDF_SOURCE_DIRS = ("Vkpdf", "VKPdf", "public/VKNew", "public/VkNew")
+
+
+def resolve_pdf_dirs(root: Path) -> list[Path]:
+    """Return all existing PDF source directories."""
+    dirs: list[Path] = []
+    seen: set[str] = set()
+    for name in PDF_SOURCE_DIRS:
+        candidate = root / name
+        key = str(candidate.resolve()).lower()
+        if candidate.is_dir() and key not in seen:
+            seen.add(key)
+            dirs.append(candidate)
+    if not dirs:
+        dirs.append(root / "Vkpdf")
+    return dirs
 
 
 def resolve_pdf_dir(root: Path) -> Path:
-    """Return the directory containing source PDF catalogs."""
-    for rel in PDF_DIR_CANDIDATES:
-        candidate = root / rel
-        if candidate.is_dir():
-            return candidate
-    return root / "public" / "VKProducts"
+    """Primary PDF directory (first match) — kept for backwards compatibility."""
+    return resolve_pdf_dirs(root)[0]
 
 
-def pdf_public_url(pdf_path: Path, root: Path) -> str:
-    """Browser path for a PDF under public/ (e.g. /VKProducts/MATT.pdf)."""
-    public = (root / "public").resolve()
-    try:
-        rel = pdf_path.resolve().relative_to(public)
-        return "/" + rel.as_posix()
-    except ValueError:
-        return f"/VKProducts/{pdf_path.name}"
+def pdf_rel_path(pdf_path: Path, root: Path) -> str:
+    """Public-relative path for catalog download links."""
+    for base in (root / "public", root):
+        try:
+            rel = pdf_path.relative_to(base)
+            return str(rel).replace("\\", "/")
+        except ValueError:
+            continue
+    return pdf_path.name
 
 
-def pdf_cache_key(pdf_path: Path, pdf_dir: Path) -> str:
-    """Stable cache key — relative path within the PDF scan root."""
-    try:
-        return pdf_path.resolve().relative_to(pdf_dir.resolve()).as_posix()
-    except ValueError:
-        return pdf_path.name
+def parse_feet_size(stem: str) -> str | None:
+    """Convert poster sizes like 2X3, 4X6 (feet) to standard mm dimensions."""
+    m = re.search(r"(?<![\d])(\d)\s*[x×]\s*(\d)(?![\d])", stem, re.IGNORECASE)
+    if not m:
+        return None
+    a, b = int(m.group(1)), int(m.group(2))
+    # Common VK poster feet → mm mappings used in catalog naming
+    feet_to_mm = {
+        (2, 3): "600x900 MM",
+        (2, 4): "600x1200 MM",
+        (4, 6): "1200x1800 MM",
+        (6, 4): "1800x1200 MM",
+    }
+    return feet_to_mm.get((a, b))
 
 
 def derive_collection_name(stem: str) -> str:
@@ -62,19 +78,22 @@ def derive_collection_name(stem: str) -> str:
 
 def infer_pdf_meta(pdf_path: Path, root: Path | None = None) -> dict:
     """Build extraction metadata from filename and legacy overrides."""
+    repo_root = root or pdf_path.parent
+    while repo_root.parent != repo_root and not (repo_root / "package.json").exists():
+        repo_root = repo_root.parent
+    rel_pdf = pdf_rel_path(pdf_path, repo_root)
+
     legacy = LEGACY_PDF_CONFIGS.get(pdf_path.name)
     if legacy:
         meta = dict(legacy)
         meta.setdefault("series_slug", slugify(meta.get("collection", pdf_path.stem)))
         meta.setdefault("subcategory", meta.get("size", "600x1200 MM").split()[0].lower())
-        meta["pdf_rel_path"] = pdf_path.name
-        if root is not None:
-            meta["pdf_catalog_url"] = pdf_public_url(pdf_path, root)
+        meta["pdf_rel_path"] = rel_pdf
         return meta
 
     stem = pdf_path.stem
     upper = stem.upper()
-    size = None
+    size = parse_feet_size(stem)
     category = "wall-tiles"
     finish = "Matt"
     surface = "Matt"
@@ -84,86 +103,52 @@ def infer_pdf_meta(pdf_path: Path, root: Path | None = None) -> dict:
     if m:
         size = f"{m.group(1)}x{m.group(2)} MM"
 
-    if re.search(r"ELE[-_]?\d", upper) or "ELEVATION" in upper:
+    if "CRYSTAL" in upper:
+        finish = "Crystal"
+        surface = "Crystal"
+        pattern = "Crystal"
+    elif re.search(r"HIGLSS|HIGH\s*GLOSS|GLOSSY", upper):
+        finish = "High Glossy"
+        surface = "Polished"
+        pattern = "Plain" if "PLAIN" in upper else "Glitter" if "GLITTER" in upper else "Decorative"
+    elif "GLITTER" in upper:
+        category = "wall-tiles"
+        pattern = "Glitter"
+        finish = "Glossy"
+        surface = "Glitter"
+
+    if "ELEVATION" in upper:
         category = "elevation-tiles"
         finish = "Matt"
         surface = "High Depth"
         pattern = "Elevation"
-    elif "EXTERIA" in upper or "EXTERIOR" in upper:
-        category = "elevation-tiles"
-        finish = "Matt"
-        surface = "High Depth"
-        pattern = "Exterior"
-    elif "KITCHEN" in upper:
-        category = "wall-tiles"
-        size = size or "300x450 MM"
-        pattern = "Kitchen"
-    elif "POOJA" in upper:
-        category = "wall-tiles"
-        size = size or "300x450 MM"
-        pattern = "Pooja"
-    elif "INTERIOR" in upper:
-        category = "wall-tiles"
-        size = size or "300x600 MM"
-        pattern = "Interior"
     elif re.search(r"16\s*[x×]\s*16", upper):
         size = size or "400x400 MM"
         category = "wall-tiles"
-    elif "CARVING" in upper or re.search(r"\bC-\d", upper):
+    elif "CARVING" in upper:
         category = "gvt-pgvt"
         size = size or "600x1200 MM"
         finish = "Matt"
         surface = "Carving"
         pattern = "Carving"
-    elif "3D" in upper:
-        category = "gvt-pgvt"
-        size = size or "600x1200 MM"
-        pattern = "3D"
-    elif "GLITTER" in upper:
+    elif "GLITTER" in upper and not re.search(r"HIGLSS|HIGH\s*GLOSS|GLOSSY", upper):
         category = "wall-tiles"
         size = size or "400x400 MM"
         pattern = "Glitter"
+        finish = "Glossy"
+        surface = "Glitter"
     elif "PARKING" in upper:
         category = "parking-tiles"
         size = size or "400x400 MM"
-    elif "GLOSSY" in upper or "HIGH GLOSSY" in upper:
-        category = "gvt-pgvt"
-        size = size or "600x1200 MM"
-        finish = "Glossy"
-        surface = "Polished"
-        pattern = "Glossy"
-    elif "WOODEN" in upper or "WOOD" in upper:
-        category = "wooden-strip"
-        size = size or "600x1200 MM"
-        finish = "Matt"
-        surface = "Matt Wood"
-        pattern = "Wood"
-    elif any(tok in upper for tok in ("FISH", "FLOWER", "SCENERY")):
-        category = "wall-tiles"
-        size = size or "300x450 MM"
-        pattern = stem.split()[0].capitalize()
-    elif "SPECIAL COLOUR" in upper or "SPECIAL" in upper:
-        category = "gvt-pgvt"
-        size = size or "600x1200 MM"
-        pattern = "Special"
-    elif "W&M" in upper or "W & M" in upper:
-        category = "wall-tiles"
-        size = size or "300x600 MM"
-        pattern = "Wall & Matt"
-    elif "GOLDEN" in upper:
-        category = "gvt-pgvt"
-        size = size or "600x1200 MM"
-        finish = "Glossy"
-        surface = "Polished"
-        pattern = "Golden"
 
     if not size:
         size = normalize_size(stem) or "400x400 MM"
 
     collection = derive_collection_name(stem)
     series_slug = slugify(collection) or slugify(stem)
+    is_poster = "POSTER" in upper or parse_feet_size(stem) is not None
 
-    meta = {
+    return {
         "series_slug": series_slug,
         "collection": collection,
         "category": category,
@@ -172,8 +157,6 @@ def infer_pdf_meta(pdf_path: Path, root: Path | None = None) -> dict:
         "finish": finish,
         "surface": surface,
         "pattern": pattern,
-        "pdf_rel_path": pdf_path.name,
+        "pdf_rel_path": rel_pdf,
+        "is_poster": is_poster,
     }
-    if root is not None:
-        meta["pdf_catalog_url"] = pdf_public_url(pdf_path, root)
-    return meta

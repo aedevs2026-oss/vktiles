@@ -1,5 +1,6 @@
 import AppImage from "@/components/ui/AppImage";
 import Link from "next/link";
+import { SocialIcon } from "@/components/icons/SocialIcons";
 import { business, footer, socialLinks, businessHours } from "@/content/data";
 import Container from "@/components/layout/Container";
 
@@ -34,9 +35,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-9 h-9 flex items-center justify-center border border-white/20 text-white/70 hover:border-sky hover:text-sky transition-colors text-xs"
+                  className="w-9 h-9 flex items-center justify-center border border-white/20 text-white/70 hover:border-sky hover:text-sky hover:bg-white/5 transition-colors"
                 >
-                  {social.platform[0]}
+                  <SocialIcon platform={social.platform} />
                 </a>
               ))}
             </div>
@@ -102,9 +103,22 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <Container className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs">
-            © {new Date().getFullYear()} {business.name}. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p className="text-white/40 text-xs">
+              © {new Date().getFullYear()} {business.name}. All rights reserved.
+            </p>
+            <p className="text-white/40 text-xs">
+              Developed by{" "}
+              <a
+                href="https://aedevs.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-sky transition-colors"
+              >
+                AEDEVS
+              </a>
+            </p>
+          </div>
           <ul className="flex gap-6">
             {footer.legal.map((link) => (
               <li key={link.href}>

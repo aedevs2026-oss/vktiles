@@ -8,7 +8,7 @@ from PIL import Image
 from ..images import (
     abs_image_path,
     extract_page_images,
-    filter_fullpage_images,
+    filter_tile_images,
     load_image_from_xref,
     rel_image_path,
     save_webp,
@@ -43,13 +43,16 @@ def extract_fullpage_pdf(
     doc = fitz.open(pdf_path)
     series_slug = meta["series_slug"]
     collection = meta.get("collection", series_slug)
+    poster = bool(meta.get("is_poster"))
     products: list[RawProduct] = []
     seen_xrefs: set[int] = set()
 
     for page_num in range(doc.page_count):
         page = doc[page_num]
         page_images = extract_page_images(page, doc)
-        tiles = filter_fullpage_images(page_images)
+        tiles = filter_tile_images(page_images, hero=True, poster=poster)
+        if not tiles:
+            tiles = filter_tile_images(page_images, hero=False, poster=poster)
         if not tiles:
             continue
 

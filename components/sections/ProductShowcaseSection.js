@@ -86,7 +86,12 @@ export default function ProductShowcaseSection({
           breakpoints={PRODUCT_SLIDER_BREAKPOINTS}
         >
           {products.map((product) => (
-            <ProductCard key={product.slug} product={product} />
+            <ProductCard
+              key={product.slug}
+              product={product}
+              badge={badge}
+              badgeLabel={badgeLabel}
+            />
           ))}
         </Carousel>
       </Container>

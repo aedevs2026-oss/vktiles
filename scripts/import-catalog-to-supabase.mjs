@@ -1,14 +1,9 @@
 #!/usr/bin/env node
 /**
  * Import content/vk-catalog.json into Supabase (idempotent upsert).
+ * Merges with existing rows so descriptions/images are not overwritten by empty values.
  *
- * - Inserts new products, updates existing ones on slug conflict
- * - Preserves existing images/descriptions when extraction data is incomplete
- * - Reuses local image files when paths already exist under public/
- *
- * Usage:
- *   node scripts/import-catalog-to-supabase.mjs
- *   npm run import-supabase
+ * Usage: node scripts/import-catalog-to-supabase.mjs
  */
 import fs from "fs";
 import path from "path";
@@ -37,7 +32,6 @@ const supabase = createClient(url, key, {
 
 const catalogPath = path.join(root, "content", "vk-catalog.json");
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
-const publicDir = path.join(root, "public");
 
 function slugify(text) {
   return String(text || "")
@@ -54,89 +48,47 @@ const CATEGORY_LABELS = {
   "parking-tiles": "Parking Tiles",
 };
 
-/** Return true when a local public image path exists on disk. */
-function localImageExists(imagePath) {
-  if (!imagePath || typeof imagePath !== "string" || !imagePath.startsWith("/")) {
-    return false;
-  }
-  return fs.existsSync(path.join(publicDir, imagePath.replace(/^\//, "")));
+/** Return local image path if the file exists in public/, otherwise null. */
+function localImagePath(relPath) {
+  if (!relPath || typeof relPath !== "string") return null;
+  if (relPath.startsWith("http")) return relPath;
+  const normalized = relPath.startsWith("/") ? relPath.slice(1) : relPath;
+  const abs = path.join(root, "public", normalized);
+  return fs.existsSync(abs) ? relPath : null;
 }
 
-/** Prefer extracted images; fall back to existing DB paths when missing or absent on disk. */
-function resolveImages(product, existing) {
-  let image = product.image || null;
-  let images = Array.isArray(product.images) ? [...product.images] : [];
-
-  if (image && !localImageExists(image)) {
-    image = null;
-  }
-  images = images.filter((p) => localImageExists(p));
-
-  if (!image && images.length > 0) {
-    image = images[0];
-  }
-
-  if (existing) {
-    if (!image && existing.image && localImageExists(existing.image)) {
-      image = existing.image;
-    }
-    if (images.length === 0 && Array.isArray(existing.images)) {
-      images = existing.images.filter((p) => localImageExists(p));
-    }
-    if (!image && images.length > 0) {
-      image = images[0];
-    }
-  }
-
-  return { image, images };
+function resolveProductImages(product) {
+  const primary = localImagePath(product.image);
+  const images = (product.images || [])
+    .map((img) => localImagePath(img))
+    .filter(Boolean);
+  const image = primary || images[0] || product.image || null;
+  const uniqueImages = image ? [image, ...images.filter((i) => i !== image)] : images;
+  return { image, images: uniqueImages };
 }
 
-function mergeSpecifications(existing, incoming) {
-  const base = existing?.specifications || {};
-  const next = incoming?.specifications || {};
-  const merged = { ...base, ...next };
-  for (const [k, v] of Object.entries(next)) {
-    if (v == null || v === "") {
-      merged[k] = base[k];
+function mergeRow(newRow, existing) {
+  if (!existing) return newRow;
+  const merged = { ...newRow };
+  if (!merged.description && existing.description) merged.description = existing.description;
+  if (!merged.image && existing.image) merged.image = existing.image;
+  if (!merged.images?.length && existing.images?.length) merged.images = existing.images;
+  if (!merged.image_thumb && existing.image_thumb) merged.image_thumb = existing.image_thumb;
+  if (!merged.image_medium && existing.image_medium) merged.image_medium = existing.image_medium;
+  if (
+    merged.specifications &&
+    existing.specifications &&
+    Object.keys(merged.specifications).length < Object.keys(existing.specifications).length
+  ) {
+    merged.specifications = { ...existing.specifications, ...merged.specifications };
+  }
+  if (merged.seo && existing.seo) {
+    merged.seo = { ...existing.seo, ...merged.seo };
+    if (!merged.seo.description && existing.seo.description) {
+      merged.seo.description = existing.seo.description;
     }
   }
   return merged;
-}
-
-function mergeProductRow(product, existing) {
-  const row = productToRow(product);
-
-  if (existing) {
-    const { image, images } = resolveImages(product, existing);
-    row.image = image;
-    row.images = images;
-    row.image_thumb = product.imageThumb || product.image_thumb || image;
-    row.image_medium = product.imageMedium || product.image_medium || image;
-
-    if (!row.description && existing.description) {
-      row.description = existing.description;
-    }
-
-    row.specifications = mergeSpecifications(existing, product);
-
-    if (!row.finish && existing.finish) row.finish = existing.finish;
-    if (!row.size && existing.size) row.size = existing.size;
-    if (!row.collection_name && existing.collection_name) {
-      row.collection_name = existing.collection_name;
-    }
-    if (!row.collection_slug && existing.collection_slug) {
-      row.collection_slug = existing.collection_slug;
-    }
-  } else {
-    const { image, images } = resolveImages(product, null);
-    row.image = image;
-    row.images = images;
-    row.image_thumb = product.imageThumb || product.image_thumb || image;
-    row.image_medium = product.imageMedium || product.image_medium || image;
-  }
-
-  row.collection_slug = row.collection_slug || slugify(product.collection);
-  return row;
 }
 
 async function upsertCategories() {
@@ -159,13 +111,14 @@ async function upsertCollections() {
   for (const p of catalog.products) {
     const slug = p.collectionSlug || slugify(p.collection);
     if (!map.has(slug)) {
+      const sourcePdf = p.sourcePdf || p.series || null;
       map.set(slug, {
         slug,
         name: p.collection,
         category_slug: p.category,
-        blurb: `VK ${p.collection} — ${p.size}`,
+        blurb: `${catalog.brand || "VK Tiles & Granites"} — ${p.collection} (${p.size})`,
         image: p.image,
-        source_pdf: p.series,
+        source_pdf: sourcePdf,
         sort_order: map.size,
         published: true,
       });
@@ -182,12 +135,7 @@ async function fetchExistingProducts(slugs) {
   const batchSize = 50;
   for (let i = 0; i < slugs.length; i += batchSize) {
     const batch = slugs.slice(i, i + batchSize);
-    const { data, error } = await supabase
-      .from("products")
-      .select(
-        "slug, image, images, description, specifications, finish, size, collection_name, collection_slug",
-      )
-      .in("slug", batch);
+    const { data, error } = await supabase.from("products").select("*").in("slug", batch);
     if (error) throw error;
     for (const row of data || []) {
       bySlug.set(row.slug, row);
@@ -216,17 +164,22 @@ async function upsertProducts() {
   const existingBySlug = await fetchExistingProducts(uniqueProducts.map((p) => p.slug));
 
   for (let i = 0; i < uniqueProducts.length; i += batchSize) {
-    const slice = uniqueProducts.slice(i, i + batchSize);
-    const batch = slice.map((p) => {
-      const existing = existingBySlug.get(p.slug);
-      if (existing) {
+    const batch = uniqueProducts.slice(i, i + batchSize).map((p) => {
+      const { image, images } = resolveProductImages(p);
+      const product = { ...p, image, images, imageThumb: image, imageMedium: image };
+      const row = productToRow(product);
+      row.collection_slug = p.collectionSlug || slugify(p.collection);
+      return mergeRow(row, existingBySlug.get(row.slug));
+    });
+
+    for (const row of batch) {
+      if (existingBySlug.has(row.slug)) {
         updated += 1;
       } else {
         inserted += 1;
-        existingBySlug.set(p.slug, p);
+        existingBySlug.set(row.slug, row);
       }
-      return mergeProductRow(p, existing);
-    });
+    }
 
     const { error } = await supabase.from("products").upsert(batch, { onConflict: "slug" });
     if (error) throw error;
@@ -234,13 +187,26 @@ async function upsertProducts() {
 
   console.log(`✓ Products inserted:  ${inserted}`);
   console.log(`✓ Products updated:   ${updated}`);
-  console.log(`  Duplicates skipped: ${duplicatesSkipped}`);
+  console.log(`✓ Duplicates skipped: ${duplicatesSkipped}`);
   console.log(`✓ Total in catalog:   ${uniqueProducts.length}`);
 }
 
 async function main() {
+  const brand = catalog.brand || "VK Tiles & Granites";
+  const productCount = catalog.count ?? catalog.products?.length ?? 0;
+  const failedPdfs = catalog.errors?.length ?? 0;
+
   console.log("Importing VK catalog to Supabase...");
-  console.log(`Catalog: ${catalog.count ?? catalog.products?.length} products\n`);
+  console.log(`Brand:   ${brand}`);
+  console.log(`Catalog: ${productCount} products`);
+  if (failedPdfs) {
+    console.log(`Failed PDFs from extraction: ${failedPdfs}`);
+    for (const name of catalog.errors || []) {
+      console.log(`  - ${name}`);
+    }
+  }
+  console.log();
+
   await upsertCategories();
   await upsertCollections();
   await upsertProducts();

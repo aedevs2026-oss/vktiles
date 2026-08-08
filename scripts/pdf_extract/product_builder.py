@@ -30,6 +30,9 @@ def build_specifications(raw: RawProduct) -> dict:
     packing = build_packing(size)
     pack = packing[0]
     specs = {
+        "brand": BRAND,
+        "category": meta.get("category"),
+        "collection": meta.get("collection"),
         "size": size,
         "thickness": pack.get("thickness"),
         "finish": meta.get("finish"),
@@ -69,8 +72,10 @@ def generate_description(raw: RawProduct, specs: dict) -> str:
     weight = specs.get("weightPerBox")
     random = specs.get("randomFaces")
 
+    category_label = meta.get("category", "").replace("-", " ")
     parts = [
-        f"{name} is part of the {collection} range by {BRAND}.",
+        f"{BRAND} — {name} from the {collection} collection.",
+        f"Category: {category_label}.",
         f"This {finish.lower()} {surface.lower()} tile is offered in {size}"
         + (f" with {thickness} thickness." if thickness else "."),
     ]
@@ -115,27 +120,6 @@ def build_seo(raw: RawProduct, specs: dict, description: str) -> dict:
     }
 
 
-def detect_missing_fields(product: dict) -> list[str]:
-    """Return human-readable labels for important fields that are empty."""
-    missing: list[str] = []
-    if not product.get("name"):
-        missing.append("name")
-    if not product.get("image"):
-        missing.append("image")
-    if not product.get("description"):
-        missing.append("description")
-    if not product.get("size"):
-        missing.append("size")
-    specs = product.get("specifications") or {}
-    if not specs.get("finish") and not product.get("finish"):
-        missing.append("finish")
-    if not product.get("collection"):
-        missing.append("collection")
-    if not product.get("category"):
-        missing.append("category")
-    return missing
-
-
 def raw_to_product(raw: RawProduct, featured: bool = False) -> dict:
     meta = raw.meta
     size = meta.get("size", "400x400 MM")
@@ -144,9 +128,10 @@ def raw_to_product(raw: RawProduct, featured: bool = False) -> dict:
     specs = build_specifications(raw)
     description = generate_description(raw, specs)
     primary = raw.image_paths[0] if raw.image_paths else ""
-    catalog_url = meta.get("pdf_catalog_url") or f"/VKProducts/{meta.get('pdf_rel_path', '')}"
+    pdf_rel = meta.get("pdf_rel_path", meta.get("series_slug", ""))
+    catalog_path = f"/{pdf_rel.lstrip('/')}" if pdf_rel else f"/Vkpdf/{raw.series_slug}.pdf"
 
-    product = {
+    return {
         "slug": raw.product_slug,
         "name": norm_name(raw.name),
         "brand": BRAND,
@@ -177,13 +162,11 @@ def raw_to_product(raw: RawProduct, featured: bool = False) -> dict:
         "sourcePdf": raw.series_slug,
         "sourcePage": raw.page + 1,
         "downloads": {
-            "catalog": catalog_url,
+            "catalog": catalog_path,
             "specification": "/contact",
         },
         "seo": build_seo(raw, specs, description),
     }
-    product["_missingFields"] = detect_missing_fields(product)
-    return product
 
 
 def parse_page_specs(page_text: str) -> dict:

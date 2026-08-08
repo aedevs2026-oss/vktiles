@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import dataclass, field
@@ -11,13 +12,21 @@ from pathlib import Path
 import fitz
 
 from .cache import load_cache, save_cache, should_skip_pdf, update_cache_entry
-from .constants import INDEX_MIN_LINKS, LEGACY_PDF_CONFIGS
+from .constants import BRAND, LEGACY_PDF_CONFIGS
 from .extractors.fullpage import extract_fullpage_pdf
 from .extractors.grid import extract_grid_pdf
 from .extractors.indexed import IndexedExtractor
-from .meta import infer_pdf_meta, pdf_cache_key, resolve_pdf_dir
+from .meta import infer_pdf_meta, resolve_pdf_dirs
 from .product_builder import raw_to_product
 from .utils import norm_name, slugify
+
+
+def _log_ok(message: str) -> None:
+    """Print status line; ASCII fallback for Windows consoles."""
+    try:
+        print(f"✓ {message}", flush=True)
+    except UnicodeEncodeError:
+        print(f"[OK] {message}", flush=True)
 
 
 @dataclass
@@ -31,36 +40,25 @@ class ExtractionStats:
     failed_pdfs: list[str] = field(default_factory=list)
 
 
-def _pdf_has_index_pages(doc: fitz.Document) -> bool:
-    """True when the PDF has clickable index page(s) with product links."""
-    for i in range(doc.page_count):
-        links = [
-            l
-            for l in doc[i].get_links()
-            if l.get("kind") == fitz.LINK_GOTO and l.get("page") is not None
-        ]
-        if len(links) >= INDEX_MIN_LINKS:
-            return True
-    return False
-
-
 def detect_pdf_mode(pdf_path: Path) -> str:
     """Return extraction mode: indexed, sequential, grid, or fullpage."""
-    explicit_mode = None
     if pdf_path.name in LEGACY_PDF_CONFIGS:
-        explicit_mode = LEGACY_PDF_CONFIGS[pdf_path.name].get("mode")
-        if explicit_mode == "sequential":
+        cfg = LEGACY_PDF_CONFIGS[pdf_path.name]
+        if cfg.get("mode") == "sequential":
             return "sequential"
-        if explicit_mode in ("grid", "fullpage"):
-            return explicit_mode
+        return "indexed"
 
     doc = fitz.open(pdf_path)
-    has_index = _pdf_has_index_pages(doc)
+    index_links = 0
     grid_name_pages = 0
     fullpage_pages = 0
 
     for i in range(doc.page_count):
         page = doc[i]
+        links = [l for l in page.get_links() if l.get("kind") == fitz.LINK_GOTO and l.get("page") is not None]
+        if len(links) >= 6:
+            index_links += 1
+
         text = page.get_text()
         from .utils import is_product_code
 
@@ -69,42 +67,32 @@ def detect_pdf_mode(pdf_path: Path) -> str:
             grid_name_pages += 1
 
         imgs = page.get_images(full=True)
-        if imgs and len(text.strip()) < 40:
+        if imgs and not text.strip():
             fullpage_pages += 1
 
     doc.close()
 
-    if explicit_mode == "indexed" and has_index:
-        return "indexed"
-    if has_index:
+    if index_links > 0:
         return "indexed"
     if grid_name_pages >= 2:
         return "grid"
-    if fullpage_pages >= 1 or grid_name_pages == 0:
-        return "fullpage"
     return "fullpage"
 
 
-def _pdf_is_image_only(pdf_path: Path) -> bool:
-    """Most pages are image-only (no extractable text layer)."""
-    doc = fitz.open(pdf_path)
-    text_pages = sum(1 for i in range(doc.page_count) if len(doc[i].get_text().strip()) > 20)
-    doc.close()
-    return text_pages < 2
-
-
 def needs_ocr(pdf_path: Path, mode: str) -> bool:
-    """Elevation and image-only catalogs use generated names — skip slow OCR."""
+    """Skip OCR for image-only catalogs that use generated product names."""
+    upper = pdf_path.stem.upper()
     if mode == "fullpage":
-        upper = pdf_path.stem.upper()
-        if "ELEVATION" in upper or _pdf_is_image_only(pdf_path):
+        if "ELEVATION" in upper or "POSTER" in upper:
+            return False
+        if re.search(r"\d\s*[x×]\s*\d", upper):
             return False
     return mode in ("indexed", "sequential", "fullpage")
 
 
 def extract_single_pdf(pdf_path: Path, root: Path, ocr=None) -> tuple[list[dict], int]:
     """Extract products from one PDF. Returns (products, image_count)."""
-    meta = infer_pdf_meta(pdf_path, root)
+    meta = infer_pdf_meta(pdf_path, root=root)
     mode = detect_pdf_mode(pdf_path)
     used_slugs: set[str] = set()
     raw_products = []
@@ -130,7 +118,6 @@ def _worker_extract(args: tuple) -> tuple[str, list[dict], int, str | None]:
     pdf_path = Path(pdf_path_str)
     root = Path(root_str)
     try:
-        # Lazy OCR load only when needed
         mode = detect_pdf_mode(pdf_path)
         ocr = None
         if needs_ocr(pdf_path, mode):
@@ -138,9 +125,9 @@ def _worker_extract(args: tuple) -> tuple[str, list[dict], int, str | None]:
 
             ocr = RapidOCR()
         products, images = extract_single_pdf(pdf_path, root, ocr=ocr)
-        return pdf_path.name, products, images, None
+        return str(pdf_path), products, images, None
     except Exception as exc:
-        return pdf_path.name, [], 0, str(exc)
+        return str(pdf_path), [], 0, str(exc)
 
 
 def merge_products(existing: list[dict], new_items: list[dict], stats: ExtractionStats) -> list[dict]:
@@ -151,9 +138,6 @@ def merge_products(existing: list[dict], new_items: list[dict], stats: Extractio
         seen_name_keys.add((p.get("series", ""), norm_name(p.get("name", ""))))
 
     for p in new_items:
-        # Strip internal extraction metadata before merge
-        p = {k: v for k, v in p.items() if not k.startswith("_")}
-
         name_key = (p.get("series", ""), norm_name(p.get("name", "")))
         if name_key in seen_name_keys and p["slug"] not in by_slug:
             stats.duplicates_skipped += 1
@@ -163,28 +147,15 @@ def merge_products(existing: list[dict], new_items: list[dict], stats: Extractio
         if p["slug"] in by_slug:
             old = by_slug[p["slug"]]
             merged = {**old, **p}
-            # Preserve existing media and text when new extraction is incomplete
+            # Preserve existing image if new extraction has none
             if not p.get("image") and old.get("image"):
                 merged["image"] = old["image"]
-                merged["imageThumb"] = old.get("imageThumb", old["image"])
-                merged["imageMedium"] = old.get("imageMedium", old["image"])
-            if not p.get("images") and old.get("images"):
-                merged["images"] = old["images"]
-            if not p.get("description") and old.get("description"):
-                merged["description"] = old["description"]
-            if old.get("specifications"):
-                merged["specifications"] = {**old["specifications"], **(p.get("specifications") or {})}
-            if p.get("downloads"):
-                merged["downloads"] = {**old.get("downloads", {}), **p["downloads"]}
+                merged["images"] = old.get("images", [])
             by_slug[p["slug"]] = merged
         else:
             by_slug[p["slug"]] = p
 
-    return [_strip_internal(p) for p in by_slug.values()]
-
-
-def _strip_internal(product: dict) -> dict:
-    return {k: v for k, v in product.items() if not k.startswith("_")}
+    return list(by_slug.values())
 
 
 def build_categories(products: list[dict]) -> list[dict]:
@@ -198,12 +169,35 @@ def build_categories(products: list[dict]) -> list[dict]:
                 "category": p["category"],
                 "subcategory": p["subcategory"],
                 "parent": p["category"],
-                "blurb": f"VK {p['collection']} — {p['size']}",
+                "blurb": f"{BRAND} — {p['collection']} ({p['size']})",
                 "image": p["image"],
                 "count": 0,
             }
         categories[key]["count"] += 1
     return sorted(categories.values(), key=lambda c: (c["category"], c["name"]))
+
+
+def collect_pdfs(
+    root: Path,
+    pdf_filter: set[str] | None,
+    pdf_dir: Path | None = None,
+) -> list[Path]:
+    """Gather PDFs from configured source directories (or a single --dir override)."""
+    pdfs: list[Path] = []
+    seen: set[str] = set()
+    search_dirs = [pdf_dir] if pdf_dir else resolve_pdf_dirs(root)
+    for search_dir in search_dirs:
+        if not search_dir.is_dir():
+            continue
+        for pdf in sorted(search_dir.rglob("*.pdf")):
+            key = str(pdf.resolve()).lower()
+            if key in seen:
+                continue
+            if pdf_filter and pdf.name not in pdf_filter:
+                continue
+            seen.add(key)
+            pdfs.append(pdf)
+    return sorted(pdfs, key=lambda p: str(p).lower())
 
 
 def run_pipeline(
@@ -213,25 +207,23 @@ def run_pipeline(
     workers: int = 2,
     force: bool = False,
     pdf_filter: set[str] | None = None,
+    pdf_dir: Path | None = None,
 ) -> ExtractionStats:
     stats = ExtractionStats()
-    pdf_dir = resolve_pdf_dir(root)
-    pdfs = sorted(pdf_dir.rglob("*.pdf"))
-    if pdf_filter:
-        pdfs = [p for p in pdfs if p.name in pdf_filter]
+    pdf_dirs = [pdf_dir] if pdf_dir else resolve_pdf_dirs(root)
+    pdfs = collect_pdfs(root, pdf_filter, pdf_dir=pdf_dir)
 
     if not pdfs:
-        print(f"No PDFs found in {pdf_dir}", file=sys.stderr)
+        dirs_label = ", ".join(str(d) for d in pdf_dirs)
+        print(f"No PDFs found in: {dirs_label}", file=sys.stderr)
         return stats
-
-    print(f"PDF source: {pdf_dir} ({len(pdfs)} file(s))")
 
     cache = load_cache(cache_path)
     to_process: list[Path] = []
     for pdf in pdfs:
-        if should_skip_pdf(pdf, cache, pdf_dir, force=force):
+        if should_skip_pdf(pdf, cache, root, force=force):
             stats.pdfs_skipped += 1
-            print(f"[skip] unchanged: {pdf_cache_key(pdf, pdf_dir)}")
+            print(f"[skip] unchanged: {pdf.name}")
         else:
             to_process.append(pdf)
 
@@ -252,24 +244,18 @@ def run_pipeline(
             }
             for fut in as_completed(futures):
                 pdf = futures[fut]
-                name, products, images, err = fut.result()
+                path_key, products, images, err = fut.result()
                 if err:
                     stats.pdfs_failed += 1
-                    stats.failed_pdfs.append(name)
-                    print(f"[fail] {name}: {err}", file=sys.stderr)
+                    stats.failed_pdfs.append(pdf.name)
+                    print(f"[fail] {pdf.name}: {err}", file=sys.stderr)
                     continue
                 stats.pdfs_processed += 1
                 stats.products_extracted += len(products)
                 stats.images_extracted += images
                 all_new.extend(products)
-                update_cache_entry(cache, pdf, pdf_dir, len(products))
-                missing = sum(len(p.get("_missingFields", [])) for p in products)
-                print(
-                    f"✓ PDF processed: {name} "
-                    f"({len(products)} products, {images} images"
-                    + (f", {missing} missing fields" if missing else "")
-                    + ")"
-                )
+                update_cache_entry(cache, pdf, root, len(products))
+                _log_ok(f"PDF processed: {pdf.name} ({len(products)} products, {images} images)")
     else:
         ocr = None
         try:
@@ -288,14 +274,8 @@ def run_pipeline(
                 stats.products_extracted += len(products)
                 stats.images_extracted += images
                 all_new.extend(products)
-                update_cache_entry(cache, pdf, pdf_dir, len(products))
-                missing = sum(len(p.get("_missingFields", [])) for p in products)
-                print(
-                    f"✓ PDF processed: {pdf.name} "
-                    f"({len(products)} products, {images} images"
-                    + (f", {missing} missing fields" if missing else "")
-                    + ")"
-                )
+                update_cache_entry(cache, pdf, root, len(products))
+                _log_ok(f"PDF processed: {pdf.name} ({len(products)} products, {images} images)")
             except Exception as exc:
                 stats.pdfs_failed += 1
                 stats.failed_pdfs.append(pdf.name)
@@ -306,9 +286,9 @@ def run_pipeline(
     catalog = {
         "scrapedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "count": len(merged),
-        "brand": "VK Tiles & Granites",
-        "source": f"VKProducts extraction ({pdf_dir.name})",
-        "pdfSource": str(pdf_dir),
+        "brand": BRAND,
+        "source": "VK local PDF extraction (Vkpdf + public/VKNew)",
+        "pdfSource": [str(d.relative_to(root)).replace("\\", "/") for d in pdf_dirs],
         "categories": build_categories(merged),
         "products": merged,
         "errors": stats.failed_pdfs,

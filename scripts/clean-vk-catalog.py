@@ -32,7 +32,8 @@ def build_description(p: dict) -> str:
     apps = ", ".join((p.get("applications") or [])[:4])
     material = MATERIAL.get(p.get("category"), "Premium Ceramic Tile")
     return (
-        f"{p['name']} from the {p.get('collection', 'VK')} range by {BRAND}. "
+        f"{BRAND} — {p['name']} from the {p.get('collection', 'VK')} collection. "
+        f"Category: {p.get('category', '').replace('-', ' ')}. "
         f"This {p.get('finish', '').lower()} {p.get('surface', '').lower()} tile "
         f"comes in {p.get('size', 'standard size')} with {p.get('thickness', '9 MM')} thickness. "
         f"Pattern: {p.get('pattern', '—')}. Material: {material}. "
@@ -46,6 +47,9 @@ def build_specifications(p: dict) -> dict:
     packing = (p.get("packing") or [{}])[0]
     specs = p.get("specifications") or {}
     base = {
+        "brand": BRAND,
+        "category": p.get("category"),
+        "collection": p.get("collection"),
         "size": p.get("size"),
         "thickness": p.get("thickness"),
         "finish": p.get("finish"),
@@ -96,18 +100,11 @@ def main() -> None:
         p["specifications"] = build_specifications(p)
         p["seo"] = build_seo(p)
         p["collectionSlug"] = slugify(p.get("collection", ""))
-        catalog_url = (p.get("downloads") or {}).get("catalog", "")
-        if catalog_url.startswith("/Vkpdf/"):
-            pdf_name = catalog_url.replace("/Vkpdf/", "")
-            vk_path = ROOT / "public" / "VKProducts" / pdf_name
-            if vk_path.exists():
-                p.setdefault("downloads", {})["catalog"] = f"/VKProducts/{pdf_name}"
-            elif pdf_name:
-                p.setdefault("downloads", {})["catalog"] = f"/VKProducts/{pdf_name}"
-        elif not catalog_url and p.get("series"):
-            series_pdf = ROOT / "public" / "VKProducts" / f"{p['series']}.pdf"
-            if series_pdf.exists():
-                p.setdefault("downloads", {})["catalog"] = f"/VKProducts/{series_pdf.name}"
+        pdf_name = p.get("downloads", {}).get("catalog", "").replace("/Vkpdf/", "")
+        if not pdf_name or pdf_name.endswith(".pdf"):
+            pass
+        elif p.get("series"):
+            p.setdefault("downloads", {})["catalog"] = f"/Vkpdf/{pdf_name or p.get('series')}.pdf"
         cleaned.append(p)
 
     categories = {}
@@ -130,14 +127,14 @@ def main() -> None:
         "scrapedAt": catalog.get("scrapedAt"),
         "count": len(cleaned),
         "brand": BRAND,
-        "source": "VKProducts local catalog",
+        "source": "VKPdf local catalog",
         "categories": sorted(categories.values(), key=lambda c: (c["category"], c["name"])),
         "products": cleaned,
         "errors": catalog.get("errors", []),
     }
 
     OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Wrote {len(cleaned)} VKProducts products -> {OUT}")
+    print(f"Wrote {len(cleaned)} VKPdf products -> {OUT}")
 
 
 if __name__ == "__main__":

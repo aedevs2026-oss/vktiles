@@ -33,7 +33,10 @@ export async function loginAction(_prev, formData) {
 
   const allowed = getAllowedEmails();
   if (allowed.length > 0 && !allowed.includes(email)) {
-    return { error: "This account is not authorized for admin access." };
+    return {
+      error:
+        "This account is not authorized for admin access. Ask the site owner to add your email to ADMIN_ALLOWED_EMAILS in .env.local.",
+    };
   }
 
   const supabase = await createClient();

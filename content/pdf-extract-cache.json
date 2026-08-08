@@ -385,6 +385,42 @@
       "processedAt": "2026-08-06T07:50:31.029215Z",
       "productCount": 40,
       "path": "VALENZA NEW CARVING.pdf"
+    },
+    "public/VkNew/2X3 NEW HIGLSS PLAIN & GLITTER.pdf": {
+      "sha256": "3c6164cd577d111f0398c6b03794fd94f06dc72f978dfd2aa8ed2ec1bc50de60",
+      "processedAt": "2026-08-08T09:56:59.918276Z",
+      "productCount": 41,
+      "filename": "2X3 NEW HIGLSS PLAIN & GLITTER.pdf"
+    },
+    "public/VkNew/2X3 CRYSTAL POSTER.pdf": {
+      "sha256": "e773eac7545c85a287fbac5fd7495a7e5ef0fd5978f743998d4cb98f81543a3d",
+      "processedAt": "2026-08-08T09:48:09.378157Z",
+      "productCount": 42,
+      "filename": "2X3 CRYSTAL POSTER.pdf"
+    },
+    "public/VkNew/2X4 CRYSTAL POSTER.pdf": {
+      "sha256": "8796f1742555702ce8faade9a73f00dc277a49c42500aac989ae93fd44938f17",
+      "processedAt": "2026-08-08T09:57:16.163051Z",
+      "productCount": 59,
+      "filename": "2X4 CRYSTAL POSTER.pdf"
+    },
+    "public/VkNew/4X6 CRYSTAL POSTER.pdf": {
+      "sha256": "ba05d415b7493336e008a0e7b3ef1832c9d056ed24a51ce4925efbb031f246cd",
+      "processedAt": "2026-08-08T10:00:08.270218Z",
+      "productCount": 60,
+      "filename": "4X6 CRYSTAL POSTER.pdf"
+    },
+    "public/VkNew/2X4 HIGLSS PLAIN & GLITTER.pdf": {
+      "sha256": "556d5e048ca5ea7a88947290c53312be0e28f4230b2ca922fcafe6045f5f60c0",
+      "processedAt": "2026-08-08T09:59:18.732463Z",
+      "productCount": 8,
+      "filename": "2X4 HIGLSS PLAIN & GLITTER.pdf"
+    },
+    "public/VkNew/6X4 HIGLSS PLAIN & GLITTER.pdf": {
+      "sha256": "8ad9cd4b6f9037e30f54f19cf3beabb409465c3e205101817dac31b684b6e311",
+      "processedAt": "2026-08-08T10:01:04.596405Z",
+      "productCount": 7,
+      "filename": "6X4 HIGLSS PLAIN & GLITTER.pdf"
     }
   }
 }
