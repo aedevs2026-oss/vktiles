@@ -6,6 +6,18 @@ import AppImage from "@/components/ui/AppImage";
 import Container from "@/components/layout/Container";
 import { gsap, registerGsapPlugins } from "@/lib/gsap-client";
 
+const getBrandImage = (brand) => {
+  if (brand?.image) return brand.image;
+
+  const candidates = [
+    `/brands/${brand?.slug || "brand"}.png`,
+    `/brands/${brand?.slug || "brand"}.jpg`,
+    `/brands/${brand?.slug || "brand"}.jpeg`,
+  ];
+
+  return candidates[0];
+};
+
 export default function PartnersStrip({ brands = [] }) {
   const sectionRef = useRef(null);
 
@@ -78,7 +90,7 @@ export default function PartnersStrip({ brands = [] }) {
               >
                 <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-white shrink-0 ring-1 ring-navy/8">
                   <AppImage
-                    src={brand.image}
+                    src={getBrandImage(brand)}
                     alt={brand.name}
                     fill
                     className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
