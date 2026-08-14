@@ -200,6 +200,14 @@ body {
   background: var(--sky);
 }
 
+.carousel-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.carousel-swiper .swiper-slide {
+  height: auto;
+}
+
 .carousel-nav-bottom + .carousel-swiper .swiper-pagination,
 .group\/carousel .carousel-swiper .swiper-pagination {
   position: relative;

@@ -74,18 +74,18 @@ export default function PartnersStrip({ brands = [] }) {
                 key={brand.slug}
                 href={`/brands#${brand.slug}`}
                 data-partners-brand
-                className="group flex items-center gap-3 rounded-2xl border border-navy/8 bg-background/80 px-4 py-3 min-w-[min(100%,200px)] hover:border-sky/35 hover:bg-sky-soft/30 transition-all duration-300"
+                className="group flex items-center gap-3 rounded-2xl border border-navy/8 bg-background/80 px-4 py-3 min-w-[min(100%,220px)] hover:border-sky/35 hover:bg-sky-soft/30 transition-all duration-300"
               >
-                <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-white shrink-0 ring-1 ring-navy/8">
+                <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-white shrink-0 ring-1 ring-navy/8">
                   <AppImage
                     src={brand.image}
                     alt={brand.name}
                     fill
-                    className="object-contain p-1 group-hover:scale-105 transition-transform duration-500"
-                    sizes="48px"
+                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                    sizes="56px"
                   />
                 </div>
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="font-display text-base text-navy group-hover:text-sky transition-colors">
                     {brand.name}
                   </p>

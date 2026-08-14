@@ -36,8 +36,8 @@ export default function ProductCard({ product, badge, badgeLabel }) {
             : null);
 
   return (
-    <article className="group h-full min-h-[390px] md:min-h-[430px] flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm shadow-navy/5 border border-navy/5 card-hover transition-all duration-300 hover:shadow-xl hover:shadow-navy/10">
-      <div className="relative aspect-[4/5] overflow-hidden bg-sky-soft/20">
+    <article className="group h-full min-h-[430px] sm:min-h-[450px] lg:min-h-[470px] flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm shadow-navy/5 border border-navy/5 card-hover transition-all duration-300 hover:shadow-xl hover:shadow-navy/10">
+      <div className="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden bg-sky-soft/20">
         <Link href={`/products/${product.slug}`} className="block w-full h-full">
           {product.image ? (
             <ProductImage
@@ -90,19 +90,19 @@ export default function ProductCard({ product, badge, badgeLabel }) {
       </div>
 
       <div className="p-4 md:p-5 flex flex-1 flex-col justify-between gap-3">
-        <div>
-          <p className="text-sky text-[9px] font-bold uppercase tracking-[0.2em] mb-2">
+        <div className="space-y-2">
+          <p className="text-sky text-[9px] font-bold uppercase tracking-[0.2em]">
             {product.collection || product.category}
           </p>
-          <h3 className="font-display text-base text-navy group-hover:text-sky transition-colors duration-300 line-clamp-2 leading-snug min-h-[2.8rem]">
+          <h3 className="font-display text-base text-navy group-hover:text-sky transition-colors duration-300 leading-snug min-h-[3.2rem] break-words">
             <Link href={`/products/${product.slug}`}>{product.name}</Link>
           </h3>
         </div>
-        <div className="flex items-center justify-between text-xs gap-3">
-          <span className="px-2.5 py-1 rounded-full bg-sky-soft text-sky font-medium truncate">
+        <div className="flex items-center justify-between gap-3 text-xs">
+          <span className="px-2.5 py-1 rounded-full bg-sky-soft text-sky font-medium truncate max-w-[58%]">
             {product.finish || "—"}
           </span>
-          <span className="text-gray truncate">{product.size || "—"}</span>
+          <span className="text-gray truncate max-w-[38%]">{product.size || "—"}</span>
         </div>
       </div>
     </article>
