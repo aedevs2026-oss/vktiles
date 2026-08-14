@@ -78,6 +78,7 @@ export default function ProductShowcaseSection({
           speed={650}
           navigation={false}
           pagination={false}
+          slideClassName="!h-full"
           autoplay={{
             delay: autoplayDelay,
             disableOnInteraction: false,

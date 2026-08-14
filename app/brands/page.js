@@ -32,7 +32,52 @@ export default function BrandsPage() {
         </Container>
       </section>
 
-      <section className="section-padding bg-background" aria-label="Brand assurance">
+      <section className="section-padding bg-background" aria-label="Brand details">
+        <Container>
+          <div className="mb-10 text-center">
+            <p className="text-sky text-[10px] font-bold uppercase tracking-[0.22em] mb-3">Brand Details</p>
+            <h2 className="font-display text-2xl md:text-3xl text-dark mb-4">
+              Premium manufacturer story behind every collection
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:gap-8">
+            {brands.map((brand) => (
+              <article
+                key={brand.slug}
+                className="grid gap-6 rounded-3xl border border-navy/8 bg-white p-5 shadow-sm shadow-navy/5 md:grid-cols-[180px_1fr] md:p-7"
+              >
+                <div className="relative aspect-square overflow-hidden rounded-2xl bg-sky-soft/30">
+                  <img
+                    src={brand.image}
+                    alt={brand.name}
+                    className="h-full w-full object-contain p-5"
+                  />
+                </div>
+
+                <div className="flex flex-col justify-center">
+                  <h3 className="font-display text-2xl text-navy mb-2">{brand.name}</h3>
+                  <p className="text-sky text-sm font-medium mb-3">{brand.tagline}</p>
+                  <p className="text-gray leading-relaxed mb-4">{brand.description}</p>
+
+                  <ul className="flex flex-wrap gap-2">
+                    {brand.highlights.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-full bg-sky-soft/60 px-3 py-1.5 text-xs font-medium text-navy"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-padding bg-white" aria-label="Brand assurance">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-2xl md:text-3xl text-dark mb-4">

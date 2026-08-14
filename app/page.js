@@ -14,7 +14,7 @@ import {
   pageSeo,
 } from "@/content/data";
 import { getGallery, getTestimonials } from "@/lib/site-content";
-import { getFeaturedProducts, getBestSellers, getProducts } from "@/lib/products";
+import { getFeaturedProducts, getBestSellers, getNewArrivals, getProducts } from "@/lib/products";
 import { generatePageMetadata } from "@/lib/seo";
 import Hero from "@/components/sections/Hero";
 import StatsSection from "@/components/sections/StatsSection";
@@ -44,6 +44,7 @@ export const dynamic = "force-dynamic";
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts(10);
   const bestSellers = getBestSellers(10);
+  const newArrivals = getNewArrivals(10);
   const gallery = getGallery();
   const testimonials = getTestimonials();
 
@@ -61,6 +62,23 @@ export default function HomePage() {
       <Hero slides={heroSlides} />
 
       <StatsSection stats={statistics} />
+
+      {newArrivals.length > 0 && (
+        <Reveal delay={0.04}>
+          <ProductShowcaseSection
+            id="new-arrivals"
+            title="New Arrivals"
+            subtitle="Freshly added tile styles, finishes and collection updates for modern spaces and new projects."
+            products={newArrivals}
+            badge="new"
+            badgeLabel="New Arrival"
+            variant="muted"
+            viewAllHref="/products"
+            viewAllLabel="View latest picks"
+            autoplayDelay={4600}
+          />
+        </Reveal>
+      )}
 
       <Reveal>
         <ProductShowcaseSection

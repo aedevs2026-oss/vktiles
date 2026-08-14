@@ -167,9 +167,6 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden lg:flex items-center gap-2 shrink-0 pl-2 border-l border-navy/8">
-            <Button href="/products" variant="secondary" size="sm">
-              View Catalog
-            </Button>
             <Button href="/contact" variant="outline" size="sm">
               Enquire
             </Button>

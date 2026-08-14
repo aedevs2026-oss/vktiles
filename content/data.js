@@ -247,12 +247,26 @@ export const brands = [
     name: "Simpolo",
     tagline: "Premium GVT & PGVT Tiles",
     image: "/brands/simpolo.jpg",
+    description:
+      "Simpolo brings premium glazed vitrified and polished tiles designed for long-lasting performance, large-format elegance and modern residential projects.",
+    highlights: [
+      "GVT & PGVT tile collections",
+      "Ceramic and porcelain for living spaces",
+      "Best-fit option for flooring and décor",
+    ],
   },
   {
     slug: "italica",
     name: "Italica",
     tagline: "Italian-inspired ceramic elegance",
     image: "/brands/italic.png",
+    description:
+      "Italica offers refined ceramic collections inspired by Italian design language, blending classic textures, soft palettes and premium architectural finishes.",
+    highlights: [
+      "Italian-inspired wall and floor styles",
+      "Luxury ceramic surfaces",
+      "Elegant textures for premium interiors",
+    ],
   },
 ];
 
