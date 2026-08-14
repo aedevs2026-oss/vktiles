@@ -52,7 +52,7 @@ export default function Carousel({
   const showEdgeNav =
     navigation && slides.length > 1 && (navigationPosition === "edges" || navigationPosition === "sides");
 
-  const swiperPb = pagination && slides.length > 1 && !showEdgeNav ? "!pb-10" : "!pb-0";
+  const swiperPb = pagination && slides.length > 1 && !showEdgeNav ? "!pb-[30px]" : "!pb-0";
 
   return (
     <div className={`relative group/carousel ${className}`}>

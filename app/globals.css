@@ -200,8 +200,14 @@ body {
   background: var(--sky);
 }
 
+.carousel-swiper {
+  padding-bottom: 30px;
+  box-sizing: border-box;
+}
+
 .carousel-swiper .swiper-wrapper {
   align-items: stretch;
+  padding-bottom: 30px;
 }
 
 .carousel-swiper .swiper-slide {
