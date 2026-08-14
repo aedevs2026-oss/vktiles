@@ -1,15 +1,12 @@
-import { projects, pageHeaders, cta } from "@/content/data";
+import { projects, pageHeaders, cta, pageSeo } from "@/content/data";
+import { generatePageMetadata } from "@/lib/seo";
 import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
 import SectionTitle from "@/components/sections/SectionTitle";
 import ProjectsCarousel from "@/components/sections/ProjectsCarousel";
 
-export const metadata = {
-  title: "Projects",
-  description:
-    "Explore completed projects by VK Tiles & Granites — villas, apartments, hotels and commercial spaces across Tamil Nadu.",
-};
+export const metadata = generatePageMetadata(pageSeo.projects);
 
 export default function ProjectsPage() {
   const header = pageHeaders.projects;

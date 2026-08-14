@@ -1,8 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import GsapProvider from "@/components/ui/GsapProvider";
 
 export default function ConditionalSiteChrome({ children }) {
   const pathname = usePathname();
@@ -13,10 +13,9 @@ export default function ConditionalSiteChrome({ children }) {
   }
 
   return (
-    <>
-      <Navbar />
+    <GsapProvider>
       <main className="flex-1">{children}</main>
       <Footer />
-    </>
+    </GsapProvider>
   );
 }

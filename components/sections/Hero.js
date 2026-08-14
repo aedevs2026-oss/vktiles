@@ -89,6 +89,7 @@ export default function Hero({ slides = [], data, compact = false }) {
     <section
       className={`relative ${heightClass} overflow-hidden bg-navy isolate`}
       aria-label="Hero banner"
+      data-gsap-skip
     >
       <div className="absolute inset-0 z-0">
         <Swiper

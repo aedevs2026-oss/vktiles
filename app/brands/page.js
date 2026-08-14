@@ -1,15 +1,12 @@
-import { brands, pageHeaders, cta } from "@/content/data";
+import { brands, pageHeaders, cta, pageSeo } from "@/content/data";
+import { generatePageMetadata } from "@/lib/seo";
 import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
 import SectionTitle from "@/components/sections/SectionTitle";
 import BrandCard from "@/components/cards/BrandCard";
 
-export const metadata = {
-  title: "Brands",
-  description:
-    "VK Tiles & Granites stocks 50+ top brands — Kajaria, Somany, Johnson, Asian Granito, Nitco, Orientbell and more.",
-};
+export const metadata = generatePageMetadata(pageSeo.brands);
 
 export default function BrandsPage() {
   const header = pageHeaders.brands;
@@ -22,10 +19,10 @@ export default function BrandsPage() {
         <Container>
           <SectionTitle
             eyebrow="Trusted Partners"
-            title="Top International Brands"
-            subtitle="Authorised dealer for India's leading tile and stone manufacturers — genuine products, wholesale pricing."
+            title="Top Tile & Granite Brands"
+            subtitle="Authorised wholesale dealer for Simpolo, Italica and premium manufacturers — genuine products at best rates in Dharmapuri & Salem."
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6" data-gsap-stagger>
             {brands.map((brand) => (
               <div key={brand.slug} id={brand.slug}>
                 <BrandCard brand={brand} />
@@ -43,8 +40,8 @@ export default function BrandsPage() {
             </h2>
             <p className="text-gray text-base leading-relaxed">
               Every brand we carry comes directly from authorised distributors. Whether you&apos;re a homeowner
-              picking tiles for a renovation or a contractor sourcing for a large project, you get the same
-              authentic quality and competitive wholesale rates.
+              in Salem, a builder in Dharmapuri or a contractor in Kadathur, you get the same authentic quality
+              and competitive wholesale rates with delivery across Tamil Nadu.
             </p>
           </div>
         </Container>

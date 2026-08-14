@@ -1,4 +1,6 @@
-import { faqs, pageHeaders, cta, business } from "@/content/data";
+import { faqs, pageHeaders, cta, business, pageSeo } from "@/content/data";
+import { generatePageMetadata } from "@/lib/seo";
+import { generateFAQPageJsonLd } from "@/lib/schema";
 import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
@@ -6,17 +8,17 @@ import SectionTitle from "@/components/sections/SectionTitle";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import Button from "@/components/ui/Button";
 
-export const metadata = {
-  title: "FAQ",
-  description:
-    "Frequently asked questions about VK Tiles & Granites — wholesale pricing, brands, delivery, design consultation and showroom hours.",
-};
+export const metadata = generatePageMetadata(pageSeo.faq);
 
 export default function FAQPage() {
   const header = pageHeaders.faq;
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQPageJsonLd(faqs)) }}
+      />
       <PageBanner title={header.title} subtitle={header.subtitle} image={header.image} />
 
       <section className="section-padding bg-white" aria-label="Frequently asked questions">
@@ -24,8 +26,8 @@ export default function FAQPage() {
           <div className="max-w-3xl mx-auto">
             <SectionTitle
               eyebrow="Help Centre"
-              title="Common Questions"
-              subtitle="Can't find what you're looking for? Call us or visit our Bommidi showroom."
+              title="Wholesale Tiles & Granites — Questions Answered"
+              subtitle="Direct answers about the best wholesale tile and granite dealer in Dharmapuri, Salem, Kadathur, Bommidi and all over Tamil Nadu."
               className="mb-10"
             />
             <FAQAccordion items={faqs} />

@@ -1,4 +1,5 @@
-import { pageHeaders, cta } from "@/content/data";
+import { pageHeaders, cta, pageSeo } from "@/content/data";
+import { generatePageMetadata } from "@/lib/seo";
 import { getBusiness, getContactConfig } from "@/lib/site-content";
 import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
@@ -7,11 +8,7 @@ import SectionTitle from "@/components/sections/SectionTitle";
 import ContactForm from "@/components/forms/ContactForm";
 import Button from "@/components/ui/Button";
 
-export const metadata = {
-  title: "Contact",
-  description:
-    "Contact VK Tiles & Granites — visit our Bommidi showroom, call us or send an enquiry for tiles, granite and marble.",
-};
+export const metadata = generatePageMetadata(pageSeo.contact);
 
 export default function ContactPage() {
   const header = pageHeaders.contact;

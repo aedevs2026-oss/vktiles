@@ -1,4 +1,5 @@
-import { pageHeaders, cta } from "@/content/data";
+import { pageHeaders, cta, pageSeo } from "@/content/data";
+import { generatePageMetadata } from "@/lib/seo";
 import { getTestimonials } from "@/lib/site-content";
 import PageBanner from "@/components/sections/PageBanner";
 import CTA from "@/components/sections/CTA";
@@ -6,11 +7,7 @@ import Container from "@/components/layout/Container";
 import SectionTitle from "@/components/sections/SectionTitle";
 import TestimonialsCarousel from "@/components/sections/TestimonialsCarousel";
 
-export const metadata = {
-  title: "Testimonials",
-  description:
-    "Read what homeowners, contractors and designers say about VK Tiles & Granites — premium quality and trusted service.",
-};
+export const metadata = generatePageMetadata(pageSeo.testimonials);
 
 export default function TestimonialsPage() {
   const header = pageHeaders.testimonials;

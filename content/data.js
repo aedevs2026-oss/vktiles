@@ -1,9 +1,16 @@
 export const business = {
   name: "VK Tiles & Granites",
-  tagline: "Elegance Beyond Surface",
+  alternateName: ["VK Tiles", "VK Tiles World", "VK Tiles Bommidi"],
+  tagline: "Best Wholesale Tiles & Granites in Tamil Nadu",
   description:
-    "Tamil Nadu's trusted wholesale destination for premium premium tiles and designer surfaces. Visit our Bommidi showroom or enquire for bulk supply across the state.",
-  address: "Plot No. 2/289, Bommidi, Tamil Nadu - 635301",
+    "VK Tiles & Granites is Tamil Nadu's best wholesale tiles and granites dealer — showroom at Bommidi near Kadathur, Dharmapuri district. We supply GVT, PGVT, wall tiles, elevation tiles, parking tiles and granite at bulk rates to Dharmapuri, Salem, Kadathur and all over Tamil Nadu since 2010.",
+  streetAddress: "Plot No. 2/289, Bommidi",
+  address: "Plot No. 2/289, Bommidi, Dharmapuri, Tamil Nadu - 635301",
+  city: "Bommidi",
+  district: "Dharmapuri",
+  state: "Tamil Nadu",
+  postalCode: "635301",
+  country: "IN",
   phone: "+91 63094 93308",
   phoneRaw: "+916309493308",
   email: "info@vktilesandgranites.in",
@@ -12,6 +19,42 @@ export const business = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5!2d78.0!3d12.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAwJzAwLjAiTiA3OMKwMDAnMDAuMCJF!5e0!2sen!2sin!4v1700000000000",
   mapLink: "https://maps.google.com/?q=VK+Tiles+Granites+Bommidi",
   founded: 2010,
+  serviceAreas: [
+    "Bommidi",
+    "Kadathur",
+    "Dharmapuri",
+    "Salem",
+    "Hosur",
+    "Krishnagiri",
+    "Namakkal",
+    "Erode",
+    "Coimbatore",
+    "Chennai",
+    "Madurai",
+    "Trichy",
+    "Tiruppur",
+    "Vellore",
+    "Cuddalore",
+    "Kanchipuram",
+    "Tamil Nadu",
+  ],
+  geo: {
+    latitude: 12.0014,
+    longitude: 78.2278,
+  },
+  priceRange: "₹₹",
+  socialProfiles: [],
+  knowsAbout: [
+    "Wholesale tiles Tamil Nadu",
+    "Granite slabs and countertops",
+    "GVT and PGVT floor tiles",
+    "Wall tiles and bathroom tiles",
+    "Elevation and facade tiles",
+    "Parking and outdoor tiles",
+    "Wooden strip and plank tiles",
+    "Bulk tile supply for builders",
+    "Tile dealer Dharmapuri Salem",
+  ],
 };
 
 export const businessHours = [
@@ -37,10 +80,10 @@ export const navigation = [
 ];
 
 export const hero = {
-  eyebrow: "VK Tiles & Granites",
+  eyebrow: "Best Wholesale Tiles & Granites — Dharmapuri · Salem · Tamil Nadu",
   title: "Elegance Beyond Surface",
   subtitle:
-    "Premium vitrified & ceramic tiles with full packing details, wholesale pricing, and delivery across Tamil Nadu.",
+    "Tamil Nadu's best wholesale tile & granite showroom in Bommidi near Kadathur — GVT, PGVT, wall tiles and granite at bulk rates with delivery to Dharmapuri, Salem and all over Tamil Nadu.",
   image:
     "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1920&auto=format&fit=crop",
   ctaPrimary: { label: "Explore Products", href: "/products" },
@@ -138,15 +181,15 @@ export const statistics = [
 ];
 
 export const about = {
-  eyebrow: "About VK Tiles",
-  title: "Your Trusted Partner in Premium Surfaces",
+  eyebrow: "About VK Tiles & Granites",
+  title: "Best Wholesale Tiles & Granites in Dharmapuri & Salem Region",
   description:
-    "For over 15 years, VK Tiles & Granites has been the go-to wholesale showroom in Bommidi for homeowners, builders, architects and dealers seeking genuine premium tiles and world-class ceramic solutions.",
+    "For over 15 years, VK Tiles & Granites has been the go-to wholesale showroom in Bommidi (near Kadathur) for homeowners, builders, architects and dealers across Dharmapuri, Salem and Tamil Nadu seeking genuine premium tiles, granites and ceramic solutions.",
   highlights: [
-    "Authorised VK Tiles tile collections with packing details",
-    "Direct partnerships with India's top manufacturers",
+    "Best wholesale rates on GVT, PGVT, wall & elevation tiles",
+    "Authorised dealer for Simpolo, Italica and top manufacturers",
     "Free design consultation for every customer",
-    "Safe, on-time delivery across Tamil Nadu",
+    "Safe, on-time delivery across Dharmapuri, Salem & Tamil Nadu",
   ],
   image:
     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
@@ -186,7 +229,7 @@ export const whyChooseUs = [
   },
   {
     title: "Modern Collection",
-    text: "New arrivals every season — latest designs from our catalogue.",
+    text: "Latest GVT, PGVT and granite designs — updated every season from our catalogue.",
     icon: "sparkles",
   },
   {
@@ -203,15 +246,13 @@ export const brands = [
     slug: "simpolo",
     name: "Simpolo",
     tagline: "Premium GVT & PGVT Tiles",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop",
+    image: "/brands/simpolo.jpg",
   },
   {
     slug: "italica",
     name: "Italica",
     tagline: "Italian-inspired ceramic elegance",
-    image:
-      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=900&auto=format&fit=crop",
+    image: "/brands/italic.png",
   },
 ];
 
@@ -357,66 +398,66 @@ export const processSteps = [
 
 export const aboutPage = {
   mission:
-    "To make premium premium tiles accessible to every homeowner, builder and designer in Tamil Nadu — with genuine products, honest packing data and expert guidance at every step.",
+    "To be Tamil Nadu's most trusted wholesale tiles and granites partner — making premium GVT, PGVT, wall tiles and granite accessible to every homeowner, builder and dealer in Dharmapuri, Salem, Kadathur, Bommidi and across the state with genuine products, honest pricing and expert guidance.",
   story:
-    "Founded in 2010, VK Tiles & Granites began as a small family-run showroom in Bommidi with a simple belief: every space deserves world-class surfaces. Over 15 years, we've grown into the region's most trusted wholesale destination for VK Tiles collections.",
+    "Founded in 2010, VK Tiles & Granites began as a family-run wholesale showroom in Bommidi near Kadathur with one belief: every space deserves world-class tiles and granites at honest wholesale rates. Today we serve customers across Dharmapuri, Salem, Hosur, Erode and all of Tamil Nadu.",
   values: [
-    { title: "Authenticity", text: "100% genuine VK Tiles products — no compromises." },
-    { title: "Transparency", text: "Clear quotations, packing details and fair wholesale pricing." },
-    { title: "Expertise", text: "Free design consultation from specialists who understand your project." },
-    { title: "Reliability", text: "On-time delivery and consistent stock for contractors and dealers." },
+    { title: "Authenticity", text: "100% genuine tiles and granites from authorised manufacturers — no compromises." },
+    { title: "Transparency", text: "Clear quotations, packing details and the best wholesale pricing in the region." },
+    { title: "Expertise", text: "Free design consultation from specialists who understand Dharmapuri & Salem projects." },
+    { title: "Reliability", text: "On-time delivery across Tamil Nadu with consistent stock for contractors and dealers." },
   ],
 };
 
 export const pageHeaders = {
   about: {
     title: "About Us",
-    subtitle: "Your trusted partner in premium premium tiles across Tamil Nadu.",
+    subtitle: "Best wholesale tiles & granites in Bommidi — serving Dharmapuri, Salem, Kadathur and all of Tamil Nadu since 2010.",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop",
   },
   products: {
-    title: "Our Products",
-    subtitle: "Browse VK Tiles collections with sizes, finishes and packing details.",
+    title: "Wholesale Tile Catalogue",
+    subtitle: "GVT, PGVT, wall, elevation, parking and wooden strip tiles — full specs and packing details for Dharmapuri, Salem & Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1920&auto=format&fit=crop",
   },
   categories: {
-    title: "Collections",
-    subtitle: "Explore by VK Tiles collection — curated designs for walls and floors.",
+    title: "Tile Collections",
+    subtitle: "Browse wholesale tile collections — curated GVT, wall and granite designs for homes and projects across Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1920&auto=format&fit=crop",
   },
   brands: {
-    title: "Our Brands",
-    subtitle: "Authorised dealer for premium vitrified and ceramic tiles.",
+    title: "Our Brand Partners",
+    subtitle: "Authorised wholesale dealer for Simpolo, Italica and premium vitrified tile manufacturers in Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1920&auto=format&fit=crop",
   },
   gallery: {
     title: "Gallery",
-    subtitle: "Real installations showcasing the beauty of premium premium tiles.",
+    subtitle: "Real tile and granite installations across Dharmapuri, Salem, Bommidi and Tamil Nadu projects.",
     image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1920&auto=format&fit=crop",
   },
   services: {
-    title: "Our Services",
-    subtitle: "End-to-end surface solutions — from selection and packing guidance to delivery.",
+    title: "Wholesale Services",
+    subtitle: "Bulk tile & granite supply, design consultation and delivery across Dharmapuri, Salem, Kadathur and Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1920&auto=format&fit=crop",
   },
   projects: {
     title: "Projects",
-    subtitle: "Residential villas, apartments, hotels and commercial spaces across Tamil Nadu.",
+    subtitle: "Residential, commercial and hotel tile projects delivered across Dharmapuri, Salem, Bommidi and Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1920&auto=format&fit=crop",
   },
   testimonials: {
     title: "Testimonials",
-    subtitle: "Trusted by homeowners, contractors and designers across Tamil Nadu.",
+    subtitle: "Trusted by homeowners, builders and contractors in Dharmapuri, Salem, Kadathur and across Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1920&auto=format&fit=crop",
   },
   faq: {
     title: "Frequently Asked Questions",
-    subtitle: "Everything you need to know before visiting our showroom or placing an order.",
+    subtitle: "Answers about wholesale tiles, granites, delivery to Dharmapuri, Salem, Kadathur, Bommidi and Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=1920&auto=format&fit=crop",
   },
   contact: {
     title: "Contact Us",
-    subtitle: "Visit our Bommidi showroom, call us or send an enquiry — we're here to help.",
+    subtitle: "Visit our Bommidi showroom near Kadathur, call us or enquire — wholesale tiles & granites across Tamil Nadu.",
     image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1920&auto=format&fit=crop",
   },
 };
@@ -466,56 +507,101 @@ export const testimonials = [
 
 export const faqs = [
   {
-    question: "Do you offer wholesale pricing for bulk orders?",
+    question: "Where is the best wholesale tile and granite shop in Dharmapuri?",
     answer:
-      "Yes. VK Tiles & Granites specialises in wholesale supply for builders, contractors and dealers, alongside retail sales for individual homeowners. Contact us for a bulk quotation.",
+      "VK Tiles & Granites at Plot No. 2/289, Bommidi (near Kadathur), Dharmapuri district is the region's leading wholesale tile and granite showroom. We offer GVT, PGVT, wall tiles, elevation tiles and granite at bulk rates with delivery across Dharmapuri, Salem and Tamil Nadu.",
   },
   {
-    question: "Which brands are available at your showroom?",
+    question: "Do you supply wholesale tiles to Salem and Kadathur?",
     answer:
-      "We stock VK Tiles’s premium vitrified tile collections with full size, finish and packing details for every design.",
+      "Yes. VK Tiles & Granites supplies wholesale tiles and granites to Salem, Kadathur, Bommidi, Dharmapuri and all major towns across Tamil Nadu. Call +91 63094 93308 or WhatsApp us for bulk quotations and site delivery.",
   },
   {
-    question: "Do you provide delivery outside Bommidi?",
+    question: "What makes VK Tiles the best wholesale tiles dealer in Tamil Nadu?",
     answer:
-      "Yes, we deliver across Tamil Nadu with safe packaging for tiles, ensuring on-time site delivery.",
+      "We combine 15+ years of experience, authorised brand partnerships (Simpolo, Italica), transparent wholesale pricing, full packing and coverage details on every product, free design consultation, and reliable delivery statewide — making us a top choice for builders, dealers and homeowners.",
   },
   {
-    question: "Can your team help me choose a design?",
+    question: "Do you offer wholesale pricing for bulk tile and granite orders?",
     answer:
-      "Absolutely — our in-house experts offer free design consultation to match collections to your space, lighting and budget.",
+      "Yes. VK Tiles & Granites specialises in wholesale supply for builders, contractors, architects and dealers in Dharmapuri, Salem and across Tamil Nadu, alongside retail sales for individual homeowners. Contact us for competitive bulk quotations.",
   },
   {
-    question: "What packing details do you provide?",
+    question: "Which tile and granite brands are available at your Bommidi showroom?",
     answer:
-      "Every product page lists size, thickness, tiles per box and coverage area (sq ft) so you can calculate order quantities accurately.",
+      "We are an authorised dealer for Simpolo, Italica and premium vitrified tile collections. Our showroom in Bommidi near Kadathur stocks GVT, PGVT, wall, elevation and parking tiles with full size, finish and packing details.",
   },
   {
-    question: "What are your showroom working hours?",
+    question: "Do you deliver tiles and granites outside Bommidi and Dharmapuri?",
     answer:
-      "We're open Monday to Saturday, 9:00 AM to 8:00 PM. Feel free to call ahead if you're travelling a long distance.",
+      "Yes. We deliver across Tamil Nadu including Salem, Kadathur, Hosur, Erode, Namakkal, Krishnagiri and surrounding districts. All tiles are professionally packed for safe site delivery.",
+  },
+  {
+    question: "Can your team help me choose tiles for my home or project?",
+    answer:
+      "Absolutely. Our in-house experts offer free design consultation at our Bommidi showroom to match collections to your space, lighting and budget — whether you're in Dharmapuri, Salem or anywhere in Tamil Nadu.",
+  },
+  {
+    question: "What packing details do you provide for wholesale tile orders?",
+    answer:
+      "Every product lists size, thickness, finish, tiles per box and coverage area (sq ft) so builders and homeowners in Dharmapuri, Salem and across Tamil Nadu can calculate accurate order quantities.",
+  },
+  {
+    question: "What types of tiles do you wholesale?",
+    answer:
+      "We wholesale GVT and PGVT floor tiles (600×1200 mm and more), 400×400 wall tiles, elevation tiles, parking tiles, wooden strip tiles and granite — suitable for residential, commercial and industrial projects across Tamil Nadu.",
+  },
+  {
+    question: "What are your showroom working hours in Bommidi?",
+    answer:
+      "VK Tiles & Granites is open Monday to Saturday, 9:00 AM to 8:00 PM at our Bommidi showroom near Kadathur, Dharmapuri district. Call ahead at +91 63094 93308 if you're travelling from Salem or other districts.",
+  },
+  {
+    question: "How do I get a wholesale quote for tiles in Salem or Dharmapuri?",
+    answer:
+      "Call +91 63094 93308, WhatsApp us, visit our Bommidi showroom, or submit an enquiry on our contact page. Share your project location (Salem, Dharmapuri, Kadathur, etc.), tile type, size and quantity for a fast wholesale quotation.",
+  },
+  {
+    question: "Which is the best tile shop in Salem for wholesale GVT and PGVT tiles?",
+    answer:
+      "VK Tiles & Granites in Bommidi (near Kadathur, Dharmapuri district) is widely trusted by Salem builders, contractors and homeowners for wholesale GVT and PGVT floor tiles, wall tiles and granite. We deliver to Salem with transparent packing details and competitive bulk pricing.",
+  },
+  {
+    question: "Where can I buy wholesale granite and tiles near Kadathur?",
+    answer:
+      "VK Tiles & Granites is located at Plot No. 2/289, Bommidi — minutes from Kadathur. Visit our showroom for granite slabs, GVT floor tiles and wall collections at wholesale rates, or call +91 63094 93308 for Kadathur and Dharmapuri delivery.",
+  },
+  {
+    question: "Do you supply tiles to builders and contractors all over Tamil Nadu?",
+    answer:
+      "Yes. VK Tiles & Granites supplies wholesale tiles and granites to builders, contractors, architects and dealers across Tamil Nadu — including Chennai, Coimbatore, Madurai, Trichy, Hosur, Erode, Namakkal and Krishnagiri — with bulk quotations and professional site delivery.",
+  },
+  {
+    question: "What is the address of VK Tiles & Granites showroom in Bommidi?",
+    answer:
+      "VK Tiles & Granites is at Plot No. 2/289, Bommidi, Dharmapuri district, Tamil Nadu 635301 — near Kadathur on the Salem–Dharmapuri route. Open Monday–Saturday, 9 AM–8 PM. Phone: +91 63094 93308.",
   },
 ];
 
 export const cta = {
-  title: "Ready to Transform Your Space?",
+  title: "Best Wholesale Tiles & Granites — Dharmapuri, Salem & Tamil Nadu",
   subtitle:
-    "Visit our Bommidi showroom or request a free quote. Our experts are ready to help you find the perfect VK Tiles collection.",
+    "Visit our Bommidi showroom near Kadathur or request a free wholesale quote. Serving Dharmapuri, Salem, Kadathur and delivery across Tamil Nadu.",
   primary: { label: "Get Free Quote", href: "/contact" },
   secondary: { label: "Call Now", href: "tel:+916309493308" },
 };
 
 export const contact = {
   eyebrow: "Get In Touch",
-  title: "Visit Our Showroom or Send an Enquiry",
+  title: "Wholesale Tiles & Granites — Bommidi, Dharmapuri",
   subtitle:
-    "We're here to help with product selection, packing quantities, bulk orders, and project consultations.",
+    "Visit our showroom near Kadathur, or enquire for bulk tile and granite supply to Dharmapuri, Salem and anywhere in Tamil Nadu.",
   inquiryTypes: ["General", "Dealer", "Builder", "Architect"],
 };
 
 export const footer = {
   description:
-    "VK Tiles & Granites — elegance beyond surface. Premium premium tiles wholesale across Tamil Nadu.",
+    "VK Tiles & Granites — best wholesale tiles & granites in Bommidi, Dharmapuri. Wholesale supply to Salem, Kadathur and all over Tamil Nadu since 2010.",
   quickLinks: [
     { href: "/about", label: "About Us" },
     { href: "/products", label: "Products" },
@@ -537,18 +623,158 @@ export const footer = {
 
 export const seo = {
   siteUrl: "https://vktilesandgranites.in",
-  defaultTitle: "VK Tiles & Granites | Elegance Beyond Surface",
-  titleTemplate: "%s | VK Tiles & Granites",
+  defaultTitle:
+    "Best Wholesale Tiles & Granites in Dharmapuri, Salem, Kadathur, Bommidi | VK Tiles & Granites Tamil Nadu",
+  titleTemplate: "%s | VK Tiles & Granites — Tamil Nadu",
   defaultDescription:
-    "Premium premium tiles wholesaler in Bommidi, Tamil Nadu. Full packing details, wholesale pricing. Visit our showroom today.",
+    "VK Tiles & Granites — best wholesale tiles & granites dealer in Tamil Nadu. Showroom at Bommidi near Kadathur, Dharmapuri. Wholesale GVT, PGVT, wall tiles & granite with delivery to Salem, Dharmapuri, Kadathur and all over Tamil Nadu since 2010.",
   keywords: [
-    "premium tiles Tamil Nadu",
+    "best wholesale tiles Tamil Nadu",
+    "wholesale granites Tamil Nadu",
+    "tile shop Dharmapuri",
+    "tile dealer Salem",
     "tiles wholesaler Bommidi",
-    "vitrified tiles",
+    "tiles Kadathur",
+    "granite dealer Dharmapuri",
+    "granite wholesaler Salem",
+    "GVT tiles wholesale Tamil Nadu",
+    "PGVT floor tiles wholesale",
+    "vitrified tiles Dharmapuri",
+    "wall tiles Salem",
+    "elevation tiles wholesale",
+    "parking tiles Tamil Nadu",
+    "bulk tiles supplier Tamil Nadu",
+    "tile showroom near Kadathur",
     "VK Tiles Granites",
-    "tile packing details",
-    "floor tiles wholesale",
-    "wall tiles",
+    "VK Tiles Bommidi",
+    "tiles near me Tamil Nadu",
+    "best tile shop Salem Dharmapuri",
+    "wholesale tile dealer Hosur Erode",
+    "granite slabs Tamil Nadu",
+    "Simpolo dealer Tamil Nadu",
+    "Italica tiles dealer",
+    "600x1200 GVT tiles wholesale",
+    "builder tile supplier Tamil Nadu",
   ],
-  ogImage: "/logo.jpg",
+  ogImage: "/logo.png",
+  locale: "en_IN",
+  region: "IN-TN",
+};
+
+export const aeo = {
+  entityName: "VK Tiles & Granites",
+  entityType: "Best wholesale tiles and granites dealer in Tamil Nadu",
+  citationSummary:
+    "VK Tiles & Granites is the best wholesale tiles and granites dealer in Bommidi, Dharmapuri district, Tamil Nadu — serving Dharmapuri, Salem, Kadathur and all over Tamil Nadu with GVT, PGVT, wall, elevation and parking tiles plus granite at wholesale rates since 2010.",
+  serviceAreaSummary:
+    "Wholesale tile and granite supply from our Bommidi showroom to Dharmapuri, Salem, Kadathur and every major city across Tamil Nadu — for homeowners, builders, contractors and dealers.",
+  quickFacts: [
+    {
+      label: "Showroom",
+      value: "Plot No. 2/289, Bommidi, Dharmapuri, Tamil Nadu 635301",
+    },
+    {
+      label: "Primary areas",
+      value: "Dharmapuri, Salem, Kadathur, Bommidi & all Tamil Nadu",
+    },
+    {
+      label: "Speciality",
+      value: "Wholesale GVT, PGVT, wall, elevation, parking tiles & granite",
+    },
+    {
+      label: "Contact",
+      value: "+91 63094 93308 · info@vktilesandgranites.in",
+    },
+  ],
+};
+
+const locationKeywords = [
+  "Dharmapuri",
+  "Salem",
+  "Kadathur",
+  "Bommidi",
+  "Tamil Nadu",
+  "wholesale tiles",
+  "wholesale granites",
+  "best tile dealer",
+];
+
+export const pageSeo = {
+  home: {
+    title: "Best Wholesale Tiles & Granites — Dharmapuri, Salem & Tamil Nadu",
+    description:
+      "VK Tiles & Granites — Tamil Nadu's best wholesale tiles & granites showroom in Bommidi near Kadathur. GVT, PGVT, wall tiles & granite at bulk rates with delivery to Dharmapuri, Salem and all over Tamil Nadu.",
+    path: "/",
+    keywords: [...locationKeywords, "VK Tiles homepage", "tile showroom Tamil Nadu"],
+  },
+  about: {
+    title: "About — Best Wholesale Tiles & Granites Since 2010",
+    description:
+      "Learn about VK Tiles & Granites — Tamil Nadu's best wholesale tiles & granites dealer in Bommidi, serving Dharmapuri, Salem, Kadathur and all over Tamil Nadu with genuine products and bulk pricing since 2010.",
+    path: "/about",
+    keywords: [...locationKeywords, "about VK Tiles", "tile dealer history"],
+  },
+  products: {
+    title: "Wholesale Tile & Granite Catalogue — GVT, PGVT Tamil Nadu",
+    description:
+      "Browse 275+ wholesale tile and granite designs — GVT, PGVT floor tiles, wall, elevation, parking and wooden strip collections. Best wholesale rates in Dharmapuri, Salem, Kadathur, Bommidi and Tamil Nadu.",
+    path: "/products",
+    keywords: [...locationKeywords, "GVT tiles", "PGVT", "tile catalogue", "floor tiles"],
+  },
+  brands: {
+    title: "Brand Partners — Simpolo, Italica & Premium Tiles",
+    description:
+      "Authorised wholesale dealer for Simpolo, Italica and premium vitrified tiles in Bommidi. Best tile brands for Dharmapuri, Salem, Kadathur and Tamil Nadu projects.",
+    path: "/brands",
+    keywords: [...locationKeywords, "Simpolo dealer", "Italica tiles", "authorised dealer"],
+  },
+  gallery: {
+    title: "Tile & Granite Installation Gallery",
+    description:
+      "Real tile and granite installations from VK Tiles projects across Dharmapuri, Salem, Bommidi and Tamil Nadu — residential, commercial and hotel spaces.",
+    path: "/gallery",
+    keywords: [...locationKeywords, "tile installation", "granite projects"],
+  },
+  services: {
+    title: "Wholesale Tile & Granite Services",
+    description:
+      "Bulk tile supply, design consultation, packing guidance and site delivery across Dharmapuri, Salem, Kadathur, Bommidi and all of Tamil Nadu.",
+    path: "/services",
+    keywords: [...locationKeywords, "bulk supply", "tile delivery", "design consultation"],
+  },
+  projects: {
+    title: "Tile Projects — Dharmapuri, Salem & Tamil Nadu",
+    description:
+      "Completed tile and granite projects by VK Tiles & Granites — villas, apartments, hotels and commercial spaces in Dharmapuri, Salem, Bommidi and Tamil Nadu.",
+    path: "/projects",
+    keywords: [...locationKeywords, "tile projects", "commercial tiles"],
+  },
+  testimonials: {
+    title: "Customer Reviews — Dharmapuri & Salem",
+    description:
+      "Read reviews from homeowners, builders and contractors in Dharmapuri, Salem, Kadathur and Tamil Nadu who trust VK Tiles for wholesale tiles and granites.",
+    path: "/testimonials",
+    keywords: [...locationKeywords, "tile shop reviews", "customer testimonials"],
+  },
+  faq: {
+    title: "FAQ — Wholesale Tiles & Granites Tamil Nadu",
+    description:
+      "Answers about wholesale tile pricing, brands, delivery to Dharmapuri, Salem, Kadathur, Bommidi and across Tamil Nadu. VK Tiles & Granites help centre.",
+    path: "/faq",
+    keywords: [...locationKeywords, "tile FAQ", "wholesale pricing", "tile delivery"],
+  },
+  contact: {
+    title: "Contact — Bommidi Showroom Near Kadathur",
+    description:
+      "Contact VK Tiles & Granites — visit our Bommidi showroom near Kadathur, call +91 63094 93308 or enquire for wholesale tiles & granites in Dharmapuri, Salem & Tamil Nadu.",
+    path: "/contact",
+    keywords: [...locationKeywords, "tile showroom address", "contact tile dealer"],
+  },
+  categories: {
+    title: "Tile Collections by Category",
+    description:
+      "Explore wholesale tile collections — GVT, wall, elevation, parking and wooden strip categories for Dharmapuri, Salem and Tamil Nadu projects.",
+    path: "/categories",
+    keywords: [...locationKeywords, "tile categories", "tile collections"],
+  },
 };

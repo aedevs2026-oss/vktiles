@@ -7,7 +7,9 @@ import {
   processSteps,
   pageHeaders,
   cta,
+  pageSeo,
 } from "@/content/data";
+import { generatePageMetadata } from "@/lib/seo";
 import PageBanner from "@/components/sections/PageBanner";
 import StatsSection from "@/components/sections/StatsSection";
 import WhyChooseSection from "@/components/sections/WhyChooseSection";
@@ -15,11 +17,7 @@ import CTA from "@/components/sections/CTA";
 import Container from "@/components/layout/Container";
 import SectionTitle from "@/components/sections/SectionTitle";
 
-export const metadata = {
-  title: "About Us",
-  description:
-    "Learn about VK Tiles & Granites — Tamil Nadu's trusted wholesale showroom for premium tiles, granite and marble since 2010.",
-};
+export const metadata = generatePageMetadata(pageSeo.about);
 
 export default function AboutPage() {
   const header = pageHeaders.about;
@@ -72,7 +70,7 @@ export default function AboutPage() {
             title="Building Beautiful Spaces, One Surface at a Time"
             subtitle={aboutPage.mission}
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-gsap-stagger>
             {aboutPage.values.map((value) => (
               <article key={value.title} className="bg-white p-6 card-hover">
                 <h3 className="font-display text-lg text-dark mb-2">{value.title}</h3>
@@ -92,7 +90,7 @@ export default function AboutPage() {
             title="How It Works"
             subtitle="From your first showroom visit to delivery at your site — a seamless experience."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-gsap-stagger>
             {processSteps.map((step, index) => (
               <article key={step.title} className="relative bg-background p-6 text-center">
                 <span className="inline-flex w-10 h-10 items-center justify-center bg-gold text-white font-display text-lg mb-4">

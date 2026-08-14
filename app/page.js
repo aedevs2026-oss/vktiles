@@ -11,9 +11,11 @@ import {
   faqs,
   cta,
   contact,
+  pageSeo,
 } from "@/content/data";
 import { getGallery, getTestimonials } from "@/lib/site-content";
-import { getFeaturedProducts, getNewArrivals, getBestSellers, getProducts } from "@/lib/products";
+import { getFeaturedProducts, getBestSellers, getProducts } from "@/lib/products";
+import { generatePageMetadata } from "@/lib/seo";
 import Hero from "@/components/sections/Hero";
 import StatsSection from "@/components/sections/StatsSection";
 import AboutPreview from "@/components/sections/AboutPreview";
@@ -33,12 +35,14 @@ import ProjectCard from "@/components/cards/ProjectCard";
 import GalleryCard from "@/components/cards/GalleryCard";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import ServiceAreaSection from "@/components/seo/ServiceAreaSection";
+
+export const metadata = generatePageMetadata(pageSeo.home);
 
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts(10);
-  const newArrivals = getNewArrivals(10);
   const bestSellers = getBestSellers(10);
   const gallery = getGallery();
   const testimonials = getTestimonials();
@@ -60,24 +64,9 @@ export default function HomePage() {
 
       <Reveal>
         <ProductShowcaseSection
-          id="new-arrivals"
-          title="New Arrivals"
-          subtitle="Fresh random picks from our latest VKNew catalogue lines — crystal, high gloss and glitter collections."
-          products={newArrivals}
-          badge="new"
-          badgeLabel="New Arrival"
-          variant="white"
-          viewAllHref="/products"
-          viewAllLabel="Browse catalogue"
-          autoplayDelay={5000}
-        />
-      </Reveal>
-
-      <Reveal delay={0.05}>
-        <ProductShowcaseSection
           id="featured-products"
           title="Featured Products"
-          subtitle="Handpicked premium designs from our showroom — GVT, wall tiles, elevation and wooden strip collections."
+          subtitle="Handpicked wholesale GVT, wall, elevation and wooden strip tiles — best rates for Dharmapuri, Salem and Tamil Nadu projects."
           products={featuredProducts}
           badge="featured"
           badgeLabel="Featured"
@@ -92,7 +81,7 @@ export default function HomePage() {
         <ProductShowcaseSection
           id="best-sellers"
           title="Best Sellers & Popular Picks"
-          subtitle="Top-requested collections from Plain, Deserto, Albert Boston and our widest catalogue ranges."
+          subtitle="Top-requested wholesale tile collections — most popular picks for builders and homeowners in Dharmapuri, Salem, Kadathur and Bommidi."
           products={bestSellers}
           badge="bestseller"
           badgeLabel="Best Seller"
@@ -121,7 +110,7 @@ export default function HomePage() {
             <SectionTitle
               eyebrow="VK Tiles"
               title="Product Categories"
-              subtitle="Browse our floor tile and wooden strip collections — all sizes and designs from the VK catalogue."
+              subtitle="Wholesale floor tile and wooden strip collections — all sizes and designs with delivery across Dharmapuri, Salem and Tamil Nadu."
             />
             <Carousel
               id="categories"
@@ -147,6 +136,10 @@ export default function HomePage() {
       </Reveal>
 
       <PartnersStrip brands={brands} />
+
+      <Reveal>
+        <ServiceAreaSection />
+      </Reveal>
 
       <Reveal>
         <section className="section-padding bg-background" aria-label="Our services">
@@ -211,7 +204,7 @@ export default function HomePage() {
             <SectionTitle
               eyebrow="Visual Showcase"
               title="Gallery"
-              subtitle="Real installations showcasing the beauty of premium tiles, granite and marble."
+              subtitle="Real tile and granite installations across Dharmapuri, Salem, Bommidi and Tamil Nadu."
             />
             <Carousel
               id="gallery"
@@ -244,7 +237,7 @@ export default function HomePage() {
             <SectionTitle
               eyebrow="Testimonials"
               title="What Our Customers Say"
-              subtitle="Trusted by homeowners, contractors and designers across Tamil Nadu."
+              subtitle="Trusted by homeowners, builders and contractors in Dharmapuri, Salem, Kadathur and across Tamil Nadu."
             />
             <Carousel
               id="testimonials"
@@ -278,7 +271,7 @@ export default function HomePage() {
               <SectionTitle
                 eyebrow="FAQ"
                 title="Common Questions"
-                subtitle="Everything you need to know before visiting our showroom or placing an order."
+                subtitle="Everything you need to know about wholesale tiles and granites in Dharmapuri, Salem, Kadathur, Bommidi and Tamil Nadu."
                 align="left"
                 className="mb-0"
               />

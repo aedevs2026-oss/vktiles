@@ -1,5 +1,5 @@
 import { getProducts } from "@/lib/products";
-import { productHeroSlides, cta } from "@/content/data";
+import { productHeroSlides, cta, pageSeo } from "@/content/data";
 import { generatePageMetadata } from "@/lib/seo";
 import Hero from "@/components/sections/Hero";
 import CTA from "@/components/sections/CTA";
@@ -8,13 +8,7 @@ import ProductCatalog from "@/components/products/ProductCatalog";
 
 export const revalidate = 3600;
 
-export const metadata = generatePageMetadata({
-  title: "Products",
-  description:
-    "Browse VK Tiles & Granites — GVT/PGVT floor tiles and wooden strip collections with full specifications and packing details.",
-  path: "/products",
-  keywords: ["VK Tiles", "GVT tiles", "PGVT", "wall tiles", "parking tiles", "Bommidi"],
-});
+export const metadata = generatePageMetadata(pageSeo.products);
 
 export default async function ProductsPage({ searchParams }) {
   const products = getProducts();
