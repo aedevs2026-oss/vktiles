@@ -5,7 +5,7 @@ export const business = {
   description:
     "VK Tiles & Granites is Tamil Nadu's best wholesale tiles and granites dealer — showroom at Bommidi near Kadathur, Dharmapuri district. We supply GVT, PGVT, wall tiles, elevation tiles, parking tiles and granite at bulk rates to Dharmapuri, Salem, Kadathur and all over Tamil Nadu since 2010.",
   streetAddress: "Plot No. 2/289, Bommidi",
-  address: "Plot No. 2/289, Bommidi, Dharmapuri, Tamil Nadu - 635301",
+  address: "Salem Main Road, Bommidi,Nadur,Dharmapuri, Tamil Nadu - 635301",
   city: "Bommidi",
   district: "Dharmapuri",
   state: "Tamil Nadu",
