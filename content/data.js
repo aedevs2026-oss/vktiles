@@ -66,7 +66,7 @@ export const socialLinks = [
   { platform: "Facebook", href: "https://facebook.com", label: "Follow on Facebook" },
   { platform: "Instagram", href: "https://instagram.com", label: "Follow on Instagram" },
   { platform: "YouTube", href: "https://youtube.com", label: "Watch on YouTube" },
-  { platform: "WhatsApp", href: "https://wa.me/916309493308", label: "Chat on WhatsApp" },
+  { platform: "WhatsApp", href: "https://wa.me/917200038101", label: "Chat on WhatsApp" },
 ];
 
 export const navigation = [
@@ -139,7 +139,7 @@ export const productHeroSlides = [
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1920&auto=format&fit=crop",
     ctaPrimary: { label: "View Wall Tiles", href: "/products?category=wall-tiles" },
-    ctaSecondary: { label: "WhatsApp Us", href: "https://wa.me/916309493308" },
+    ctaSecondary: { label: "WhatsApp Us", href: "https://wa.me/917200038101" },
   },
   {
     id: "elevation",
@@ -528,7 +528,7 @@ export const faqs = [
   {
     question: "Do you supply wholesale tiles to Salem and Kadathur?",
     answer:
-      "Yes. VK Tiles & Granites supplies wholesale tiles and granites to Salem, Kadathur, Bommidi, Dharmapuri and all major towns across Tamil Nadu. Call +91 63094 93308 or WhatsApp us for bulk quotations and site delivery.",
+      "Yes. VK Tiles & Granites supplies wholesale tiles and granites to Salem, Kadathur, Bommidi, Dharmapuri and all major towns across Tamil Nadu. Call +91 7200038101 or WhatsApp us for bulk quotations and site delivery.",
   },
   {
     question: "What makes VK Tiles the best wholesale tiles dealer in Tamil Nadu?",
@@ -568,12 +568,12 @@ export const faqs = [
   {
     question: "What are your showroom working hours in Bommidi?",
     answer:
-      "VK Tiles & Granites is open Monday to Saturday, 9:00 AM to 8:00 PM at our Bommidi showroom near Kadathur, Dharmapuri district. Call ahead at +91 63094 93308 if you're travelling from Salem or other districts.",
+      "VK Tiles & Granites is open Monday to Saturday, 9:00 AM to 8:00 PM at our Bommidi showroom near Kadathur, Dharmapuri district. Call ahead at +91 7200038101 if you're travelling from Salem or other districts.",
   },
   {
     question: "How do I get a wholesale quote for tiles in Salem or Dharmapuri?",
     answer:
-      "Call +91 63094 93308, WhatsApp us, visit our Bommidi showroom, or submit an enquiry on our contact page. Share your project location (Salem, Dharmapuri, Kadathur, etc.), tile type, size and quantity for a fast wholesale quotation.",
+      "Call +91 7200038101, WhatsApp us, visit our Bommidi showroom, or submit an enquiry on our contact page. Share your project location (Salem, Dharmapuri, Kadathur, etc.), tile type, size and quantity for a fast wholesale quotation.",
   },
   {
     question: "Which is the best tile shop in Salem for wholesale GVT and PGVT tiles?",
@@ -583,7 +583,7 @@ export const faqs = [
   {
     question: "Where can I buy wholesale granite and tiles near Kadathur?",
     answer:
-      "VK Tiles & Granites is located at Plot No. 2/289, Bommidi — minutes from Kadathur. Visit our showroom for granite slabs, GVT floor tiles and wall collections at wholesale rates, or call +91 63094 93308 for Kadathur and Dharmapuri delivery.",
+      "VK Tiles & Granites is located at Plot No. 2/289, Bommidi — minutes from Kadathur. Visit our showroom for granite slabs, GVT floor tiles and wall collections at wholesale rates, or call +91 7200038101 for Kadathur and Dharmapuri delivery.",
   },
   {
     question: "Do you supply tiles to builders and contractors all over Tamil Nadu?",
@@ -593,7 +593,7 @@ export const faqs = [
   {
     question: "What is the address of VK Tiles & Granites showroom in Bommidi?",
     answer:
-      "VK Tiles & Granites is at Plot No. 2/289, Bommidi, Dharmapuri district, Tamil Nadu 635301 — near Kadathur on the Salem–Dharmapuri route. Open Monday–Saturday, 9 AM–8 PM. Phone: +91 63094 93308.",
+      "VK Tiles & Granites is at Plot No. 2/289, Bommidi, Dharmapuri district, Tamil Nadu 635301 — near Kadathur on the Salem–Dharmapuri route. Open Monday–Saturday, 9 AM–8 PM. Phone: +91 7200038101.",
   },
 ];
 
@@ -602,7 +602,7 @@ export const cta = {
   subtitle:
     "Visit our Bommidi showroom near Kadathur or request a free wholesale quote. Serving Dharmapuri, Salem, Kadathur and delivery across Tamil Nadu.",
   primary: { label: "Get Free Quote", href: "/contact" },
-  secondary: { label: "Call Now", href: "tel:+916309493308" },
+  secondary: { label: "Call Now", href: "tel:+917200038101" },
 };
 
 export const contact = {
@@ -636,7 +636,7 @@ export const footer = {
 };
 
 export const seo = {
-  siteUrl: "https://vktilesandgranites.in",
+  siteUrl: "https://www.vktiles.in",
   defaultTitle:
     "Best Wholesale Tiles & Granites in Dharmapuri, Salem, Kadathur, Bommidi | VK Tiles & Granites Tamil Nadu",
   titleTemplate: "%s | VK Tiles & Granites — Tamil Nadu",
@@ -697,7 +697,7 @@ export const aeo = {
     },
     {
       label: "Contact",
-      value: "+91 63094 93308 · info@vktilesandgranites.in",
+      value: "+91 7200038101 · vktilesworld@gmail.com",
     },
   ],
 };
@@ -780,7 +780,7 @@ export const pageSeo = {
   contact: {
     title: "Contact — Bommidi Showroom Near Kadathur",
     description:
-      "Contact VK Tiles & Granites — visit our Bommidi showroom near Kadathur, call +91 63094 93308 or enquire for wholesale tiles & granites in Dharmapuri, Salem & Tamil Nadu.",
+      "Contact VK Tiles & Granites — visit our Bommidi showroom near Kadathur, call +91 7200038101 or enquire for wholesale tiles & granites in Dharmapuri, Salem & Tamil Nadu.",
     path: "/contact",
     keywords: [...locationKeywords, "tile showroom address", "contact tile dealer"],
   },
