@@ -9,6 +9,7 @@ import { ui } from "@/components/admin/admin-ui";
 export default function AdminLoginForm() {
   const searchParams = useSearchParams();
   const unauthorized = searchParams.get("error") === "unauthorized";
+  const authTimeout = searchParams.get("error") === "auth_timeout";
   const [state, formAction, pending] = useActionState(loginAction, null);
 
   return (
@@ -25,6 +26,13 @@ export default function AdminLoginForm() {
 
         <div className="bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl shadow-[0_20px_50px_-20px_rgba(11,31,58,0.2)] p-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky to-sky-bright" />
+
+          {authTimeout && (
+            <p className={`mb-4 ${ui.alertError}`}>
+              Authentication timed out. Please try signing in again. If this keeps happening, check that your Supabase
+              project is active and environment variables are set on Vercel.
+            </p>
+          )}
 
           {unauthorized && (
             <p className={`mb-4 ${ui.alertError}`}>

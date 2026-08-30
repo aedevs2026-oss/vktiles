@@ -1,6 +1,8 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse } from "next/server";
 
+const AUTH_TIMEOUT_MS = 4000;
+
 function securityHeaders(response) {
   response.headers.set("X-Frame-Options", "DENY");
   response.headers.set("X-Content-Type-Options", "nosniff");
@@ -17,6 +19,21 @@ function getAllowedEmails() {
     .filter(Boolean);
 }
 
+function hasSupabaseAuthCookie(request) {
+  return request.cookies
+    .getAll()
+    .some((cookie) => cookie.name.startsWith("sb-") && cookie.name.includes("auth-token"));
+}
+
+function withTimeout(promise, ms) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => {
+      setTimeout(() => reject(new Error("auth_timeout")), ms);
+    }),
+  ]);
+}
+
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
 
@@ -26,6 +43,13 @@ export async function middleware(request) {
     if (pathname !== "/admin/setup") {
       return securityHeaders(NextResponse.redirect(new URL("/admin/setup", request.url)));
     }
+    return securityHeaders(NextResponse.next());
+  }
+
+  const isPublicAdminRoute = pathname === "/admin/login" || pathname === "/admin/setup";
+
+  // Avoid a Supabase round-trip for login/setup when there is no session cookie.
+  if (isPublicAdminRoute && !hasSupabaseAuthCookie(request)) {
     return securityHeaders(NextResponse.next());
   }
 
@@ -55,11 +79,22 @@ export async function middleware(request) {
     }
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let session = null;
+  try {
+    const { data } = await withTimeout(supabase.auth.getSession(), AUTH_TIMEOUT_MS);
+    session = data.session;
+  } catch {
+    if (isPublicAdminRoute) {
+      return securityHeaders(NextResponse.next());
+    }
+    return securityHeaders(
+      NextResponse.redirect(new URL("/admin/login?error=auth_timeout", request.url))
+    );
+  }
 
-  if (pathname === "/admin/login" || pathname === "/admin/setup") {
+  const user = session?.user ?? null;
+
+  if (isPublicAdminRoute) {
     if (user && pathname === "/admin/login") {
       return securityHeaders(NextResponse.redirect(new URL("/admin", request.url)));
     }
@@ -73,7 +108,11 @@ export async function middleware(request) {
   const allowed = getAllowedEmails();
   const email = user.email?.toLowerCase();
   if (allowed.length > 0 && email && !allowed.includes(email)) {
-    await supabase.auth.signOut();
+    try {
+      await withTimeout(supabase.auth.signOut(), 2000);
+    } catch {
+      /* sign-out is best-effort when auth is slow */
+    }
     return securityHeaders(
       NextResponse.redirect(new URL("/admin/login?error=unauthorized", request.url))
     );
@@ -83,5 +122,5 @@ export async function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/admin", "/admin/:path*"],
 };

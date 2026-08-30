@@ -22,7 +22,7 @@ export default function ImageUploadField({
 
   defaultUrl = "",
 
-  hint = "Upload JPEG, PNG, or WebP (max 10 MB). Or paste an image URL below.",
+  hint = "Upload JPEG, PNG, or WebP (max 10 MB) — stored in Supabase. Or paste an image URL below.",
 
 }) {
 

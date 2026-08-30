@@ -8,8 +8,11 @@ import {
   rowToProduct,
   productToRow,
   writeCatalogJson,
-  buildCatalogFromProducts,
+  readCatalogJson,
+  mergeProductsBySlug,
+  upsertProductInCatalog,
 } from "@/lib/products-db";
+import { clearCatalogCache } from "@/lib/products";
 import { resolveImageFromForm } from "@/lib/supabase/upload";
 
 async function getAdminSupabase() {
@@ -151,6 +154,11 @@ export async function saveProductAction(id, formData) {
 
     if (error) return { error: error.message };
 
+    if (row.published !== false) {
+      upsertProductInCatalog(rowToProduct(row));
+      clearCatalogCache();
+    }
+
     revalidatePath("/admin/products");
     revalidatePath("/products");
     return { success: true };
@@ -181,33 +189,26 @@ export async function publishCatalogAction() {
     .order("name");
   if (pErr) return { error: pErr.message };
 
-  const { data: categories, error: cErr } = await supabase
-    .from("categories")
-    .select("*")
-    .eq("published", true)
-    .order("sort_order");
-  if (cErr) return { error: cErr.message };
-
+  const existingCatalog = readCatalogJson();
   const mappedProducts = (products || []).map(rowToProduct);
-  const catalogCategories = (categories || []).map((c) => ({
-    slug: c.slug,
-    name: c.name,
-    category: c.slug,
-    subcategory: "600x1200",
-    parent: c.slug,
-    blurb: c.blurb,
-    image: c.image,
-    count: mappedProducts.filter((p) => p.category === c.slug).length,
-  }));
+  const mergedProducts = mergeProductsBySlug(existingCatalog.products, mappedProducts);
 
-  const catalog = buildCatalogFromProducts(mappedProducts, catalogCategories);
+  const catalog = {
+    ...existingCatalog,
+    scrapedAt: new Date().toISOString(),
+    count: mergedProducts.length,
+    source: "Supabase admin + local catalog",
+    products: mergedProducts,
+  };
+
   writeCatalogJson(catalog);
+  clearCatalogCache();
 
   revalidatePath("/");
   revalidatePath("/products");
   revalidatePath("/products/[slug]", "page");
 
-  return { success: true, count: mappedProducts.length };
+  return { success: true, count: mergedProducts.length, updated: mappedProducts.length };
 }
 
 export async function publishCatalogFormAction() {

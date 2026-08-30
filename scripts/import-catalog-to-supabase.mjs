@@ -48,10 +48,11 @@ const CATEGORY_LABELS = {
   "parking-tiles": "Parking Tiles",
 };
 
-/** Return local image path if the file exists in public/, otherwise null. */
+/** Return image path/URL for catalog import (keep local paths even when files are not in git). */
 function localImagePath(relPath) {
   if (!relPath || typeof relPath !== "string") return null;
   if (relPath.startsWith("http")) return relPath;
+  if (relPath.startsWith("/")) return relPath;
   const normalized = relPath.startsWith("/") ? relPath.slice(1) : relPath;
   const abs = path.join(root, "public", normalized);
   return fs.existsSync(abs) ? relPath : null;
